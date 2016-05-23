@@ -10,12 +10,32 @@
 
 public class Main {
     public static void main(String[] args) {
-        System.out.print("success2");
-        Node node1 = new Node(new Vector(0, 0));
-        Node node2 = new Node(new Vector(100, 0));
-        Beam beam = new Beam(node1, node2);
-        System.out.print(beam.forceVector().getX() + "toimii");
+        System.out.print("success2\n");
+        Node node1 = new Node(new Vector(0, 0), 10f, 0.1f);
+        Node node2 = new Node(new Vector(100, 0), 10f, 0.1f);
+        Beam beam = new Beam(node1, node2, 120, 200, 200, 200);
         
+        System.out.print("beam force: x:" + beam.forceVector().getX() + ", y:" + beam.forceVector().getY() + ", node1 x:" + node1.getPosition().getX() + " y:" + node1.getPosition().getY() + ", node2 x:" + node2.getPosition().getX() + " y:" + node2.getPosition().getY() + "\n");
+        
+        node1.calculateNewState();
+ //       node2.calculateNewState();
+        System.out.print("beam force: x:" + beam.forceVector().getX() + ", y:" + beam.forceVector().getY() + ", node1 x:" + node1.getPosition().getX() + " y:" + node1.getPosition().getY() + ", node2 x:" + node2.getPosition().getX() + " y:" + node2.getPosition().getY() + "\n");
+        
+        node1.calculateNewState();
+//        node2.calculateNewState();
+        System.out.print("beam force: x:" + beam.forceVector().getX() + ", y:" + beam.forceVector().getY() + ", node1 x:" + node1.getPosition().getX() + " y:" + node1.getPosition().getY() + ", node2 x:" + node2.getPosition().getX() + " y:" + node2.getPosition().getY() + "\n");
+        
+        node1.calculateNewState();
+//        node2.calculateNewState();
+
+        System.out.print("beam force: x:" + beam.forceVector().getX() + ", y:" + beam.forceVector().getY() + ", node1 x:" + node1.getPosition().getX() + " y:" + node1.getPosition().getY() + ", node2 x:" + node2.getPosition().getX() + " y:" + node2.getPosition().getY() + "\n");
+        
+        node1.calculateNewState();
+        node2.calculateNewState();
+
+        System.out.print("beam force: x:" + beam.forceVector().getX() + ", y:" + beam.forceVector().getY() + ", node1 x:" + node1.getPosition().getX() + " y:" + node1.getPosition().getY() + ", node2 x:" + node2.getPosition().getX() + " y:" + node2.getPosition().getY() + "\n");
+        
+
         
         
     }

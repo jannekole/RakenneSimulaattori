@@ -8,7 +8,8 @@
  * @author janne
  */
 public class Space {
-    
+    float gravity = 9.81f;
+    float updateInterval = 0.1f;
     
     
 }

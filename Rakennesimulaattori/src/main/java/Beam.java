@@ -16,9 +16,15 @@ public class Beam {
     Node node1;
     Node node2;
     
-    public Beam(Node node1, Node node2){
+    public Beam(Node node1, Node node2, double length, double stiffness, int mass, int strength){
         this.node1 = node1;
         this.node2 = node2;
+        
+        this.length = length;
+        this.strength = strength;
+        this.stiffness = stiffness;
+        this.mass = mass;
+        
         node1.addBeam(this);
         node2.addBeam(this);
         
@@ -39,7 +45,7 @@ public class Beam {
     }
 
     Vector forceVector() {
-        return this.directionVector().multiply(length);  
+        return this.directionVector().multiply(this.force());  
     }
 
     private Vector directionVector() {
