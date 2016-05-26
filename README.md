@@ -2,8 +2,7 @@ Rakennesimulaattori on ohjelma jossa voi rakentaa palkeista erilaista rakenteita
 
 **Dokumentaatio:**
 
-[* Aiheen kuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)
-
-[* PIT-raportti](dokumentaatio/201605262210/index.html)
-
-[* Checkstyle-raportti](dokumentaatio/checkstyle.html)
+ 
+* [ Aiheen kuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)
+* [ PIT-raportti](dokumentaatio/201605262210/index.html)
+* [ Checkstyle-raportti](dokumentaatio/checkstyle.html)
