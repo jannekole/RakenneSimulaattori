@@ -1,3 +1,5 @@
+package physics;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,26 +19,27 @@ public class Node {
     
     ArrayList<Beam> beams = new ArrayList();
     
-    Vector position;
-    Vector velocityVector;
-    Vector accelerationVector;
+    Vector positionV;
+    Vector velocityV;
+    Vector accelerationV;
     
     
-    public Node(Vector position, float gravity, float updateInterval){
-        this.position = position;
-        this.velocityVector = new Vector(0, 0);
-        this.accelerationVector = new Vector(0, 0);
+    public Node(Vector position, float gravity, float updateInterval) {
+        this.positionV = position;
+        this.velocityV = new Vector(0, 0);
+        this.accelerationV = new Vector(0, 0);
+        
         this.gravity = gravity;
         this.updateInterval = updateInterval;
     }
     
     
-    void setPosition(Vector position){
-        this.position = position;
+    public void setPosition(Vector position) {
+        this.positionV = position;
     }
            
-    Vector getPosition(){
-        return position;
+    public Vector getPosition() {
+        return positionV;
     }
     
 
@@ -46,17 +49,17 @@ public class Node {
     
     
     
-    public Vector accelerationVector(){
-        return new Vector(-10, 20); // Not completed!
+    public Vector accelerationVector() {
+        return new Vector(-10, 0); // Not completed!
     }
     
-    public void calculateNewState(){
+    public void calculateNewState() {
         
         Vector velocityDifferenceV = accelerationVector().multiply(updateInterval);
-        Vector averageVelocityV = velocityVector.add(velocityDifferenceV.multiply(0.5));
+        Vector averageVelocityV = velocityV.add(velocityDifferenceV.multiply(0.5));
         
-        Vector newPositionV = position.add(averageVelocityV.multiply(updateInterval));
-        Vector newVelocity = velocityVector.add(velocityDifferenceV);
+        Vector newPositionV = positionV.add(averageVelocityV.multiply(updateInterval));
+        Vector newVelocity = velocityV.add(velocityDifferenceV);
         
         setPosition(newPositionV); 
         this.setVelocityVector(newVelocity); 
@@ -65,6 +68,6 @@ public class Node {
     
 
     private void setVelocityVector(Vector velocityVector) {
-        this.velocityVector = velocityVector;
+        this.velocityV = velocityVector;
     }
 }
