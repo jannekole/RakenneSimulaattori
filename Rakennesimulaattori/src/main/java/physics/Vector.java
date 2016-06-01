@@ -32,7 +32,7 @@ public class Vector {
     public String toString() {
         DecimalFormat df = new DecimalFormat("00.0000");
 
-        return "x: " + df.format(x) + "y: " + df.format(y) + "";
+        return "x: " + df.format(x) + " y: " + df.format(y) + "";
     }
     
     

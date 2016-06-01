@@ -38,13 +38,15 @@ public class App {
         
         System.out.print("--- O H J E E T ---\n"
                 + "Ohjelma simuloi tällä hetkellä yhtä palkkia, tai oikeastaan\n"
-                + "jousen päissä olevia painoja. Ohjelman käynnistyessä jousi on \n"
-                + "jännittynyt ja se alkaa oskilloida, sekä tippua vapaassa pudotuksessa.\n"
-                + "Ohjelma laskee painojen sijainnin, nopeuden ja kiihtyvyyden. \n"
+                + "jousen päissä olevia painoja (node). Ohjelman käynnistyessä jousi on \n"
+                + "jännittynyt ja se alkaa oskilloida sekä tippua vapaassa pudotuksessa.\n"
+                + "Ohjelma laskee painojen sijainnin, nopeuden ja kiihtyvyyden ajan edetessä. \n"
+                + "Jousi-paino yhdistelmä alkaa 'vaeltaa' muutaman oskilloinnin jälkeen,\n"
+                + "mikä todennäköisesti johtuu Double:lla tehtyjen laskujen epätarkkuudesta\n"
                 + "----\n"
                 + "Anna kaksi lukua. Ensimmäinen luku kertoo montako riviä ohjelma\n"
                 + "tulostaa. Toinen luku kertoo kuinka monta kertaa ohjelma laskee palkin\n"
-                + "tilan rivien välissä. Esimerkiksi 10 ja 10 antaa järkevän tuloksen\n");
+                + "tilan rivien välissä. Esimerkiksi 15 ja 10 antaa järkevän tuloksen\n");
         lines = scanner.nextInt();
         calculationsPerLine = scanner.nextInt();
         
@@ -90,7 +92,10 @@ public class App {
     }
     
     public void printStatus() {
-        for (Node node : nodes) {
+        
+        for (int i = 0 ; i  < nodes.size() ; i++) {
+            Node node = nodes.get(i);
+            System.out.print("__  Node "+ (i+1) + ": ");
             printNode(node);
             
         }
