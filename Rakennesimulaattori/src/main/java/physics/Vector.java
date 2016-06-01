@@ -1,4 +1,5 @@
 package physics;
+import java.text.DecimalFormat;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -26,6 +27,14 @@ public class Vector {
     public double getY() {
         return y;
     }    
+    
+    @Override
+    public String toString() {
+        DecimalFormat df = new DecimalFormat("00.0000");
+
+        return "x: " + df.format(x) + "y: " + df.format(y) + "";
+    }
+    
     
     public double length() {
         return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));    

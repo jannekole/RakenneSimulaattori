@@ -57,15 +57,31 @@ public class Beam {
         return force;
     }
 
-    public Vector getForceVector() {
-        return this.directionVector().multiply(this.force());  
+    public Vector getForceVector(Node node) {
+        if (node == node1) {
+            return this.directionUnitVector().multiply(this.force());
+        }
+        else if (node == node2) {
+            return this.directionUnitVector().multiply(this.force() * (-1));
+        }
+        System.out.print("node not found");
+        return new Vector(0,0);
+        
     }
 
-    private Vector directionVector() {
+    private Vector directionUnitVector() {
         return node1.positionV.subtract(node2.positionV).multiply(1 / this.distance());      
     }
 
-   
+    public int getMass() {
+        return mass;
+    }
+
+    public void setMass(int mass) {
+        this.mass = mass;
+    }
+
+
 
     
 }

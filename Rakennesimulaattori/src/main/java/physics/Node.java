@@ -43,14 +43,14 @@ public class Node {
     }
     
 
-    void addBeam(Beam beam) {
+    public void addBeam(Beam beam) {
         beams.add(beam);
     }
     
     
     
     public Vector accelerationVector() {
-        return new Vector(-10, 0); // Not completed!
+        return forceSum().multiply(1 / massSum());
     }
     
     public void calculateNewState() {
@@ -62,12 +62,39 @@ public class Node {
         Vector newVelocity = velocityV.add(velocityDifferenceV);
         
         setPosition(newPositionV); 
-        this.setVelocityVector(newVelocity); 
+        this.setVelocityV(newVelocity); 
+    }
+
+    public Vector getVelocityV() {
+        return velocityV;
     }
     
     
 
-    private void setVelocityVector(Vector velocityVector) {
+    private void setVelocityV(Vector velocityVector) {
         this.velocityV = velocityVector;
+    }
+
+    
+    public Vector forceSum() {
+        Vector sum = new Vector(0, 0);
+        for (Beam beam : beams) {
+            sum = sum.add(beam.getForceVector(this));  
+        }
+        sum = sum.add(gravityForce());
+        return sum;
+    }
+
+    private double massSum() {
+        int sum = 0;        
+        for (Beam beam : beams) {
+            sum += beam.getMass();
+        }      
+        return sum / 2;     //mass is halved because only one end of the beam is taken into account
+    }
+
+    private Vector gravityForce() {
+        double gravityF = - gravity * massSum();
+        return new Vector(0, gravityF);
     }
 }
