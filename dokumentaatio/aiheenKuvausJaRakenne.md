@@ -12,3 +12,7 @@ Ihmiset jotka haluavat leikkiä virtuaalisilla rakennelmilla
 
 * Rakenteiden rakentaminen lisäämällä/poistamalla palkkeja ja yhdistelemällä niitä toisiinsa
 * Simuloinnin käynnistäminen ja katsominen
+ 
+**Luokkakaavio:**
+
+![](/dokumentaatio/luokkakaavio.png)
