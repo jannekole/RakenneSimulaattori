@@ -51,7 +51,7 @@ public class App {
                 + "Anna kaksi lukua. Ensimmäinen luku kertoo montako riviä ohjelma\n"
                 + "tulostaa. Toinen luku kertoo kuinka monta kertaa ohjelma laskee palkin\n"
                 + "tilan rivien välissä. Esimerkiksi 15 ja 10 antaa järkevän tuloksen\n");
-        
+      /*  
         lines = scanner.nextInt();
         calculationsPerLine = scanner.nextInt();
         
@@ -72,7 +72,7 @@ public class App {
             stepFor(calculationsPerLine);
             i ++;
         }
-            
+        */  
 
  
          
@@ -121,6 +121,7 @@ public class App {
         float gravity = 0.00f;
         space.addNode(new Node(new Vector(0, 0), 0.004f, 0.1f));   //GRAVITY
         space.addNode(new Node(new Vector(400, 0), gravity, 0.1f)); 
+        space.addNode(new Node(new Vector(200, 346), gravity, 0.1f));
         float length = 480;
         float stiffness = 800;
         int mass = 20;
@@ -129,6 +130,8 @@ public class App {
         
         Beam beam = new Beam(space.getNode(0), space.getNode(1), length, stiffness, mass, strength); //tästä eroon
         space.addBeam(beam);
+        space.addBeam(new Beam(space.getNode(0), space.getNode(2), length, stiffness, mass, strength));
+        space.addBeam(new Beam(space.getNode(1), space.getNode(2), length, stiffness, mass, strength));
     }
     
 }

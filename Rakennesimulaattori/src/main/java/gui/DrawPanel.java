@@ -30,7 +30,7 @@ import javax.swing.Timer;
 
 
 public class DrawPanel extends JPanel {
-    int delay = 100; //milliseconds
+    //int delay = 1000; //milliseconds
     
     ArrayList<graphicNode> graphicNodes;
     
@@ -49,6 +49,13 @@ public class DrawPanel extends JPanel {
         this.app = app;
         
         graphicNodes = new ArrayList();
+        
+        ArrayList<Node> nodes = app.getSpace().getNodes();
+        
+        for (Node node : nodes) {
+            addNode(node);
+        }
+        
 
         setBorder(BorderFactory.createLineBorder(Color.black));
 
@@ -74,11 +81,9 @@ public class DrawPanel extends JPanel {
     
     public void refresh() {
         System.out.print(".resh ");
-        ArrayList<Node> nodes = app.getSpace().getNodes();
+
         
-        Node node = nodes.get(0);
-        
-        addNode(node);
+
         graphicNodes.get(0).setCoordinates();
         
 //        int x = (int) node.getPosition().getX();
@@ -93,7 +98,7 @@ public class DrawPanel extends JPanel {
 
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(250,200);
+        return new Dimension(1000,800);
     }
     
     @Override
@@ -101,9 +106,10 @@ public class DrawPanel extends JPanel {
         super.paintComponent(g);       
         if (!graphicNodes.isEmpty()) {
             System.out.print(" not empty ");
-            graphicNodes.get(0).paintNode(g);
+            for (graphicNode node : graphicNodes) {
+                node.paintNode(g);
+            }
         }
-//        g.setColor(Color.RED);
- //       g.fillOval(50,50,diameter,diameter);
+
     }  
 }

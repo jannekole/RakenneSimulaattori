@@ -35,7 +35,7 @@ public class graphicNode {
     public void paintNode(Graphics g) {
         setCoordinates();
         g.setColor(Color.BLACK);
-        g.fillOval(x,y,diameter,diameter);
+        g.fillOval(x + 300, -y + 400,diameter,diameter);
         System.out.print("pöö");
     }
 
