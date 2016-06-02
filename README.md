@@ -4,5 +4,5 @@
 
  
 * [ Aiheen kuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)
-* [ PIT-raportti](dokumentaatio/201606022354/index.html)
-* [ Checkstyle-raportti](dokumentaatio/checkstyle.html) Joku meni pieleen ja tämä on vanha versio
+* [ PIT-raportti](dokumentaatio/201606022354/index.html) Uusia testejä on vain muutama koska keskityin käyttöliittymään
+* [ Checkstyle-raportti](dokumentaatio/checkstyle.html) Joku meni pieleen ja tämä on aikaisempi versio
