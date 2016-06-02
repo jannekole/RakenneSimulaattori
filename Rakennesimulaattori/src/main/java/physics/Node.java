@@ -85,7 +85,7 @@ public class Node {
         return sum;
     }
 
-    private double massSum() {
+    public double massSum() {
         int sum = 0;        
         for (Beam beam : beams) {
             sum += beam.getMass();
