@@ -12,6 +12,9 @@ import physics.Vector;
 import java.util.ArrayList;
 
 import java.util.Scanner;
+import physics.Space;
+
+import gui.Gui;
 
 
 /**
@@ -19,16 +22,16 @@ import java.util.Scanner;
  * @author janne
  */
 public class App {
-    ArrayList<Node> nodes = new ArrayList(); 
+
     Scanner scanner;
     Boolean keepGoing;
+    Space space;
     
     public App() {
-        keepGoing = true;
+        space = new Space();
         
-        nodes.add(new Node(new Vector(0, 0), 10f, 0.1f));
-        nodes.add(new Node(new Vector(100, 0), 10f, 0.1f));
-        Beam beam = new Beam(nodes.get(0), nodes.get(1), 120, 200, 20, 200);
+        setObjects();
+        
         scanner = new Scanner( System.in );
         
         
@@ -36,6 +39,7 @@ public class App {
         int lines;
         int calculationsPerLine;
         
+       
         System.out.print("--- O H J E E T ---\n"
                 + "Ohjelma simuloi tällä hetkellä yhtä palkkia, tai oikeastaan\n"
                 + "jousen päissä olevia painoja (node). Ohjelman käynnistyessä jousi on \n"
@@ -47,8 +51,11 @@ public class App {
                 + "Anna kaksi lukua. Ensimmäinen luku kertoo montako riviä ohjelma\n"
                 + "tulostaa. Toinen luku kertoo kuinka monta kertaa ohjelma laskee palkin\n"
                 + "tilan rivien välissä. Esimerkiksi 15 ja 10 antaa järkevän tuloksen\n");
+        
         lines = scanner.nextInt();
         calculationsPerLine = scanner.nextInt();
+        
+        calculationsPerLine = 10;
         
         int i = 0;
         
@@ -65,7 +72,20 @@ public class App {
             stepFor(calculationsPerLine);
             i ++;
         }
+            
+
+ 
+         
+        
           
+    }
+
+    public Space getSpace() {
+        return space;
+    }
+    
+    public void addNode(Node node) {
+        space.addNode(node);
     }
     
     
@@ -74,27 +94,18 @@ public class App {
         
         for (int i = 0 ; i < until; i++)
             {
-                step();
+                space.step();
             }
         printStatus();
     }
  
     
     
-    public void step() {
-        for (Node node : nodes) {
-
-            node.calculateNewState();
-        }
-        
-        
-
-    }
-    
+   
     public void printStatus() {
         
-        for (int i = 0 ; i  < nodes.size() ; i++) {
-            Node node = nodes.get(i);
+        for (int i = 0 ; i  < space.getNodes().size() ; i++) {
+            Node node = space.getNode(i);
             System.out.print("__  Node "+ (i+1) + ": ");
             printNode(node);
             
@@ -104,6 +115,20 @@ public class App {
 
     private void printNode(Node node) {
         System.out.print("position: " + node.getPosition().toString() + "  speed: " + node.getVelocityV().toString() + " acc: " + node.accelerationVector().toString() + " ");
+    }
+
+    private void setObjects() { //Väliaikainen ratkaisu
+        float gravity = 0.00f;
+        space.addNode(new Node(new Vector(0, 0), 0.004f, 0.1f));   //GRAVITY
+        space.addNode(new Node(new Vector(400, 0), gravity, 0.1f)); 
+        float length = 480;
+        float stiffness = 800;
+        int mass = 20;
+        int strength = 200000;
+        
+        
+        Beam beam = new Beam(space.getNode(0), space.getNode(1), length, stiffness, mass, strength); //tästä eroon
+        space.addBeam(beam);
     }
     
 }
