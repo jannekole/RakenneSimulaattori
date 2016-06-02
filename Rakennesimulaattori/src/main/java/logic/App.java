@@ -119,7 +119,7 @@ public class App {
 
     private void setObjects() { //Väliaikainen ratkaisu
         float gravity = 0.00f;
-        space.addNode(new Node(new Vector(0, 0), 0.004f, 0.1f));   //GRAVITY
+        space.addNode(new Node(new Vector(0, 0), gravity, 0.1f));   //GRAVITY
         space.addNode(new Node(new Vector(400, 0), gravity, 0.1f)); 
         space.addNode(new Node(new Vector(200, 346), gravity, 0.1f));
         float length = 480;
