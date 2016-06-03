@@ -1,9 +1,10 @@
-﻿Rakennesimulaattori on ohjelma jossa voi rakentaa palkeista erilaista rakenteita ja sitten simuloida niiden käyttäytymistä.
+﻿###Rakennesimulaattori
 
-Tällä hetkellä main.javan suorittamalla saa nähtyä graafisesti ohjelman toimintaa. Ikkunassa pitäisi näkyä kolme heiluvaa pistettä. Pisteet kuvaavat painoja jotka on yhdistetty toisiinsa jousilla. Tämä rakennelma on aluksi jännittyneessä tilassa, joten rakennelma alkaa oskilloida kun ohjelma käynnistyy. 
+Rakennesimulaattori on ohjelma jossa voi rakentaa palkeista erilaista rakenteita ja sitten simuloida niiden käyttäytymistä.
 
-Alanurkkaan voi kirjoittaa luvun, ja refresh napilla simulointi siirtyy eteenpäin luvun verran askelia. Jossakin vaiheessa (n. 3500 askelta alusta) pisteet alkavat käyttäytyä hieman erikoisesti, mahdollisesti Doubleilla tehtyjen laskujen virheiden takia.
+Tällä hetkellä Gui2.javan suorittamalla saa nähtyä graafisesti ohjelman toimintaa. Avautuvassa ikkunassa pitäisi näkyä neljä toisiinsa yhdistettyä pistettä. Pisteet kuvaavat painoja jotka on yhdistetty toisiinsa jousilla. Tämä rakennelma on aluksi jännittyneessä tilassa, joten rakennelma alkaa oskilloida kun ohjelma käynnistyy. Ohjelmassa on nyt iskunvaimennus, joten oiskillointi vaimenee.
 
+Alanurkkaan voi kirjoittaa luvun, ja refresh napilla simulointi siirtyy eteenpäin luvun verran askelia. 
 **Dokumentaatio:**
 
  
