@@ -39,10 +39,15 @@ public class Builder {
         space.addNode(new Node(new Vector(400, 400), gravity, 0.1f));
  //       space.addNode(new Node(new Vector(0, 400), gravity, 0.1f));
         
+        space.getNode(0).setXStationary(true);
+        space.getNode(0).setYStationary(true);
+        space.getNode(1).setXStationary(true);
+        space.getNode(1).setYStationary(true);
+        
         
         float length = 480;
-        float stiffness = 800;
-        int mass = 20;
+        float stiffness = 2000;
+        int mass = 5;
         int strength = 200000;
         
         Beam beam = new Beam(space.getNode(0), space.getNode(1), length, stiffness, mass, strength); //tästä eroon

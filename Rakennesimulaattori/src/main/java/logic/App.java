@@ -108,7 +108,7 @@ public class App {
 
     private void setObjects() { 
         Builder builder = new Builder(space);
-        builder.build("node 1;x 20;y 20;-\n node 2;x 0;  y 100;-");
+        builder.build("node 1;x 0;y 20;-\n node 2;x 120;  y 70;-");
         
     }
     

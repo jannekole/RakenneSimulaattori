@@ -19,7 +19,7 @@ public class Beam {
     
     double calculatedForce;
     
-    double dampeningFactor = 0.5;
+    double dampeningFactor = 0.7;
     
     boolean isBroken;
     

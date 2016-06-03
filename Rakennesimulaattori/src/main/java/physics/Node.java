@@ -19,23 +19,32 @@ public class Node {
     
     ArrayList<Beam> beams = new ArrayList();
     
+    Vector startPositionV;
     Vector positionV;
     Vector velocityV;
     Vector accelerationV;
     
+    boolean xStationary;
+    boolean yStationary;
+    
     
     public Node(Vector position, float gravity, float updateInterval) {
+        this.startPositionV = position;
         this.positionV = position;
+        
         this.velocityV = new Vector(0, 0);
         this.accelerationV = new Vector(0, 0);
         
         this.gravity = gravity;
         this.updateInterval = updateInterval;
+        
+        this.xStationary = false;
+        this.yStationary = false;
     }
     
     
     public void setPosition(Vector position) {
-        this.positionV = position;
+        this.startPositionV = position;
     }
            
     public Vector getPosition() {
@@ -55,14 +64,25 @@ public class Node {
     
     public void calculateNewState() {
         
+        
+        
         Vector velocityDifferenceV = accelerationVector().multiply(updateInterval);
         Vector averageVelocityV = velocityV.add(velocityDifferenceV.multiply(0.5));
         
         Vector newPositionV = positionV.add(averageVelocityV.multiply(updateInterval));
-        Vector newVelocity = velocityV.add(velocityDifferenceV);
+        Vector newVelocityV = velocityV.add(velocityDifferenceV);
         
-        setPosition(newPositionV); 
-        this.setVelocityV(newVelocity); 
+        if(isXStationary()) {
+            newPositionV.setX(startPositionV.getX());
+            newVelocityV.setX(0);
+        }
+        if(isYStationary()) {
+            newPositionV.setY(startPositionV.getY());
+            newVelocityV.setY(0);
+        }
+        
+        positionV = newPositionV; 
+        setVelocityV(newVelocityV); 
     }
 
     public Vector getVelocityV() {
@@ -97,4 +117,21 @@ public class Node {
         double gravityF = - gravity * massSum();
         return new Vector(0, gravityF);
     }
+
+    public boolean isXStationary() {
+        return xStationary;
+    }
+
+    public void setXStationary(boolean xStationary) {
+        this.xStationary = xStationary;
+    }
+
+    public boolean isYStationary() {
+        return yStationary;
+    }
+
+    public void setYStationary(boolean yStationary) {
+        this.yStationary = yStationary;
+    }
+
 }

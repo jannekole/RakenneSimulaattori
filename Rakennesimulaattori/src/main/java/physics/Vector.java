@@ -56,5 +56,13 @@ public class Vector {
         return new Vector(this.x * scalar, this.y * scalar);
     }
 
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
 
 }
