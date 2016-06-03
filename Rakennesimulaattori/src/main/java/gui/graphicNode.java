@@ -19,23 +19,33 @@ public class graphicNode {
     
     Node node;
     
+    int radius;
     int diameter;
     int x;
     int y;
     
+    int xOffset;
+    int yOffset;
+        
     
-    public graphicNode(Node node) {
+    public graphicNode(Node node, int xOffset, int yOffset) {
 
+        this.xOffset = xOffset;
+        this.yOffset = yOffset;
+        
         this.node = node;
         
-        this.diameter = 5;
+        this.radius = 5;
+        this.diameter = radius * 2;
+        
+        
         
     }
             
     public void paintNode(Graphics g) {
         setCoordinates();
         g.setColor(Color.BLACK);
-        g.fillOval(x + 500, -y + 400,diameter,diameter);
+        g.fillOval(x + xOffset - radius, -y + yOffset - radius,diameter,diameter);
         
     }
 

@@ -78,10 +78,10 @@ public class App {
     }
     
     
-    public void stepFor(int until) {
+    public void stepFor(int steps) {
                
         
-        for (int i = 0 ; i < until; i++)
+        for (int i = 0 ; i < steps; i++)
             {
                 space.step();
             }
@@ -106,21 +106,10 @@ public class App {
         System.out.print("position: " + node.getPosition().toString() + "  speed: " + node.getVelocityV().toString() + " acc: " + node.accelerationVector().toString() + " ");
     }
 
-    private void setObjects() { //Väliaikainen ratkaisu
-        float gravity = 0.00f;
-        space.addNode(new Node(new Vector(0, 0), gravity, 0.1f));   //GRAVITY
-        space.addNode(new Node(new Vector(400, 0), gravity, 0.1f)); 
-        space.addNode(new Node(new Vector(200, 346), gravity, 0.1f));
-        float length = 480;
-        float stiffness = 800;
-        int mass = 20;
-        int strength = 200000;
+    private void setObjects() { 
+        Builder builder = new Builder(space);
+        builder.build("node 1;x 20;y 20;-\n node 2;x 0;  y 100;-");
         
-        
-        Beam beam = new Beam(space.getNode(0), space.getNode(1), length, stiffness, mass, strength); //tästä eroon
-        space.addBeam(beam);
-        space.addBeam(new Beam(space.getNode(0), space.getNode(2), length, stiffness, mass, strength));
-        space.addBeam(new Beam(space.getNode(1), space.getNode(2), length, stiffness, mass, strength));
     }
     
 }

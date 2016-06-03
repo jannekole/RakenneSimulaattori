@@ -1,5 +1,7 @@
 package physics;
 
+import java.util.ArrayList;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,14 +17,24 @@ public class Beam {
     double stiffness;
     int strength;
     
+    double calculatedForce;
+    
+    double dampeningFactor = 0.5;
+    
     boolean isBroken;
     
-    Node node1;
-    Node node2;
+    
+    
+    ArrayList<Node> nodes;
+    
+//    Node node1;
+//    Node node2;
     
     public Beam(Node node1, Node node2, double length, double materialStiffness, int mass, int strength) {
-        this.node1 = node1;
-        this.node2 = node2;
+        this.nodes = new ArrayList();
+        
+        this.nodes.add(node1);
+        this.nodes.add(node2);
         
         isBroken = false;
         
@@ -31,38 +43,60 @@ public class Beam {
         this.stiffness = materialStiffness / length;
         this.mass = mass;
         
-        node1.addBeam(this);
-        node2.addBeam(this);
+        for (Node node : nodes) {
+            node.addBeam(this);
+        }
         
     }
     
     public double distance() {
-        return node1.getPosition().distance(node2.getPosition());
+        return nodes.get(0).getPosition().distance(nodes.get(1).getPosition());
     }
     
     public Vector beamVector() {
         
-        return node1.getPosition().subtract(node1.getPosition()); 
+        return nodes.get(0).getPosition().subtract(nodes.get(1).getPosition()); 
     }
-    
-    public double force() {
+
+    private double dampen(double newForce) {
+        double oldForce = calculatedForce;
+        if (Math.abs(newForce) < Math.abs(oldForce)) {
+            newForce = newForce * (1 - dampeningFactor);
+        }
+
+        return newForce;
+    }
+
+    void calculateNewState() {
         if (isBroken) {
-            return 0;
+            calculatedForce = 0;
+            return;
         }
-        double force = stiffness * (length -  this.distance());
-        if (Math.abs(force) > strength) {
+        double newForce = stiffness * (length -  this.distance());
+        
+        if (Math.abs(newForce) > strength) {
             isBroken = true;
-            return 0;
+            calculatedForce = 0;
+            return;
         }
-        return force;
+        calculatedForce = dampen(newForce);
+        
+        
+        
+    }    
+    
+    
+    public double getForce() {
+
+        return calculatedForce;
     }
 
     public Vector getForceVector(Node node) {
-        if (node == node1) {
-            return this.directionUnitVector().multiply(this.force());
+        if (node == nodes.get(0)) {
+            return this.directionUnitVector().multiply(this.getForce());
         }
-        else if (node == node2) {
-            return this.directionUnitVector().multiply(this.force() * (-1));
+        else if (node == nodes.get(1)) {
+            return this.directionUnitVector().multiply(this.getForce() * (-1));
         }
         System.out.print("node not found");
         return new Vector(0,0);
@@ -70,7 +104,7 @@ public class Beam {
     }
 
     private Vector directionUnitVector() {
-        return node1.positionV.subtract(node2.positionV).multiply(1 / this.distance());      
+        return nodes.get(0).positionV.subtract(nodes.get(1).positionV).multiply(1 / this.distance());      
     }
 
     public int getMass() {
@@ -81,7 +115,10 @@ public class Beam {
         this.mass = mass;
     }
 
+    public ArrayList<Node> getNodes() {
+        return nodes;
+    }
 
 
-    
+
 }

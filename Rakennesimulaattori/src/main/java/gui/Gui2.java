@@ -114,8 +114,8 @@ public class Gui2 extends javax.swing.JFrame {
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
         app.stepFor(Integer.parseInt(jTextField1.getText()));
-        app.printStatus();
-        jPanel1.refresh();
+
+        jPanel1.repaint();
 
     }                                       
 
@@ -160,11 +160,11 @@ public class Gui2 extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent evt) {
                         //...Perform a task...
                         app.stepFor(1);
-                        gui.jPanel1.refresh();
+                        gui.jPanel1.repaint();
                         System.out.print("ref");
                     }
                 };
-                int delay = 10;
+                int delay = 20;
                 new Timer(delay, taskPerformer).start();
                 System.out.print("past timer");
                 

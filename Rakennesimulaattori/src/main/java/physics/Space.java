@@ -12,7 +12,9 @@ import java.util.ArrayList;
  * @author janne
  */
 public class Space {
-    float gravity = 9.81f;
+    float gravity = 0f;
+
+
     float updateInterval = 0.1f;
     ArrayList<Node> nodes = new ArrayList(); 
     ArrayList<Beam> beams = new ArrayList(); 
@@ -28,12 +30,28 @@ public class Space {
     public ArrayList<Node> getNodes() {
         return nodes;
     }
-      
+
+    public ArrayList<Beam> getBeams() {
+        return beams;
+    }
+    
+    public float getGravity() {
+        return gravity;
+    }      
+
+    public float getUpdateInterval() {
+        return updateInterval;
+    }
+    
+    
     
     public void step() {
         for (Node node : nodes) {
-
+            
             node.calculateNewState();
+        }
+        for (Beam beam : beams) {
+            beam.calculateNewState();
         }
         
         
@@ -43,4 +61,6 @@ public class Space {
     public Node getNode(int i) {
         return nodes.get(i);
     }
+
+
 }

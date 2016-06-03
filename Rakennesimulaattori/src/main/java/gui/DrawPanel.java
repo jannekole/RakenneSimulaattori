@@ -27,18 +27,21 @@ import java.util.ArrayList;
 import logic.App;
 import physics.Node;
 import javax.swing.Timer;
+import physics.Beam;
 
 
 public class DrawPanel extends JPanel {
     //int delay = 1000; //milliseconds
     
     ArrayList<graphicNode> graphicNodes;
-    
+    ArrayList<graphicBeam> graphicBeams;    
     
     private int x = 0;
     private int y = 0;
     private int diameter = 20;
     
+    private int xOffset = 400;
+    private int yOffset = 300;
     
 
     
@@ -49,12 +52,23 @@ public class DrawPanel extends JPanel {
         this.app = app;
         
         graphicNodes = new ArrayList();
+        graphicBeams = new ArrayList();
+        
         
         ArrayList<Node> nodes = app.getSpace().getNodes();
         
         for (Node node : nodes) {
             addNode(node);
         }
+        
+        ArrayList<Beam> beams = app.getSpace().getBeams();
+        
+        for (Beam beam : beams) {
+            addBeam(beam);
+        }
+  
+        
+
         
 
         setBorder(BorderFactory.createLineBorder(Color.black));
@@ -75,23 +89,27 @@ public class DrawPanel extends JPanel {
     }
 
     public void addNode(Node node) {
-        graphicNodes.add(new graphicNode(node));
+        graphicNodes.add(new graphicNode(node , xOffset, yOffset));
     }
+    
+    private void addBeam(Beam beam) {
+        graphicBeams.add(new graphicBeam(beam, xOffset, yOffset));
+    }    
 
     
-    public void refresh() {
-        System.out.print(".resh ");
+   // public void refresh() {
+     //   System.out.print(".resh ");
 
         
 
-        graphicNodes.get(0).setCoordinates();
+
         
 //        int x = (int) node.getPosition().getX();
 //        int y = (int) node.getPosition().getY();
 //        this.x = x;
 //        this.y = y;
-        repaint();
-    }
+ //       repaint();
+   // }
     
     
     
@@ -110,6 +128,15 @@ public class DrawPanel extends JPanel {
                 node.paintNode(g);
             }
         }
+        if (!graphicBeams.isEmpty()) {
 
+            for (graphicBeam beam : graphicBeams) {
+                beam.paintBeam(g);
+            }
+        }
+
+        
     }  
+
+
 }

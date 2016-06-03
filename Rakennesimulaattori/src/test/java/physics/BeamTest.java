@@ -57,7 +57,7 @@ public class BeamTest {
 
     @Test // Tests if the beam at rest produces a force of 0
     public void testBeamForce1() { 
-        assertEquals(0f, beam.force(), 0.01);
+        assertEquals(0f, beam.getForce(), 0.01);
         
     }
     
@@ -66,7 +66,7 @@ public class BeamTest {
         
         Vector newPosition = new Vector(120, 0);
         node2.setPosition(newPosition);
-        assertEquals(-20, beam.force(), 0.01);
+        assertEquals(-20, beam.getForce(), 0.01);
         
     }
     @Test //Tests to see if stretching the beam too much causes the beam to break (force = 0)
@@ -74,7 +74,7 @@ public class BeamTest {
         
         Vector newPosition = new Vector(150, 0);
         node2.setPosition(newPosition);
-        assertEquals(0, beam.force(), 0.01);
+        assertEquals(0, beam.getForce(), 0.01);
         
     }
     @Test //Tests to see if compressing the beam too much causes the beam to break (force = 0)
@@ -82,7 +82,7 @@ public class BeamTest {
         
         Vector newPosition = new Vector(50, 0);
         node2.setPosition(newPosition);
-        assertEquals(0, beam.force(), 0.01);
+        assertEquals(0, beam.getForce(), 0.01);
         
     }
     
