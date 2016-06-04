@@ -29,9 +29,7 @@ public class Node {
     
     
     public Node(Vector position, float gravity, float updateInterval) {
-        this.startPositionV = position;
-        this.positionV = position;
-        
+        setPosition(position);
         this.velocityV = new Vector(0, 0);
         this.accelerationV = new Vector(0, 0);
         
@@ -45,6 +43,7 @@ public class Node {
     
     public void setPosition(Vector position) {
         this.startPositionV = position;
+        this.positionV = position;
     }
            
     public Vector getPosition() {

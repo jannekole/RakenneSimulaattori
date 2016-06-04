@@ -15,7 +15,7 @@ public class Space {
     float gravity = 0f;
 
 
-    float updateInterval = 0.1f;
+    public static float updateInterval = 0.01f;
     ArrayList<Node> nodes = new ArrayList(); 
     ArrayList<Beam> beams = new ArrayList(); 
     
@@ -46,13 +46,15 @@ public class Space {
     
     
     public void step() {
+        for (Beam beam : beams) {
+            beam.calculateNewState();
+        }
+        
         for (Node node : nodes) {
             
             node.calculateNewState();
         }
-        for (Beam beam : beams) {
-            beam.calculateNewState();
-        }
+
         
         
 

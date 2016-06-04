@@ -5,8 +5,10 @@
  */
 package gui;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import physics.Beam;
 import physics.Node;
 
@@ -16,6 +18,8 @@ import physics.Node;
  */
 public class graphicBeam {
     Beam beam;
+    
+    boolean isBroken = false;
     
     int diameter;
     int x1;
@@ -40,8 +44,15 @@ public class graphicBeam {
             
     public void paintBeam(Graphics g) {
         setCoordinates();
-        g.setColor(Color.BLACK);
-        g.drawLine(x1 + xOffset, -y1 + yOffset, x2 + xOffset, -y2 + yOffset);
+        Graphics2D g2D = (Graphics2D) g;
+        g2D.setStroke(new BasicStroke(4, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+        g2D.setColor(Color.BLACK);
+        if (isBroken) {
+            g2D.setColor(Color.PINK);
+            g2D.setStroke(new BasicStroke(1, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+            
+        }
+        g2D.drawLine(x1 + xOffset, -y1 + yOffset, x2 + xOffset, -y2 + yOffset);
         
     }
 
@@ -50,8 +61,11 @@ public class graphicBeam {
         x1 = (int) beam.getNodes().get(0).getPosition().getX();
         y1 = (int) beam.getNodes().get(0).getPosition().getY();
         
+        
         x2 = (int) beam.getNodes().get(1).getPosition().getX();
         y2 = (int) beam.getNodes().get(1).getPosition().getY();
+        
+        isBroken = beam.isBroken();
         
         
     }

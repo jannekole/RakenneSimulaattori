@@ -48,7 +48,7 @@ public class BeamTest {
         int strength = 30;
         
         
-        beam = new Beam(node1, node2, length, stiffness, mass, strength);
+        beam = new Beam(node1, node2, stiffness, mass, strength, length);
     }
     
     @After
@@ -66,6 +66,8 @@ public class BeamTest {
         
         Vector newPosition = new Vector(120, 0);
         node2.setPosition(newPosition);
+        beam.calculateNewState();
+        beam.calculateNewState();
         assertEquals(-20, beam.getForce(), 0.01);
         
     }

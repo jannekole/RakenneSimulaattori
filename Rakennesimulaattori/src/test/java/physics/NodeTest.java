@@ -92,8 +92,8 @@ public class NodeTest {
         int strength = 30;
         
         
-        beam1 = new Beam(node1, node2, length, stiffness, mass, strength);
-        beam2 = new Beam(node1, node3, length, 50       , 30  , strength);
+        beam1 = new Beam(node1, node2, stiffness, mass, strength, length);
+        beam2 = new Beam(node1, node3, 50       , 30  , strength, length);
         
         assertEquals(node1.massSum(), 65, 0.001);
         
@@ -111,9 +111,11 @@ public class NodeTest {
         Vector position4 = new Vector(0, 120);
         node4.setPosition(position4);
         
-        beam1 = new Beam(node2, node3, length, stiffness, mass, strength);
-        beam2 = new Beam(node2, node4, length, 50       , 30  , strength);
+        beam1 = new Beam(node2, node3, stiffness, mass, strength, length);
+        beam2 = new Beam(node2, node4, 50       , 30  , strength, length);
         
+        beam1.calculateNewState();
+        beam2.calculateNewState();
       
         assertEquals(20, node2.forceSum().x, 0.01);
         assertEquals(10, node2.forceSum().y, 0.01);
@@ -130,8 +132,8 @@ public class NodeTest {
         Vector position4 = new Vector(0, 120);
         node4.setPosition(position4);
         
-        beam1 = new Beam(node2, node3, length, stiffness, mass, strength);
-        beam2 = new Beam(node2, node4, length, 50       , 30  , strength);
+        beam1 = new Beam(node2, node3, stiffness, mass, strength, length);
+        beam2 = new Beam(node2, node4, 50       , 30  , strength, length);
         
         assertEquals(20 / 65, node2.accelerationV.x, 0.01);
         assertEquals(10 / 65, node2.accelerationV.y, 0.01);

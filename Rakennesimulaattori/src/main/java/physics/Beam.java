@@ -19,7 +19,7 @@ public class Beam {
     
     double calculatedForce;
     
-    double dampeningFactor = 0.7;
+    double dampeningFactor = 0.2; 
     
     boolean isBroken;
     
@@ -29,27 +29,52 @@ public class Beam {
     
 //    Node node1;
 //    Node node2;
-    
-    public Beam(Node node1, Node node2, double length, double materialStiffness, int mass, int strength) {
+   
+    public Beam(Node node1, Node node2, double materialStiffness, int mass, int strength) {
+        this(node1, node2, materialStiffness, mass, strength, 0);
+    }
+ 
+    public Beam(Node node1, Node node2, double materialStiffness, int mass, int strength, double length) {
+        
+
+        
         this.nodes = new ArrayList();
         
         this.nodes.add(node1);
         this.nodes.add(node2);
         
+        if (length == 0) {
+            setLengthToNodes();
+        }
+        else {
+            this.length = length;
+        }
+        
         isBroken = false;
         
-        this.length = length;
+        
+        
         this.strength = strength;
-        this.stiffness = materialStiffness / length;
+        this.stiffness = materialStiffness / this.length;
         this.mass = mass;
         
         for (Node node : nodes) {
             node.addBeam(this);
         }
-        
-    }
+          
+
+    }    
+     
     
-    public double distance() {
+        
+
+       
+            
+       
+        
+    
+    
+    public double getNodeDistance() {
         return nodes.get(0).getPosition().distance(nodes.get(1).getPosition());
     }
     
@@ -72,7 +97,9 @@ public class Beam {
             calculatedForce = 0;
             return;
         }
-        double newForce = stiffness * (length -  this.distance());
+        double newForce = stiffness * (length -  this.getNodeDistance());
+        
+        System.out.print("length" + length + " dist: " + this.getNodeDistance());
         
         if (Math.abs(newForce) > strength) {
             isBroken = true;
@@ -80,6 +107,7 @@ public class Beam {
             return;
         }
         calculatedForce = dampen(newForce);
+        System.out.print("calc f" + calculatedForce);
         
         
         
@@ -104,7 +132,7 @@ public class Beam {
     }
 
     private Vector directionUnitVector() {
-        return nodes.get(0).positionV.subtract(nodes.get(1).positionV).multiply(1 / this.distance());      
+        return nodes.get(0).positionV.subtract(nodes.get(1).positionV).multiply(1 / this.getNodeDistance());      
     }
 
     public int getMass() {
@@ -119,6 +147,17 @@ public class Beam {
         return nodes;
     }
 
+    private void setLengthToNodes() {
+        length = getNodeDistance();
+    }
 
+    public double getLength() {
+        return length;
+    }
 
+    public boolean isBroken() {
+        return isBroken;
+    }
+
+    
 }
