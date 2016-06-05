@@ -167,7 +167,7 @@ public class DrawPanel extends JPanel {
     private void setTimer() {
         
         int frameRate = 50;
-        float speedMultiplier = 5f;
+        float speedMultiplier = 1f;
 
         int delay = 1000 / frameRate;
         int calculationsPerFrame = (int) (speedMultiplier / Space.updateInterval * delay / 1000);
