@@ -5,6 +5,9 @@
  */
 package logic;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import physics.Beam;
@@ -29,7 +32,7 @@ public class Builder {
     public void build(String string) {
         
         String[] components;
-        components = string.split("-");
+        components = string.split("\n");
         for (String component : components) {
             component = component.trim();
             buildComponent(component);            
@@ -45,8 +48,8 @@ public class Builder {
         
         space.getNode(0).setXStationary(true);
         space.getNode(0).setYStationary(true);
- //       space.getNode(1).setXStationary(true);
-   //     space.getNode(1).setYStationary(true);
+        space.getNode(1).setXStationary(true);
+        space.getNode(1).setYStationary(true);
         
         
 //        float length = 200;
@@ -116,8 +119,21 @@ public class Builder {
         String nodeName1  = getValue("a", valueStrings);
         String nodeName2  = getValue("b", valueStrings);
         
-        node1 = nodes.get(nodeName1);
-        node2 = nodes.get(nodeName2);
+        
+        String beamRow = "";
+        for (String string : valueStrings) {
+            beamRow = beamRow + string;
+        }
+        if ((node1 = nodes.get(nodeName1)) == null) {
+            
+            System.out.print(beamRow);
+        }
+        if ((node2 = nodes.get(nodeName2)) == null) {
+            System.out.print(beamRow);
+        }
+//        node2 = nodes.get(nodeName2);
+        
+        
         
         space.addBeam(new Beam(node1, node2, materialStiffness, mass, strength, length));
         
@@ -130,7 +146,7 @@ public class Builder {
             valueString = valueString.trim();
             String tagFromText = valueString.split("\\s")[0];
             if (tagFromText.equalsIgnoreCase(tag)) {
-                valueString = valueString.replaceAll("\\D*", "");
+                valueString = valueString.replaceAll("[^0-9-]*", "");
                 return valueString;
             }
             
@@ -149,6 +165,33 @@ public class Builder {
             buildBeam(component.split(";"));
         }        
         
+    }
+
+    void buildFromFile(String filename) {
+        String data = stringFromFile(filename);
+        build(data);
+    }
+
+    private String stringFromFile(String filename) {
+        
+      FileReader in;
+      
+      String data = "";
+      try {
+         in = new FileReader(filename);
+         BufferedReader bufferedReader = new BufferedReader(in);
+         String line;
+         while ((line = bufferedReader.readLine()) != null) {
+                data = data + line + "\n";
+
+               // System.out.println(data);
+            }
+        }
+      catch (IOException e) { 
+                 
+                 }
+      
+      return data;
     }
 
    

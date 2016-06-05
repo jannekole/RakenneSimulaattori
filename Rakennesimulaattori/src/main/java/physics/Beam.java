@@ -19,7 +19,7 @@ public class Beam {
     
     double calculatedForce;
     
-    double dampeningFactor = 0.2; 
+    double dampeningFactor = 0.1; 
     
     boolean isBroken;
     
@@ -99,7 +99,7 @@ public class Beam {
         }
         double newForce = stiffness * (length -  this.getNodeDistance());
         
-        System.out.print("length" + length + " dist: " + this.getNodeDistance());
+        //System.out.print("length" + length + " dist: " + this.getNodeDistance());
         
         if (Math.abs(newForce) > strength) {
             isBroken = true;
@@ -107,7 +107,7 @@ public class Beam {
             return;
         }
         calculatedForce = dampen(newForce);
-        System.out.print("calc f" + calculatedForce);
+        //System.out.print("calc f" + calculatedForce);
         
         
         
@@ -126,7 +126,7 @@ public class Beam {
         else if (node == nodes.get(1)) {
             return this.directionUnitVector().multiply(this.getForce() * (-1));
         }
-        System.out.print("node not found");
+
         return new Vector(0,0);
         
     }

@@ -9,6 +9,7 @@ package gui;
  *
  * @author janne
  */
+import static gui.Gui2.app;
 import javax.swing.SwingUtilities;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -29,10 +30,13 @@ import logic.App;
 import physics.Node;
 import javax.swing.Timer;
 import physics.Beam;
+import physics.Space;
 
 
 public class DrawPanel extends JPanel {
-    //int delay = 1000; //milliseconds
+    int initialDelay = 1000; //milliseconds
+    
+    Timer timer;
     
     ArrayList<graphicNode> graphicNodes;
     ArrayList<graphicBeam> graphicBeams;    
@@ -41,8 +45,8 @@ public class DrawPanel extends JPanel {
     private int y = 0;
     private int diameter = 20;
     
-    private int xOffset = 800;
-    private int yOffset = 300;
+    private int xOffset = 900;
+    private int yOffset = 000;
     
 
     
@@ -50,24 +54,14 @@ public class DrawPanel extends JPanel {
 
     public DrawPanel(App app) {
         
-        this.app = app;
+
         
         graphicNodes = new ArrayList();
         graphicBeams = new ArrayList();
         
-        
-        ArrayList<Node> nodes = app.getSpace().getNodes();
-        
-        for (Node node : nodes) {
-            addNode(node);
-        }
-        
-        ArrayList<Beam> beams = app.getSpace().getBeams();
-        
-        for (Beam beam : beams) {
-            addBeam(beam);
-        }
-  
+        setTimer();
+    
+        load(app);
         
 
         
@@ -88,6 +82,32 @@ public class DrawPanel extends JPanel {
         
 
     }
+    public void load(App app) {   
+        
+        this.app = app;
+        
+        timer.stop();
+        timer.start();
+        
+        deleteComponents();
+        
+        ArrayList<Node> nodes = app.getSpace().getNodes();
+        
+        for (Node node : nodes) {
+            addNode(node);
+        }
+        
+        ArrayList<Beam> beams = app.getSpace().getBeams();
+        
+        for (Beam beam : beams) {
+            addBeam(beam);
+        }
+        
+        timer.stop();
+        repaint();
+        timer.start();
+        
+    }
 
     public void addNode(Node node) {
         graphicNodes.add(new graphicNode(node , xOffset, yOffset));
@@ -96,7 +116,12 @@ public class DrawPanel extends JPanel {
     private void addBeam(Beam beam) {
         graphicBeams.add(new graphicBeam(beam, xOffset, yOffset));
     }    
+    
+    private void deleteComponents() {
 
+        graphicNodes = new ArrayList();
+        graphicBeams = new ArrayList();
+    }
     
    // public void refresh() {
      //   System.out.print(".resh ");
@@ -117,14 +142,14 @@ public class DrawPanel extends JPanel {
 
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(1000,800);
+        return new Dimension(1800,800);
     }
     
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);       
+
         if (!graphicNodes.isEmpty()) {
-            System.out.print(" not empty ");
             for (graphicNode node : graphicNodes) {
                 node.paintNode(g);
             }
@@ -138,6 +163,35 @@ public class DrawPanel extends JPanel {
 
         
     }  
+
+    private void setTimer() {
+        
+        int frameRate = 50;
+        float speedMultiplier = 5f;
+
+        int delay = 1000 / frameRate;
+        int calculationsPerFrame = (int) (speedMultiplier / Space.updateInterval * delay / 1000);
+
+        ActionListener taskPerformer = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                        //...Perform a task...
+
+                app.stepFor(calculationsPerFrame);
+
+                        //long millis = System.currentTimeMillis() % 100000;
+                //System.out.print("\nmillis: (before paint): " + millis + " ");
+                repaint();
+
+                        //long millis2 = System.currentTimeMillis() % 100000;
+                //System.out.print("millis: (after  paint): " + millis2 + " dif: " + (millis2 - millis) + "  ");
+            }
+        };
+
+        timer = new Timer(delay, taskPerformer);
+        timer.setInitialDelay(initialDelay);
+        
+    }
 
 
 }
