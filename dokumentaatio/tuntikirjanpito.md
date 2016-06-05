@@ -9,5 +9,5 @@ Päivä | Tunnit | Kuvaus
 02.06.2016 | 6h | Käyttöliittymää ei niin onnistuneesti
 03.06.2016 | 11h | Käyttöliittymää ja tiedostojen lukua. Ohjelman suoritus hidastui mystisesti, minkä korjaamiseen meni aikaa. Ongelman aiheutti printtailu (paljon yli) kymmeniä tuhansia kertoja sekunnissa.  
 04.06.2016 | 10h | Käyttöliittymää ja tiedostojen lukua
-05.06.2016 | 3h | Käyttöliittymä 
+05.06.2016 | 5h | Käyttöliittymä ja koodikatselmointi
 
