@@ -11,8 +11,13 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import javax.swing.JFileChooser;
 import javax.swing.Timer;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import logic.App;
 import physics.Space;
+import java.io.File;
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -36,13 +41,13 @@ public class Gui2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jFrame1 = new javax.swing.JFrame();
-        button1 = new java.awt.Button();
+        skipForwardButton = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jPanel1 = new DrawPanel(app);   //EDITED
         jTextField2 = new javax.swing.JTextField();
         canvas1 = new java.awt.Canvas();
-        button2 = new java.awt.Button();
-        jButton1 = new javax.swing.JButton();
+        reloadButton = new javax.swing.JButton();
+        openFileButton = new javax.swing.JButton();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -57,16 +62,16 @@ public class Gui2 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        button1.setActionCommand("Refresh");
-        button1.setLabel("Skip forward");
-        button1.addActionListener(new java.awt.event.ActionListener() {
+        skipForwardButton.setActionCommand("Refresh");
+        skipForwardButton.setLabel("Skip forward");
+        skipForwardButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button1ActionPerformed(evt);
             }
         });
         
-        button2.setLabel("Reload");
-        button2.addActionListener(new java.awt.event.ActionListener() {
+        reloadButton.setLabel("Reload");
+        reloadButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button2ActionPerformed(evt);
             }
@@ -74,8 +79,8 @@ public class Gui2 extends javax.swing.JFrame {
 
         });
         
-        jButton1.setText("load");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        openFileButton.setText("load");
+        openFileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 showFileChooser();
             }
@@ -104,12 +109,12 @@ public class Gui2 extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGap(0, 546, Short.MAX_VALUE)
-                                        .addComponent(jButton1)
-                                        .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(openFileButton)
+                                        .addComponent(reloadButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(20, 20, 20)
                                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(skipForwardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())
         );
@@ -120,75 +125,86 @@ public class Gui2 extends javax.swing.JFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jButton1)
-                                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(openFileButton)
+                                .addComponent(skipForwardButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(reloadButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())
         );
 
-        button1.getAccessibleContext().setAccessibleName("Refresh");
+        skipForwardButton.getAccessibleContext().setAccessibleName("Refresh");
 
         pack();
     }// </editor-fold>                        
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-        app.stepFor(Integer.parseInt(jTextField1.getText()));
+        jPanel1.stepFor(Integer.parseInt(jTextField1.getText()));
 
         jPanel1.repaint();
     }
+
     private void button2ActionPerformed(ActionEvent evt) {
-                                                            
-        jPanel1.load("test.txt");
+
+        try {
+            jPanel1.restart();
+        } catch (IOException e) {
+            
+        }
     }
 
     /**
      * @param args the command line arguments
      */
-    
-    private void showFileChooser(){
-      
+    private void showFileChooser() {
 
-      final JFileChooser  fileDialog = new JFileChooser();
-
-            int returnVal = fileDialog.showOpenDialog(jFrame1);
-            if (returnVal == JFileChooser.APPROVE_OPTION) {
-               java.io.File file = fileDialog.getSelectedFile();
-               String filePath = file.getName();
-               jPanel1.load("pendulum.txt");
-               System.out.println(filePath);
-            }
-            else{
-                       
-            }      
-         }
-    
-      
+        final JFileChooser fileDialog = new JFileChooser();
         
-   
+        File directory = new File(System.getProperty("user.dir"));
+          
+        fileDialog.setCurrentDirectory(directory);
+
+        int returnVal = fileDialog.showOpenDialog(jFrame1);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            java.io.File file = fileDialog.getSelectedFile();
+            String filePath = file.getAbsolutePath();
+            try {
+                jPanel1.load(filePath);
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(jFrame1, e.getMessage());
+
+            }
+            
+            System.out.println(filePath);
+        } else {
+
+        }
+    }
+
+    static private void setLookAndFeel(String systemLookAndFeelClassName) {
+        try {
+            // Set System L&F
+            UIManager.setLookAndFeel(
+                    UIManager.getSystemLookAndFeelClassName());
+        } catch (UnsupportedLookAndFeelException e) {
+            // handle exception
+        } catch (ClassNotFoundException e) {
+            // handle exception
+        } catch (InstantiationException e) {
+            // handle exception
+        } catch (IllegalAccessException e) {
+            // handle exception
+        }
+    }
+
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Gui2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Gui2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Gui2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Gui2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+        setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         //</editor-fold>
         //</editor-fold>
 
@@ -197,22 +213,26 @@ public class Gui2 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
+                
                 Gui2 gui = new Gui2();
                 
                 gui.pack();
                 gui.setVisible(true);
             }
+
+
         });
     }
 
     // Variables declaration - do not modify                     
-    private java.awt.Button button1;
-    private java.awt.Button button2;
+    private javax.swing.JButton skipForwardButton;
+    private javax.swing.JButton reloadButton;
     private java.awt.Canvas canvas1;
     private javax.swing.JFrame jFrame1;
     private DrawPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton openFileButton;
     // End of variables declaration                   
 }

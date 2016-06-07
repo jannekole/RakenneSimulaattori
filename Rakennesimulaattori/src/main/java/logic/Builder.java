@@ -36,7 +36,7 @@ public class Builder {
         this.nodes = new HashMap();
     }
     
-    public void build(String string) {
+    public void build(String string) throws IOException {
         
         String[] components;
         components = string.split(COMPONENTSEPARATOR);
@@ -44,8 +44,8 @@ public class Builder {
             String component = components[rowIndex].trim();
             try {
                 buildComponent(component);       
-            } catch (Error e) {
-                throw new Error("Error in file on row " + (rowIndex + 1) + ": " + e.getMessage());
+            } catch (IOException e) {
+                throw new IOException("Error in file on row " + (rowIndex + 1) + ": " + e.getMessage());
             }
                     
             
@@ -59,7 +59,7 @@ public class Builder {
  //       space.addNode(new Node(new Vector(400, 400), gravity, updateInterval));
  //       space.addNode(new Node(new Vector(0, 400), gravity, updateInterval));
         
-        space.getNode(0).setXStationary(true);
+        space.getNode(0).setXStationary(true); //väliaikainen
         space.getNode(0).setYStationary(true);
         space.getNode(1).setXStationary(true);
         space.getNode(1).setYStationary(true);
@@ -108,7 +108,7 @@ public class Builder {
         
         space.addNode(node);
     }
-    private void buildBeam(String[] valueStrings) {
+    private void buildBeam(String[] valueStrings) throws IOException {
         Node node1;
         Node node2;
         
@@ -138,15 +138,23 @@ public class Builder {
         
         
         if ((node1 = nodes.get(nodeName1)) == null) {
-            throw new java.lang.Error("Node " + nodeName1 + " not found.");
+            throw new IOException("Node " + nodeName1 + " not found.");
         } else if ((node2 = nodes.get(nodeName2)) == null) {
-            throw new java.lang.Error("Node " + nodeName2 + " not found.");
+            throw new IOException("Node " + nodeName2 + " not found.");
         }
+        
+        
 //        node2 = nodes.get(nodeName2);
         
         
         
-        space.addBeam(new Beam(node1, node2, materialStiffness, mass, strength, length));
+        try {
+            space.addBeam(new Beam(node1, node2, materialStiffness, mass, strength, length));
+        } 
+        catch (Exception e) {
+            throw new IOException(e.getMessage());
+        }
+        
         
     
     }
@@ -165,11 +173,11 @@ public class Builder {
         return null;
     }
 
-    private void buildComponent(String component) {
+    private void buildComponent(String component) throws IOException {
         
         component = component.trim();
         String [] componentFields = component.split(FIELDSEPARATOR);
-        String componentType = componentFields[0].trim();;
+        String componentType = componentFields[0].trim();
         
         
         if (componentType.startsWith("node")) {
@@ -183,8 +191,10 @@ public class Builder {
     }
 
     void buildFromFile(String filename) throws IOException {
+
         String data = stringFromFile(filename);
         build(data);
+
     }
 
     private String stringFromFile(String filename) throws IOException {

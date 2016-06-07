@@ -88,5 +88,30 @@ public class BeamTest {
         
     }
     
+    @Test(expected = IllegalArgumentException.class)
+    public void testNegativeStrengthThrowsException() {
+        
+        
+        Beam beam3 = beam = new Beam(node1, node2, 50, 100, -1, 23);
+        
+        
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void testNegativeLengthThrowsException() {
+        
+        
+        Beam beam3 = beam = new Beam(node1, node2, 50, 100, 23, -1);
+        
+        
+    }    
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void testNegativeStiffnessThrowsException() {
+        
+        
+        Beam beam3 = beam = new Beam(node1, node2, 50, 100, 341, 23);
+        
+        
+    }    
     
 }

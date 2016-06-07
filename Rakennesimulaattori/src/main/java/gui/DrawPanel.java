@@ -49,11 +49,14 @@ public class DrawPanel extends JPanel {
     private int xOffset = 900;
     private int yOffset = 000;
     
+    String filePath;
+    
 
     
     App app;
 
     public DrawPanel(App app) {
+        this.filePath = "";
         
         this.app = app;
         
@@ -83,20 +86,21 @@ public class DrawPanel extends JPanel {
         
 
     }
-    public void load(String fileName) {   
+    public void restart() throws IOException {
+        load(filePath);
+    }
+    public void load(String filePath) throws IOException {   
         
-        
+        this.filePath = filePath;
         
         
         timer.stop();
         timer.start();
         
         deleteComponents();
-        try {
-            app.load(fileName);
-        } catch (IOException e) {
-            throw new Error(e.getMessage());
-        }
+        
+        app.load(filePath);
+        
         
         
     
@@ -201,6 +205,10 @@ public class DrawPanel extends JPanel {
         timer = new Timer(delay, taskPerformer);
         timer.setInitialDelay(initialDelay);
         
+    }
+
+    void stepFor(int steps) {
+        app.stepFor(steps);
     }
 
 

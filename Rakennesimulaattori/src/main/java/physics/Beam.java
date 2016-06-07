@@ -17,6 +17,8 @@ public class Beam {
     double stiffness;
     int strength;
     
+    double materialStiffness;
+    
     double calculatedForce;
     
     double dampeningFactor = 0.1; 
@@ -44,18 +46,22 @@ public class Beam {
         this.nodes.add(node2);
         
         if (length == 0) {
-            setLengthToNodes();
+            
+            setLengthToNodeDistance();
         } else {
-            this.length = length;
+            setLength(length);
         }
-        
+
         isBroken = false;
         
         
+        setStrength(strength);
+        setMass(mass);
         
-        this.strength = strength;
-        this.stiffness = materialStiffness / this.length;
-        this.mass = mass;
+        this.materialStiffness= materialStiffness;
+        
+        
+        
         
         for (Node node : nodes) {
             node.addBeam(this);
@@ -96,17 +102,14 @@ public class Beam {
             calculatedForce = 0;
             return;
         }
-        double newForce = stiffness * (length -  this.getNodeDistance());
-        
-        //System.out.print("length" + length + " dist: " + this.getNodeDistance());
-        
+        double newForce = materialStiffness / length * (length -  this.getNodeDistance());
+                
         if (Math.abs(newForce) > strength) {
             isBroken = true;
             calculatedForce = 0;
             return;
         }
         calculatedForce = dampen(newForce);
-        //System.out.print("calc f" + calculatedForce);
         
         
         
@@ -138,15 +141,25 @@ public class Beam {
     }
 
     public void setMass(int mass) {
-        this.mass = mass;
+        
+        
+        if (mass > 0) {
+            this.mass = mass;
+        } else {
+            throw new IllegalArgumentException("Mass has to be greater than 0, was " + mass);
+        }
+         
     }
 
     public ArrayList<Node> getNodes() {
         return nodes;
     }
 
-    private void setLengthToNodes() {
-        length = getNodeDistance();
+    private void setLengthToNodeDistance() {
+        double newLength = getNodeDistance();
+        
+        setLength(newLength);
+        
     }
 
     public double getLength() {
@@ -155,6 +168,47 @@ public class Beam {
 
     public boolean isBroken() {
         return isBroken;
+    }
+
+    public double getMaterialStiffness() {
+        return materialStiffness;
+    }
+
+    public final void setMaterialStiffness(double materialStiffness) {
+        this.materialStiffness = materialStiffness;
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public final void setStrength(int strength) {
+        
+        if (strength > 0) {
+            this.strength = strength;
+        } else {
+            throw new IllegalArgumentException("Strength has to be greater than 0, was " + strength);
+        }
+        
+        
+    }
+
+    public double getDampeningFactor() {
+        return dampeningFactor;
+    }
+
+    public void setDampeningFactor(double dampeningFactor) {
+        this.dampeningFactor = dampeningFactor;
+    }
+
+    public final void setLength(double length) {
+                
+        if (length > 0) {
+            this.length = length;
+        } else {
+            throw new IllegalArgumentException("Length has to be greater than 0, was " + length);
+        }
+
     }
 
     
