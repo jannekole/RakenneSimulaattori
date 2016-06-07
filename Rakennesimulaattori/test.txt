@@ -1,5 +1,5 @@
 node	0	;	x	15	;	y	-690
-node	1	;	x	0	;	y	-700
+node	a	;	x	0	;	y	-700
 node	2	;	x	0	;	y	-680
 node	3	;	x	0	;	y	-660
 node	4	;	x	0	;	y	-640
@@ -78,8 +78,7 @@ node	76	;	x	15	;	y	10
 node	77	;	x	15	;	y	30
 node	78	;	x	15	;	y	50
 node	79	;	x	15	;	y	70
-
-beam	;	a	1	;	b	2	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	a	;	b	2;	L	0	;	sf	300000	;	m	5	;	sr	12000
 beam	;	a	2	;	b	3	;	L	0	;	sf	300000	;	m	5	;	sr	12000
 beam	;	a	3	;	b	4	;	L	0	;	sf	300000	;	m	5	;	sr	12000
 beam	;	a	4	;	b	5	;	L	0	;	sf	300000	;	m	5	;	sr	12000
@@ -156,7 +155,7 @@ beam	;	a	75	;	b	76	;	L	0	;	sf	300000	;	m	5	;	sr	12000
 beam	;	a	76	;	b	77	;	L	0	;	sf	300000	;	m	5	;	sr	12000
 beam	;	a	77	;	b	78	;	L	0	;	sf	300000	;	m	5	;	sr	12000
 beam	;	a	78	;	b	79	;	L	0	;	sf	300000	;	m	5	;	sr	12000
-beam	;	a	1	;	b	0	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	a	;	b	0	;	L	0	;	sf	300000	;	m	5	;	sr	12000
 beam	;	a	2	;	b	42	;	L	0	;	sf	300000	;	m	5	;	sr	12000
 beam	;	a	3	;	b	43	;	L	0	;	sf	300000	;	m	5	;	sr	12000
 beam	;	a	4	;	b	44	;	L	0	;	sf	300000	;	m	5	;	sr	12000

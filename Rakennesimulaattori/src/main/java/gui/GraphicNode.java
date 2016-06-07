@@ -13,7 +13,7 @@ import physics.Node;
  *
  * @author janne
  */
-public class graphicNode {
+public class GraphicNode {
     
 
     
@@ -28,7 +28,7 @@ public class graphicNode {
     int yOffset;
         
     
-    public graphicNode(Node node, int xOffset, int yOffset) {
+    public GraphicNode(Node node, int xOffset, int yOffset) {
 
         this.xOffset = xOffset;
         this.yOffset = yOffset;
@@ -45,7 +45,7 @@ public class graphicNode {
     public void paintNode(Graphics g) {
         setCoordinates();
         g.setColor(Color.BLACK);
-        g.fillOval(x + xOffset - radius, -y + yOffset - radius,diameter,diameter);
+        g.fillOval(x + xOffset - radius, -y + yOffset - radius, diameter, diameter);
         
     }
 

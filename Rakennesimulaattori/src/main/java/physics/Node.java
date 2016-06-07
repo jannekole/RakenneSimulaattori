@@ -71,11 +71,11 @@ public class Node {
         Vector newPositionV = positionV.add(averageVelocityV.multiply(updateInterval));
         Vector newVelocityV = velocityV.add(velocityDifferenceV);
         
-        if(isXStationary()) {
+        if (isXStationary()) {
             newPositionV.setX(startPositionV.getX());
             newVelocityV.setX(0);
         }
-        if(isYStationary()) {
+        if (isYStationary()) {
             newPositionV.setY(startPositionV.getY());
             newVelocityV.setY(0);
         }
@@ -113,7 +113,7 @@ public class Node {
     }
 
     private Vector gravityForce() {
-        double gravityF = - gravity * massSum();
+        double gravityF = -gravity * massSum();
         return new Vector(0, gravityF);
     }
 

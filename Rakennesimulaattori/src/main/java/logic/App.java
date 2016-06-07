@@ -5,6 +5,8 @@
  */
 package logic;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import physics.Beam;
 import physics.Node;
 import physics.Vector;
@@ -29,7 +31,7 @@ public class App {
     
     public App() {
         
-        start();
+        
 
         
         
@@ -37,7 +39,7 @@ public class App {
  
          
     public void textUI() {
-        scanner = new Scanner( System.in );
+        scanner = new Scanner(System.in);
         
         
         
@@ -65,7 +67,7 @@ public class App {
             
             stepFor(calculationsPerLine);
             printStatus();
-            i ++;
+            i++;
         }
           
     }    
@@ -98,20 +100,23 @@ public class App {
         space.printNode(node);
     }
 
-    private void setObjects() { 
+    private void setObjects(String fileName) throws IOException { 
+        
+        space = new Space();
         Builder builder = new Builder(space);
  /*       builder.build(
 ); */
-        String filename = "test.txt";
-        builder.buildFromFile(filename);
+       
         
+            builder.buildFromFile(fileName);
+ 
     }
 
-    public void start() {
+    public void load(String fileName) throws IOException {
         
-        space = new Space();
         
-        setObjects();
+        
+        setObjects(fileName);
         
     }
     

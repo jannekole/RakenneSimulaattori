@@ -6,6 +6,7 @@
 package logic;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,6 +25,12 @@ public class Builder {
     Space space;    
     HashMap<String, Node> nodes;
     
+    
+    
+    static final String COMPONENTSEPARATOR = "\n"; // new line
+    static final String FIELDSEPARATOR = ";";
+    static final String VALUESEPARATOR = "\\s";    // white space
+    
     public Builder(Space space) {
         this.space = space;
         this.nodes = new HashMap();
@@ -32,15 +39,21 @@ public class Builder {
     public void build(String string) {
         
         String[] components;
-        components = string.split("\n");
-        for (String component : components) {
-            component = component.trim();
-            buildComponent(component);            
+        components = string.split(COMPONENTSEPARATOR);
+        for (int rowIndex = 0; rowIndex < components.length; rowIndex++) {
+            String component = components[rowIndex].trim();
+            try {
+                buildComponent(component);       
+            } catch (Error e) {
+                throw new Error("Error in file on row " + (rowIndex + 1) + ": " + e.getMessage());
+            }
+                    
+            
         }
 
         
-        float gravity = space.getGravity();
-        float updateInterval = space.getUpdateInterval();
+  //      float gravity = space.getGravity();
+    //    float updateInterval = space.getUpdateInterval();
         
  //       space.addNode(new Node(new Vector(400, 0), gravity, updateInterval)); 
  //       space.addNode(new Node(new Vector(400, 400), gravity, updateInterval));
@@ -84,7 +97,7 @@ public class Builder {
         
         x = Double.parseDouble(getValue("x", valueStrings));
         y = Double.parseDouble(getValue("y", valueStrings));
-        gravity = space.getGravity();
+
         updateInterval = space.getUpdateInterval();
         position = new Vector(x, y);       
         
@@ -98,38 +111,36 @@ public class Builder {
     private void buildBeam(String[] valueStrings) {
         Node node1;
         Node node2;
+        
+        String nodeName1;
+        String nodeName2;
+        
         double length;
         double materialStiffness;
         int mass;
         int strength;
-        
-
-
-        
-        length = 200;
-        materialStiffness = 25000;
-        mass = 5;
-        strength = 15000;
+       
         
         materialStiffness   = Double.parseDouble(getValue("sf", valueStrings));
         mass                = Integer.parseInt(getValue("m", valueStrings));
         strength            = Integer.parseInt(getValue("sr", valueStrings));
         length              = Double.parseDouble(getValue("l", valueStrings));
         
-        String nodeName1  = getValue("a", valueStrings);
-        String nodeName2  = getValue("b", valueStrings);
+        nodeName1  = getValue("a", valueStrings);
+        nodeName2  = getValue("b", valueStrings);
         
+         
         
         String beamRow = "";
         for (String string : valueStrings) {
             beamRow = beamRow + string;
         }
+        
+        
         if ((node1 = nodes.get(nodeName1)) == null) {
-            
-            System.out.print(beamRow);
-        }
-        if ((node2 = nodes.get(nodeName2)) == null) {
-            System.out.print(beamRow);
+            throw new java.lang.Error("Node " + nodeName1 + " not found.");
+        } else if ((node2 = nodes.get(nodeName2)) == null) {
+            throw new java.lang.Error("Node " + nodeName2 + " not found.");
         }
 //        node2 = nodes.get(nodeName2);
         
@@ -139,16 +150,15 @@ public class Builder {
         
     
     }
-     
+    
 
     private String getValue(String tag, String[] valueStrings) {
         for (String valueString : valueStrings) {
             valueString = valueString.trim();
-            String tagFromText = valueString.split("\\s")[0];
-            if (tagFromText.equalsIgnoreCase(tag)) {
-                valueString = valueString.replaceAll("[^0-9-]*", "");
-                return valueString;
-            }
+            String[] splitText = valueString.split(VALUESEPARATOR);
+            if (splitText[0].equalsIgnoreCase(tag)) {
+                return splitText[1];
+                }
             
             
         }
@@ -157,45 +167,41 @@ public class Builder {
 
     private void buildComponent(String component) {
         
+        component = component.trim();
+        String [] componentFields = component.split(FIELDSEPARATOR);
+        String componentType = componentFields[0].trim();;
         
-        if (component.trim().startsWith("node")) {
-            buildNode(component.split(";"));
+        
+        if (componentType.startsWith("node")) {
+            buildNode(componentFields);
+        } else if (componentType.startsWith("beam")) {
+            buildBeam(componentFields);
         }
-        if (component.trim().startsWith("beam")) {
-            buildBeam(component.split(";"));
-        }        
         
+        
+
     }
 
-    void buildFromFile(String filename) {
+    void buildFromFile(String filename) throws IOException {
         String data = stringFromFile(filename);
         build(data);
     }
 
-    private String stringFromFile(String filename) {
-        
-      FileReader in;
-      
-      String data = "";
-      try {
-         in = new FileReader(filename);
-         BufferedReader bufferedReader = new BufferedReader(in);
-         String line;
-         while ((line = bufferedReader.readLine()) != null) {
-                data = data + line + "\n";
+    private String stringFromFile(String filename) throws IOException {
 
-               // System.out.println(data);
-            }
+        FileReader in;
+
+        String data = "";
+
+        in = new FileReader(filename);
+        BufferedReader bufferedReader = new BufferedReader(in);
+        String line;
+        while ((line = bufferedReader.readLine()) != null) {
+            data = data + line + "\n";
+
+            // System.out.println(data);
         }
-      catch (IOException e) { 
-                 
-                 }
-      
-      return data;
-    }
 
-   
-    
-    
-    
+        return data;
+    }
 }

@@ -16,7 +16,7 @@ import physics.Node;
  *
  * @author janne
  */
-public class graphicBeam {
+public class GraphicBeam {
     Beam beam;
     
     boolean isBroken = false;
@@ -32,7 +32,7 @@ public class graphicBeam {
     int yOffset;
      
     
-    public graphicBeam(Beam beam, int xOffset, int yOffset) {
+    public GraphicBeam(Beam beam, int xOffset, int yOffset) {
 
         this.beam = beam;
         

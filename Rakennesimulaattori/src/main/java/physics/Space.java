@@ -48,19 +48,17 @@ public class Space {
         long millis = System.currentTimeMillis() % 100000;                
         System.out.print("\nmillis: (before calc): " + millis + " ");
   */      
-        for (int i = 0 ; i < steps; i++)
-            {
-                step();
-            }
+        for (int i = 0; i < steps; i++) {
+            step();
+        }
       
 /*       
         long millis2 = System.currentTimeMillis() % 100000;
         System.out.print("millis: (after  calc): " + millis2 + " dif: " + (millis2 - millis) + "  ");
         //printStatus();
   */
-        }
-     
-    
+    }
+         
     public void step() {
         
 //        long millis = System.currentTimeMillis() % 100000;                
@@ -84,9 +82,9 @@ public class Space {
     
     public void printStatus() {
         
-        for (int i = 0 ; i  < getNodes().size() ; i++) {
+        for (int i = 0; i  < getNodes().size(); i++) {
             Node node = getNode(i);
-            System.out.print("__  Node "+ (i+1) + ": ");
+            System.out.print("__  Node " + (i + 1) + ": ");
             printNode(node);
             
         }

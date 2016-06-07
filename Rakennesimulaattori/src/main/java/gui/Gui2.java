@@ -8,6 +8,8 @@ package gui;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import javax.swing.JFileChooser;
 import javax.swing.Timer;
 import logic.App;
 import physics.Space;
@@ -23,13 +25,9 @@ public class Gui2 extends javax.swing.JFrame {
      */
     static App app;
 
-
-
-    public Gui2() {
+        public Gui2() {
         initComponents();
-
     }
-
     /**
      * This method is cator.
      */
@@ -44,6 +42,7 @@ public class Gui2 extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         canvas1 = new java.awt.Canvas();
         button2 = new java.awt.Button();
+        jButton1 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -74,7 +73,13 @@ public class Gui2 extends javax.swing.JFrame {
 
 
         });
-       
+        
+        jButton1.setText("load");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showFileChooser();
+            }
+        });
 
         jTextField1.setText("5");
         
@@ -99,6 +104,7 @@ public class Gui2 extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGap(0, 546, Short.MAX_VALUE)
+                                        .addComponent(jButton1)
                                         .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(20, 20, 20)
                                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -114,6 +120,7 @@ public class Gui2 extends javax.swing.JFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jButton1)
                                 .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -130,20 +137,36 @@ public class Gui2 extends javax.swing.JFrame {
         app.stepFor(Integer.parseInt(jTextField1.getText()));
 
         jPanel1.repaint();
-
     }
     private void button2ActionPerformed(ActionEvent evt) {
-         
-        app.start();
-        
-        jPanel1.load(app);
-        
+                                                            
+        jPanel1.load("test.txt");
     }
-    
-    
+
     /**
      * @param args the command line arguments
      */
+    
+    private void showFileChooser(){
+      
+
+      final JFileChooser  fileDialog = new JFileChooser();
+
+            int returnVal = fileDialog.showOpenDialog(jFrame1);
+            if (returnVal == JFileChooser.APPROVE_OPTION) {
+               java.io.File file = fileDialog.getSelectedFile();
+               String filePath = file.getName();
+               jPanel1.load("pendulum.txt");
+               System.out.println(filePath);
+            }
+            else{
+                       
+            }      
+         }
+    
+      
+        
+   
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -169,52 +192,15 @@ public class Gui2 extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
-        app = new App();
+        app = new App();            //siirrä tämä drawPaneliin
         
-        
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 Gui2 gui = new Gui2();
-                /*
-                int frameRate = 50;
-                float speedMultiplier = 5f;
                 
-                int delay = 1000 / frameRate;
-                int calculationsPerFrame = (int) (speedMultiplier / Space.updateInterval * delay / 1000);
-
-                
-                ActionListener taskPerformer = new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent evt) {
-                        //...Perform a task...
-                        
-
-                        app.stepFor(calculationsPerFrame);
-                    
-                        //long millis = System.currentTimeMillis() % 100000;
-                        //System.out.print("\nmillis: (before paint): " + millis + " ");
-                        
-                        gui.jPanel1.repaint();
-                        
-                        
-                        //long millis2 = System.currentTimeMillis() % 100000;
-                        //System.out.print("millis: (after  paint): " + millis2 + " dif: " + (millis2 - millis) + "  ");
-
-                    }
-                };
-
-                Timer timer = new Timer(delay, taskPerformer);
-                timer.setInitialDelay(1000);
-                timer.start();
-                */
-                
-                
-
                 gui.pack();
                 gui.setVisible(true);
-
             }
         });
     }
@@ -227,5 +213,6 @@ public class Gui2 extends javax.swing.JFrame {
     private DrawPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JButton jButton1;
     // End of variables declaration                   
 }

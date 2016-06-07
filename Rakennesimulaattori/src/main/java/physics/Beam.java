@@ -45,8 +45,7 @@ public class Beam {
         
         if (length == 0) {
             setLengthToNodes();
-        }
-        else {
+        } else {
             this.length = length;
         }
         
@@ -122,12 +121,11 @@ public class Beam {
     public Vector getForceVector(Node node) {
         if (node == nodes.get(0)) {
             return this.directionUnitVector().multiply(this.getForce());
-        }
-        else if (node == nodes.get(1)) {
+        } else if (node == nodes.get(1)) {
             return this.directionUnitVector().multiply(this.getForce() * (-1));
         }
 
-        return new Vector(0,0);
+        return new Vector(0, 0);
         
     }
 

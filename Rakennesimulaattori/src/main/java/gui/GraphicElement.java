@@ -9,6 +9,6 @@ package gui;
  *
  * @author janne
  */
-public interface graphicElement {
+public interface GraphicElement {
     
 }

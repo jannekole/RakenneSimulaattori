@@ -25,6 +25,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseMotionAdapter;
+import java.io.IOException;
 import java.util.ArrayList;
 import logic.App;
 import physics.Node;
@@ -38,8 +39,8 @@ public class DrawPanel extends JPanel {
     
     Timer timer;
     
-    ArrayList<graphicNode> graphicNodes;
-    ArrayList<graphicBeam> graphicBeams;    
+    ArrayList<GraphicNode> graphicNodes;
+    ArrayList<GraphicBeam> graphicBeams;    
     
     private int x = 0;
     private int y = 0;
@@ -54,14 +55,14 @@ public class DrawPanel extends JPanel {
 
     public DrawPanel(App app) {
         
-
+        this.app = app;
         
         graphicNodes = new ArrayList();
         graphicBeams = new ArrayList();
         
         setTimer();
     
-        load(app);
+        //load("");
         
 
         
@@ -82,14 +83,23 @@ public class DrawPanel extends JPanel {
         
 
     }
-    public void load(App app) {   
+    public void load(String fileName) {   
         
-        this.app = app;
+        
+        
         
         timer.stop();
         timer.start();
         
         deleteComponents();
+        try {
+            app.load(fileName);
+        } catch (IOException e) {
+            throw new Error(e.getMessage());
+        }
+        
+        
+    
         
         ArrayList<Node> nodes = app.getSpace().getNodes();
         
@@ -110,11 +120,11 @@ public class DrawPanel extends JPanel {
     }
 
     public void addNode(Node node) {
-        graphicNodes.add(new graphicNode(node , xOffset, yOffset));
+        graphicNodes.add(new GraphicNode(node , xOffset, yOffset));
     }
     
     private void addBeam(Beam beam) {
-        graphicBeams.add(new graphicBeam(beam, xOffset, yOffset));
+        graphicBeams.add(new GraphicBeam(beam, xOffset, yOffset));
     }    
     
     private void deleteComponents() {
@@ -142,7 +152,7 @@ public class DrawPanel extends JPanel {
 
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(1800,800);
+        return new Dimension(1800, 800);
     }
     
     @Override
@@ -150,13 +160,13 @@ public class DrawPanel extends JPanel {
         super.paintComponent(g);       
 
         if (!graphicNodes.isEmpty()) {
-            for (graphicNode node : graphicNodes) {
+            for (GraphicNode node : graphicNodes) {
                 node.paintNode(g);
             }
         }
         if (!graphicBeams.isEmpty()) {
 
-            for (graphicBeam beam : graphicBeams) {
+            for (GraphicBeam beam : graphicBeams) {
                 beam.paintBeam(g);
             }
         }
@@ -167,7 +177,7 @@ public class DrawPanel extends JPanel {
     private void setTimer() {
         
         int frameRate = 50;
-        float speedMultiplier = 1f;
+        float speedMultiplier = 10f;
 
         int delay = 1000 / frameRate;
         int calculationsPerFrame = (int) (speedMultiplier / Space.updateInterval * delay / 1000);
