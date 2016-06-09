@@ -10,4 +10,7 @@ Päivä | Tunnit | Kuvaus
 03.06.2016 | 11h | Käyttöliittymää ja tiedostojen lukua. Ohjelman suoritus hidastui mystisesti, minkä korjaamiseen meni aikaa. Ongelman aiheutti printtailu (paljon yli) kymmeniä tuhansia kertoja sekunnissa.  
 04.06.2016 | 10h | Käyttöliittymää ja tiedostojen lukua
 05.06.2016 | 5h | Käyttöliittymä ja koodikatselmointi
-
+06.06.2016 | 4h | Lisätty mahdollisuus valita tiedosto
+07.06.2016 | 4h | Tiedoston valinnan hienosäätöä ym.
+08.06.2016 | 3h | Koodin siistimistä
+09.06.2016 | 5h | Lisää testejä ja koodin siistimistä
