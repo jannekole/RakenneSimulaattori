@@ -184,7 +184,7 @@ public class DrawPanel extends JPanel {
         
 
         int delay = 1000 / frameRate;
-        int calculationsPerFrame = (int) (speedMultiplier / app.getSpace().getUpdateInterval() * delay / 1000);
+        final int calculationsPerFrame = (int) (speedMultiplier / app.getSpace().getUpdateInterval() * delay / 1000);
 
         ActionListener taskPerformer = new ActionListener() {
             @Override
