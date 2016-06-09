@@ -19,6 +19,8 @@ import static org.junit.Assert.*;
  * @author janne
  */
 public class NodeTest {
+    double updateInterval;
+    
     Node node1;
     Node node2;
     Node node3;
@@ -40,10 +42,15 @@ public class NodeTest {
     
     @Before
     public void setUp() {
-        node1 = new Node(new Vector(24,28), 10, 0.1f);
-        node2 = new Node(new Vector(0,0), 0, 0.1f);
-        node3 = new Node(new Vector(100,0), 10, 0.1f);
-        node4 = new Node(new Vector(0,100), 10, 0.1f);
+        
+        updateInterval = 0.1;
+        
+        node1 = new Node(new Vector(24,28), 10, updateInterval);
+        node2 = new Node(new Vector(0,0), 0, updateInterval);
+        node3 = new Node(new Vector(100,0), 10, updateInterval);
+        node4 = new Node(new Vector(0,100), 10, updateInterval);
+        
+        
         
 
     }
@@ -120,7 +127,8 @@ public class NodeTest {
         assertEquals(20, node2.forceSum().x, 0.01);
         assertEquals(10, node2.forceSum().y, 0.01);
     }
-    public void accelerationIsCorrect() {
+    @Test
+    public void testAccelerationIsCorrect() {
         float length = 100;
         float stiffness = 100;
         int mass = 100;
@@ -135,8 +143,40 @@ public class NodeTest {
         beam1 = new Beam(node2, node3, stiffness, mass, strength, length);
         beam2 = new Beam(node2, node4, 50       , 30  , strength, length);
         
-        assertEquals(20 / 65, node2.accelerationV.x, 0.01);
-        assertEquals(10 / 65, node2.accelerationV.y, 0.01);
+        beam1.calculateNewState();
+        beam2.calculateNewState();
+        
+        node2.calculateNewState();
+        node3.calculateNewState();
+        node4.calculateNewState();
+        
+        
+        assertEquals(20 / 65f * updateInterval, node2.getVelocityV().x, 0.0001);
+        assertEquals(10 / 65f * updateInterval, node2.getVelocityV().y, 0.0001);
         
     }
+    @Test(expected = IllegalArgumentException.class)
+    public void nullPositionVectorReturnsException() {
+        Node node9 = new Node(null, 10, 0.1);
+
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void negativeUpdateIntervalReturnsException() {
+        Node node9 = new Node(new Vector(10, 10), 10, -0.1);
+
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void zeroUpdateIntervalReturnsException() {
+        Node node9 = new Node(new Vector(10, 10), 10, 0);
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void setNullVelocityVectorReturnsException() {
+        Node node9 = new Node(new Vector(10, 10), 10, 0.1);
+        node9.setInitialVelocity(null);
+
+    }
+    
+        
 }

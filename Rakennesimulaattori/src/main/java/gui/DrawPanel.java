@@ -9,7 +9,7 @@ package gui;
  *
  * @author janne
  */
-import static gui.Gui2.app;
+import gui.Gui;
 import javax.swing.SwingUtilities;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -36,8 +36,8 @@ import physics.Space;
 
 public class DrawPanel extends JPanel {
     int initialDelay = 1000; //milliseconds
-    
-    Timer timer;
+    float speedMultiplier = 5;
+
     
     ArrayList<GraphicNode> graphicNodes;
     ArrayList<GraphicBeam> graphicBeams;    
@@ -51,19 +51,19 @@ public class DrawPanel extends JPanel {
     
     String filePath;
     
-
+    Timer timer;
     
     App app;
 
-    public DrawPanel(App app) {
+    public DrawPanel() {
         this.filePath = "";
         
-        this.app = app;
+        this.app = new App();
         
         graphicNodes = new ArrayList();
         graphicBeams = new ArrayList();
         
-        setTimer();
+        timer = setTimer();
     
         //load("");
         
@@ -93,9 +93,9 @@ public class DrawPanel extends JPanel {
         
         this.filePath = filePath;
         
+
         
-        timer.stop();
-        timer.start();
+        
         
         deleteComponents();
         
@@ -178,13 +178,13 @@ public class DrawPanel extends JPanel {
         
     }  
 
-    private void setTimer() {
+    private Timer setTimer() {
         
         int frameRate = 50;
-        float speedMultiplier = 10f;
+        
 
         int delay = 1000 / frameRate;
-        int calculationsPerFrame = (int) (speedMultiplier / Space.updateInterval * delay / 1000);
+        int calculationsPerFrame = (int) (speedMultiplier / app.getSpace().getUpdateInterval() * delay / 1000);
 
         ActionListener taskPerformer = new ActionListener() {
             @Override
@@ -202,8 +202,10 @@ public class DrawPanel extends JPanel {
             }
         };
 
-        timer = new Timer(delay, taskPerformer);
+        Timer timer = new Timer(delay, taskPerformer);
         timer.setInitialDelay(initialDelay);
+        
+        return timer;
         
     }
 

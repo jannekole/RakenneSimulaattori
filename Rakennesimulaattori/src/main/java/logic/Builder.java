@@ -17,7 +17,8 @@ import physics.Space;
 import physics.Vector;
 
 /**
- *
+ * A class to build structures based on user generated text documents.
+ * 
  * @author janne
  */
 public class Builder {
@@ -36,58 +37,13 @@ public class Builder {
         this.nodes = new HashMap();
     }
     
-    public void build(String string) throws IOException {
-        
-        String[] components;
-        components = string.split(COMPONENTSEPARATOR);
-        for (int rowIndex = 0; rowIndex < components.length; rowIndex++) {
-            String component = components[rowIndex].trim();
-            try {
-                buildComponent(component);       
-            } catch (IOException e) {
-                throw new IOException("Error in file on row " + (rowIndex + 1) + ": " + e.getMessage());
-            }
-                    
-            
-        }
 
-        
-  //      float gravity = space.getGravity();
-    //    float updateInterval = space.getUpdateInterval();
-        
- //       space.addNode(new Node(new Vector(400, 0), gravity, updateInterval)); 
- //       space.addNode(new Node(new Vector(400, 400), gravity, updateInterval));
- //       space.addNode(new Node(new Vector(0, 400), gravity, updateInterval));
-        
-        space.getNode(0).setXStationary(true); //väliaikainen
-        space.getNode(0).setYStationary(true);
-        space.getNode(1).setXStationary(true);
-        space.getNode(1).setYStationary(true);
-        
-        
-//        float length = 200;
-  //      float stiffness = 25000;
-    //    int mass = 5;
-      //  int strength = 15000;
-        
-        //Beam beam = new Beam(space.getNode(0), space.getNode(1), length, stiffness, mass, strength); //tästä eroon
-       // space.addBeam(beam);
- //       space.addBeam(new Beam(space.getNode(0), space.getNode(3), stiffness, mass, strength));
-  //      space.addBeam(new Beam(space.getNode(1), space.getNode(2), stiffness, mass, strength));
-    //    space.addBeam(new Beam(space.getNode(2), space.getNode(3), stiffness, mass, strength));
-      //  space.addBeam(new Beam(space.getNode(2), space.getNode(0), stiffness, mass, strength));
-        //space.addBeam(new Beam(space.getNode(3), space.getNode(1), stiffness, mass, strength));
-        
- 
-        
-        
-    }
     
     public void buildNode(String[] valueStrings) {
         double x;
         double y;
-        float gravity;
-        float updateInterval;
+        double gravity;
+        double updateInterval;
         Vector position;
         
         
@@ -111,54 +67,42 @@ public class Builder {
     private void buildBeam(String[] valueStrings) throws IOException {
         Node node1;
         Node node2;
-        
+
         String nodeName1;
         String nodeName2;
-        
+
         double length;
         double materialStiffness;
         int mass;
         int strength;
-       
-        
-        materialStiffness   = Double.parseDouble(getValue("sf", valueStrings));
-        mass                = Integer.parseInt(getValue("m", valueStrings));
-        strength            = Integer.parseInt(getValue("sr", valueStrings));
-        length              = Double.parseDouble(getValue("l", valueStrings));
-        
-        nodeName1  = getValue("a", valueStrings);
-        nodeName2  = getValue("b", valueStrings);
-        
-         
-        
+
+        materialStiffness = Double.parseDouble(getValue("sf", valueStrings));
+        mass = Integer.parseInt(getValue("m", valueStrings));
+        strength = Integer.parseInt(getValue("sr", valueStrings));
+        length = Double.parseDouble(getValue("l", valueStrings));
+
+        nodeName1 = getValue("a", valueStrings);
+        nodeName2 = getValue("b", valueStrings);
+
         String beamRow = "";
         for (String string : valueStrings) {
             beamRow = beamRow + string;
         }
-        
-        
+
         if ((node1 = nodes.get(nodeName1)) == null) {
             throw new IOException("Node " + nodeName1 + " not found.");
         } else if ((node2 = nodes.get(nodeName2)) == null) {
             throw new IOException("Node " + nodeName2 + " not found.");
         }
-        
-        
+
 //        node2 = nodes.get(nodeName2);
-        
-        
-        
         try {
             space.addBeam(new Beam(node1, node2, materialStiffness, mass, strength, length));
-        } 
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new IOException(e.getMessage());
         }
-        
-        
-    
+
     }
-    
 
     private String getValue(String tag, String[] valueStrings) {
         for (String valueString : valueStrings) {
@@ -166,8 +110,8 @@ public class Builder {
             String[] splitText = valueString.split(VALUESEPARATOR);
             if (splitText[0].equalsIgnoreCase(tag)) {
                 return splitText[1];
-                }
-            
+            }
+
             
         }
         return null;
@@ -193,9 +137,32 @@ public class Builder {
     void buildFromFile(String filename) throws IOException {
 
         String data = stringFromFile(filename);
-        build(data);
+        buildFromString(data);
 
     }
+    
+    public void buildFromString(String string) throws IOException {
+        
+        space.zeroComponents();
+        
+        String[] components;
+        components = string.split(COMPONENTSEPARATOR);
+        for (int rowIndex = 0; rowIndex < components.length; rowIndex++) {
+            String component = components[rowIndex].trim();
+            try {
+                buildComponent(component);
+            } catch (IOException e) {
+                throw new IOException("Error in file on row " + (rowIndex + 1) + ": " + e.getMessage());
+            }
+
+        }
+        //väliaikainen:
+        space.getNode(0).setXConstantVelocity(true); 
+        space.getNode(0).setYConstantVelocity(true);
+        space.getNode(1).setXConstantVelocity(true);
+        space.getNode(1).setYConstantVelocity(true);
+
+    }    
 
     private String stringFromFile(String filename) throws IOException {
 

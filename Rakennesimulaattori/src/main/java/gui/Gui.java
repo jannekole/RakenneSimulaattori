@@ -18,32 +18,28 @@ import physics.Space;
 import java.io.File;
 import javax.swing.JOptionPane;
 
-
 /**
  *
  * @author janne
  */
-public class Gui2 extends javax.swing.JFrame {
+public class Gui extends javax.swing.JFrame {
 
     /**
      * Creates new form ui
      */
-    static App app;
-
-        public Gui2() {
+    public Gui() {
         initComponents();
     }
-    /**
-     * This method is cator.
-     */
+
     //@SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+
     private void initComponents() {
 
         jFrame1 = new javax.swing.JFrame();
         skipForwardButton = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
-        jPanel1 = new DrawPanel(app);   //EDITED
+        jPanel1 = new DrawPanel();   //EDITED
         jTextField2 = new javax.swing.JTextField();
         canvas1 = new java.awt.Canvas();
         reloadButton = new javax.swing.JButton();
@@ -69,17 +65,16 @@ public class Gui2 extends javax.swing.JFrame {
                 button1ActionPerformed(evt);
             }
         });
-        
+
         reloadButton.setLabel("Reload");
         reloadButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button2ActionPerformed(evt);
             }
 
-
         });
-        
-        openFileButton.setText("load");
+
+        openFileButton.setText("Open file");
         openFileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 showFileChooser();
@@ -87,7 +82,6 @@ public class Gui2 extends javax.swing.JFrame {
         });
 
         jTextField1.setText("5");
-        
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -149,19 +143,18 @@ public class Gui2 extends javax.swing.JFrame {
         try {
             jPanel1.restart();
         } catch (IOException e) {
-            
+
         }
     }
-
     /**
      * @param args the command line arguments
      */
     private void showFileChooser() {
 
         final JFileChooser fileDialog = new JFileChooser();
-        
+
         File directory = new File(System.getProperty("user.dir"));
-          
+
         fileDialog.setCurrentDirectory(directory);
 
         int returnVal = fileDialog.showOpenDialog(jFrame1);
@@ -172,12 +165,8 @@ public class Gui2 extends javax.swing.JFrame {
                 jPanel1.load(filePath);
             } catch (IOException e) {
                 JOptionPane.showMessageDialog(jFrame1, e.getMessage());
-
             }
-            
             System.out.println(filePath);
-        } else {
-
         }
     }
 
@@ -197,7 +186,6 @@ public class Gui2 extends javax.swing.JFrame {
         }
     }
 
-
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -208,20 +196,15 @@ public class Gui2 extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
-        app = new App();            //siirrä tämä drawPaneliin
-        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
-                
-                Gui2 gui = new Gui2();
-                
+
+                Gui gui = new Gui();
+
                 gui.pack();
                 gui.setVisible(true);
             }
-
-
         });
     }
 

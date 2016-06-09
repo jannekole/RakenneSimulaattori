@@ -6,8 +6,10 @@ import java.text.DecimalFormat;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 /**
- *
+ * Allows the handling and calculation of coordinates, forces etc. as vectors.
+ * 
  * @author janne
  */
 public class Vector {
@@ -31,8 +33,8 @@ public class Vector {
     @Override
     public String toString() {
         DecimalFormat df = new DecimalFormat("00.0000");
-
-        return "x: " + df.format(x) + " y: " + df.format(y) + "";
+        
+        return "x: " + df.format(x) + "; y: " + df.format(y) + "";
     }
     
     

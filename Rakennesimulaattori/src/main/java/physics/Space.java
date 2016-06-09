@@ -12,12 +12,28 @@ import java.util.ArrayList;
  * @author janne
  */
 public class Space {
-    float gravity = 10f;
+    double gravity;
+    double updateInterval;
+
+    ArrayList<Node> nodes;  
+    ArrayList<Beam> beams;
+    
+    public Space() {
+        setGravity(9.81);
+        setUpdateInterval(0.0005);
+        
+        zeroComponents();
+    }
+
+    public final void setGravity(double gravity) {
+        this.gravity = gravity;
+    }
+    
 
 
-    public static float updateInterval = 0.0005f;
-    ArrayList<Node> nodes = new ArrayList(); 
-    ArrayList<Beam> beams = new ArrayList(); 
+    public final void setUpdateInterval(double updateInterval) {
+        this.updateInterval = updateInterval;
+    }
     
     public void addNode(Node node) {
         nodes.add(node);
@@ -35,11 +51,11 @@ public class Space {
         return beams;
     }
     
-    public float getGravity() {
+    public double getGravity() {
         return gravity;
     }      
 
-    public float getUpdateInterval() {
+    public double getUpdateInterval() {
         return updateInterval;
     }
     
@@ -61,47 +77,32 @@ public class Space {
          
     public void step() {
         
-//        long millis = System.currentTimeMillis() % 100000;                
-  //      System.out.print(" before: " + millis + " ");
-
         for (Beam beam : beams) {
             beam.calculateNewState();
         }
-        
         for (Node node : nodes) {
-            
             node.calculateNewState();
         }
-//        long millis2 = System.currentTimeMillis() % 100000;
-  //      System.out.print(" after: " + millis2 + " dif: " + (millis2 - millis) + " / ");  
-
-        
-        
-
     }
     
     public void printStatus() {
         
         for (int i = 0; i  < getNodes().size(); i++) {
             Node node = getNode(i);
-            System.out.print("__  Node " + (i + 1) + ": ");
-            printNode(node);
+            System.out.print("__  Node " + (i + 1) + ": " + node);
+            
             
         }
         System.out.print("\n");
     }    
 
-    public void printNode(Node node) {
-        System.out.print("position: " + node.getPosition().toString() + "  speed: " + node.getVelocityV().toString() + " acc: " + node.accelerationVector().toString() + " ");
-    }
 
     public Node getNode(int i) {
         return nodes.get(i);
     }
 
-    public void reload() {
-        
+    public final void zeroComponents() {
+        nodes = new ArrayList(); 
+        beams = new ArrayList(); 
     }
-
-
 }

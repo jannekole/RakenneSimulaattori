@@ -30,7 +30,7 @@ public class App {
     Space space;
     
     public App() {
-        
+        space = new Space();
         
 
         
@@ -97,18 +97,18 @@ public class App {
     }    
 
     private void printNode(Node node) {
-        space.printNode(node);
+        System.out.print(node);
     }
 
     private void setObjects(String fileName) throws IOException { 
         
-        space = new Space();
+        
         Builder builder = new Builder(space);
  /*       builder.build(
 ); */
        
         
-            builder.buildFromFile(fileName);
+        builder.buildFromFile(fileName);
  
     }
 

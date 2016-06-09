@@ -8,92 +8,78 @@ import java.util.ArrayList;
  * and open the template in the editor.
  */
 /**
- *
+ *Beams behave like springs, and calculate the forces impacted on Nodes based on
+ * the parameters and the distance between the two nodes.
  * @author janne
  */
 public class Beam {
+
     int mass;
     double length;
     double stiffness;
     int strength;
-    
+
     double materialStiffness;
-    
+
     double calculatedForce;
-    
-    double dampeningFactor = 0.1; 
-    
+
+    double dampeningFactor = 0.1;
+
     boolean isBroken;
-    
-    
-    
+
     ArrayList<Node> nodes;
-    
+
 //    Node node1;
 //    Node node2;
-   
     public Beam(Node node1, Node node2, double materialStiffness, int mass, int strength) {
         this(node1, node2, materialStiffness, mass, strength, 0);
     }
- 
-    public Beam(Node node1, Node node2, double materialStiffness, int mass, int strength, double length) {
-        
 
-        
+    public Beam(Node node1, Node node2, double materialStiffness, int mass, int strength, double length) {
+
         this.nodes = new ArrayList();
-        
-        this.nodes.add(node1);
-        this.nodes.add(node2);
-        
+
+        addNode(node1);
+        addNode(node2);
+
         if (length == 0) {
-            
             setLengthToNodeDistance();
         } else {
             setLength(length);
         }
 
         isBroken = false;
-        
-        
+
+        setMaterialStiffness(materialStiffness);
         setStrength(strength);
         setMass(mass);
-        
-        this.materialStiffness= materialStiffness;
-        
-        
-        
-        
+
         for (Node node : nodes) {
             node.addBeam(this);
         }
-          
+    }
 
-    }    
-     
-    
-        
+    public final void addNode(Node node) {
+        if (!nodes.contains(node) && nodes.size() < 2 && node != null) {
+            nodes.add(node);
+        } else {
+            throw new IllegalArgumentException("Nodes can not be the same");
+        }
+    }
 
-       
-            
-       
-        
-    
-    
     public double getNodeDistance() {
         return nodes.get(0).getPosition().distance(nodes.get(1).getPosition());
     }
     
     public Vector beamVector() {
-        
         return nodes.get(0).getPosition().subtract(nodes.get(1).getPosition()); 
     }
 
     private double dampen(double newForce) {
         double oldForce = calculatedForce;
-        if (Math.abs(newForce) < Math.abs(oldForce)) {
+        if  (newForce * (newForce - oldForce) < 0) { //  Absolute value of force is decreasing and oldForce has same sign as newForce, (Math.abs(newForce) < Math.abs(oldForce) && oldForce * newForce > 0)
             newForce = newForce * (1 - dampeningFactor);
         }
-
         return newForce;
     }
 
@@ -110,14 +96,9 @@ public class Beam {
             return;
         }
         calculatedForce = dampen(newForce);
-        
-        
-        
-    }    
-    
-    
-    public double getForce() {
+    }
 
+    public double getForce() {
         return calculatedForce;
     }
 
@@ -128,38 +109,35 @@ public class Beam {
             return this.directionUnitVector().multiply(this.getForce() * (-1));
         }
 
-        return new Vector(0, 0);
-        
+        throw new IllegalArgumentException("Node not in beam");
+
     }
 
     private Vector directionUnitVector() {
-        return nodes.get(0).positionV.subtract(nodes.get(1).positionV).multiply(1 / this.getNodeDistance());      
+        return nodes.get(0).getPosition().subtract(nodes.get(1).getPosition()).multiply(1 / this.getNodeDistance());
     }
 
     public int getMass() {
         return mass;
     }
 
-    public void setMass(int mass) {
-        
-        
+    public final void setMass(int mass) {
+
         if (mass > 0) {
             this.mass = mass;
         } else {
             throw new IllegalArgumentException("Mass has to be greater than 0, was " + mass);
         }
-         
     }
 
     public ArrayList<Node> getNodes() {
         return nodes;
     }
 
-    private void setLengthToNodeDistance() {
+    public final void setLengthToNodeDistance() {
         double newLength = getNodeDistance();
-        
+
         setLength(newLength);
-        
     }
 
     public double getLength() {
@@ -175,7 +153,12 @@ public class Beam {
     }
 
     public final void setMaterialStiffness(double materialStiffness) {
-        this.materialStiffness = materialStiffness;
+
+        if (materialStiffness > 0) {
+            this.materialStiffness = materialStiffness;
+        } else {
+            throw new IllegalArgumentException("Stiffness has to be greater than 0, was " + materialStiffness);
+        }
     }
 
     public int getStrength() {
@@ -183,14 +166,12 @@ public class Beam {
     }
 
     public final void setStrength(int strength) {
-        
+
         if (strength > 0) {
             this.strength = strength;
         } else {
             throw new IllegalArgumentException("Strength has to be greater than 0, was " + strength);
         }
-        
-        
     }
 
     public double getDampeningFactor() {
@@ -202,14 +183,11 @@ public class Beam {
     }
 
     public final void setLength(double length) {
-                
+
         if (length > 0) {
             this.length = length;
         } else {
             throw new IllegalArgumentException("Length has to be greater than 0, was " + length);
         }
-
     }
-
-    
 }
