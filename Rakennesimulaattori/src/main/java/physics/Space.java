@@ -20,7 +20,7 @@ public class Space {
     
     public Space() {
         setGravity(9.81);
-        setUpdateInterval(0.0005);
+        setUpdateInterval(0.0001);
         
         zeroComponents();
     }

@@ -1,0 +1,7 @@
+node	0	;	x	15	;	y	-790
+node	1	;	x	0	;	y	-800
+node	2	;	x	0	;	y	-780
+node	3	;	x	0	;	y	-760
+
+beam	;	a	1	;	b	2	;	L	0	;	sf	1001	;	m	2	;	sr	1200
+beam	;	a	2	;	b	3	;	L	0	;	sf	1000	;	m	2	;	sr	1200

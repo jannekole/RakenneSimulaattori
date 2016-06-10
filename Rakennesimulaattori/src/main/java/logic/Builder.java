@@ -45,23 +45,20 @@ public class Builder {
         double gravity;
         double updateInterval;
         Vector position;
-        
-        
 
         gravity = space.getGravity();
-    
-        
+
         x = Double.parseDouble(getValue("x", valueStrings));
         y = Double.parseDouble(getValue("y", valueStrings));
 
         updateInterval = space.getUpdateInterval();
-        position = new Vector(x, y);       
-        
+        position = new Vector(x, y);
+
         String nodeName = getValue("node", valueStrings);
         Node node = new Node(position, gravity, updateInterval);
-        
+
         nodes.put(nodeName, node);
-        
+
         space.addNode(node);
     }
     private void buildBeam(String[] valueStrings) throws IOException {
@@ -156,7 +153,7 @@ public class Builder {
             }
 
         }
-        //väliaikainen:
+        //väliaikainen ratkaisu:
         space.getNode(0).setXConstantVelocity(true); 
         space.getNode(0).setYConstantVelocity(true);
         space.getNode(1).setXConstantVelocity(true);

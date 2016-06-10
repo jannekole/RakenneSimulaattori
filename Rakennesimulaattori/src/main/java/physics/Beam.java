@@ -23,11 +23,14 @@ public class Beam {
 
     double calculatedForce;
 
-    double dampeningFactor = 0.1;
-
+    double dampeningFactor = 0.2;
+    double dampeningFactor2 = 0; //triangle height
+    double dampeningFactor3 = 0; //triangle width newForce/oldForce
+    
     boolean isBroken;
 
     ArrayList<Node> nodes;
+
 
 //    Node node1;
 //    Node node2;
@@ -77,9 +80,14 @@ public class Beam {
 
     private double dampen(double newForce) {
         double oldForce = calculatedForce;
-        if  (newForce * (newForce - oldForce) < 0) { //  Absolute value of force is decreasing and oldForce has same sign as newForce, (Math.abs(newForce) < Math.abs(oldForce) && oldForce * newForce > 0)
+        
+        // newForce = experimentalDampen(newForce, oldForce);
+        
+        if  (newForce * (newForce - oldForce) * newForce * oldForce < 0) { //  Absolute value of force is decreasing and oldForce has same sign as newForce, (Math.abs(newForce) < Math.abs(oldForce) && oldForce * newForce > 0)
             newForce = newForce * (1 - dampeningFactor);
         }
+        
+
         return newForce;
     }
 
@@ -189,5 +197,12 @@ public class Beam {
         } else {
             throw new IllegalArgumentException("Length has to be greater than 0, was " + length);
         }
+    }
+
+    private double experimentalDampen(double newForce, double oldForce) {
+    if (oldForce != 0){
+            newForce = newForce - oldForce * dampeningFactor2 * Math.min(1, Math.max(0, (1 - Math.abs(newForce) / Math.abs(oldForce) / dampeningFactor3)));
+        }
+    return newForce;
     }
 }

@@ -46,7 +46,7 @@ public class DrawPanel extends JPanel {
     private int y = 0;
     private int diameter = 20;
     
-    private int xOffset = 900;
+    private int xOffset = 600;
     private int yOffset = 000;
     
     String filePath;
@@ -119,7 +119,7 @@ public class DrawPanel extends JPanel {
         
         timer.stop();
         repaint();
-        timer.start();
+        
         
     }
 
@@ -156,7 +156,7 @@ public class DrawPanel extends JPanel {
 
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(1800, 800);
+        return new Dimension(1000, 900);
     }
     
     @Override
@@ -180,12 +180,12 @@ public class DrawPanel extends JPanel {
 
     private Timer setTimer() {
         
-        int frameRate = 50;
+        int frameRate = 20;
         
 
         int delay = 1000 / frameRate;
         final int calculationsPerFrame = (int) (speedMultiplier / app.getSpace().getUpdateInterval() * delay / 1000);
-
+        
         ActionListener taskPerformer = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
@@ -203,7 +203,7 @@ public class DrawPanel extends JPanel {
         };
 
         Timer timer = new Timer(delay, taskPerformer);
-        timer.setInitialDelay(initialDelay);
+        //timer.setInitialDelay(initialDelay);
         
         return timer;
         
@@ -211,6 +211,22 @@ public class DrawPanel extends JPanel {
 
     void stepFor(int steps) {
         app.stepFor(steps);
+    }
+
+    void pause() {
+        timer.stop();
+    }
+
+    void play() {
+        timer.start();
+    }
+    
+    void playPause() {
+        if (timer.isRunning()) {
+            pause();    
+        } else {
+            play();
+        }
     }
 
 

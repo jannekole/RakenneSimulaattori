@@ -6,6 +6,7 @@
 package gui;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -39,11 +40,15 @@ public class Gui extends javax.swing.JFrame {
         jFrame1 = new javax.swing.JFrame();
         skipForwardButton = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
-        jPanel1 = new DrawPanel();   //EDITED
+        drawPanel = new DrawPanel();   //EDITED
         jTextField2 = new javax.swing.JTextField();
         canvas1 = new java.awt.Canvas();
         reloadButton = new javax.swing.JButton();
         openFileButton = new javax.swing.JButton();
+        playButton = new javax.swing.JButton();
+        pauseButton = new javax.swing.JButton();
+        
+
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -59,14 +64,14 @@ public class Gui extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         skipForwardButton.setActionCommand("Refresh");
-        skipForwardButton.setLabel("Skip forward");
+        skipForwardButton.setText("Skip forward");
         skipForwardButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button1ActionPerformed(evt);
             }
         });
 
-        reloadButton.setLabel("Reload");
+        reloadButton.setText("Reload");
         reloadButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button2ActionPerformed(evt);
@@ -80,11 +85,23 @@ public class Gui extends javax.swing.JFrame {
                 showFileChooser();
             }
         });
-
+        playButton.setText("Play/Pause");
+        playButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                drawPanel.playPause();
+            }
+        });     
+        
+        pauseButton.setText("Pause");
+        pauseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                drawPanel.pause();
+            }
+        });
         jTextField1.setText("5");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(drawPanel);
+        drawPanel.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -102,27 +119,32 @@ public class Gui extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGap(0, 546, Short.MAX_VALUE)
+                                        
                                         .addComponent(openFileButton)
                                         .addComponent(reloadButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(20, 20, 20)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                       
+                                        .addComponent(playButton)
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(skipForwardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(skipForwardButton))
+                                
+                                .addComponent(drawPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(drawPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(openFileButton)
                                 .addComponent(skipForwardButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(reloadButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(reloadButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                
+                                .addComponent(playButton))
                         .addContainerGap())
         );
 
@@ -133,15 +155,15 @@ public class Gui extends javax.swing.JFrame {
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-        jPanel1.stepFor(Integer.parseInt(jTextField1.getText()));
+        drawPanel.stepFor(Integer.parseInt(jTextField1.getText()));
 
-        jPanel1.repaint();
+        drawPanel.repaint();
     }
 
     private void button2ActionPerformed(ActionEvent evt) {
 
         try {
-            jPanel1.restart();
+            drawPanel.restart();
         } catch (IOException e) {
 
         }
@@ -162,7 +184,7 @@ public class Gui extends javax.swing.JFrame {
             java.io.File file = fileDialog.getSelectedFile();
             String filePath = file.getAbsolutePath();
             try {
-                jPanel1.load(filePath);
+                drawPanel.load(filePath);
             } catch (IOException e) {
                 JOptionPane.showMessageDialog(jFrame1, e.getMessage());
             }
@@ -213,9 +235,11 @@ public class Gui extends javax.swing.JFrame {
     private javax.swing.JButton reloadButton;
     private java.awt.Canvas canvas1;
     private javax.swing.JFrame jFrame1;
-    private DrawPanel jPanel1;
+    private DrawPanel drawPanel;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JButton openFileButton;
+    private javax.swing.JButton playButton;
+    private javax.swing.JButton pauseButton;
     // End of variables declaration                   
 }
