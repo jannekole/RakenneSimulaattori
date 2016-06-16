@@ -16,3 +16,9 @@ Ihmiset jotka haluavat leikkiä virtuaalisilla rakennelmilla
 **Luokkakaavio:**
 
 ![](/dokumentaatio/luokkakaavio.png)
+
+**Sekvenssikaavioita:**
+
+![](/dokumentaatio/Tiedoston lataus.png)
+
+![](/dokumentaatio/Simulointi.png)
