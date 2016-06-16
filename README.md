@@ -9,5 +9,5 @@ Open file- nappi antaa valita simuloitavan rakenteen, reload nappi aloittaa simu
 
  
 * [ Aiheen kuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)
-* [ PIT-raportti](https://htmlpreview.github.io/?https://raw.githubusercontent.com/jannekole/RakenneSimulaattori/master/dokumentaatio/201606091729/physics/index.html)
+* [ PIT-raportti](https://htmlpreview.github.io/?https://raw.githubusercontent.com/jannekole/RakenneSimulaattori/master/dokumentaatio/201606162332/physics/index.html)
 * [ Checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/jannekole/RakenneSimulaattori/blob/master/dokumentaatio/checkstyle.html) (Sisältää myös käyttöliittymän luokat kun en jostain syystä saa niitä jätettyä pois)
