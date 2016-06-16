@@ -8,8 +8,9 @@ import java.util.ArrayList;
  * and open the template in the editor.
  */
 /**
- *Beams behave like springs, and calculate the forces impacted on Nodes based on
- * the parameters and the distance between the two nodes.
+ * Beams behave like springs, and calculate the forces impacted on Nodes based
+ * on the parameters and the distance between the two nodes.
+ *
  * @author janne
  */
 public class Beam {
@@ -26,15 +27,20 @@ public class Beam {
     double dampeningFactor = 0.2;
     double dampeningFactor2 = 0; //triangle height
     double dampeningFactor3 = 0; //triangle width newForce/oldForce
-    
+
     boolean isBroken;
 
     ArrayList<Node> nodes;
 
-
-//    Node node1;
-//    Node node2;
-    public Beam(Node node1, Node node2, double materialStiffness, int mass, int strength) {
+    /**
+     *
+     * @param node1 A node to attach to the Beam.
+     * @param node2 A node to attach to the Beam.
+     * @param materialStiffness  
+     * @param mass
+     * @param strength
+     */
+        public Beam(Node node1, Node node2, double materialStiffness, int mass, int strength) {
         this(node1, node2, materialStiffness, mass, strength, 0);
     }
 
@@ -70,24 +76,25 @@ public class Beam {
         }
     }
 
+    /**
+     *
+     * @return Returns the distance between the two nodes attached to the Beam.
+     */
     public double getNodeDistance() {
         return nodes.get(0).getPosition().distance(nodes.get(1).getPosition());
     }
-    
+
     public Vector beamVector() {
-        return nodes.get(0).getPosition().subtract(nodes.get(1).getPosition()); 
+        return nodes.get(0).getPosition().subtract(nodes.get(1).getPosition());
     }
 
     private double dampen(double newForce) {
         double oldForce = calculatedForce;
-        
+
         // newForce = experimentalDampen(newForce, oldForce);
-        
-        if  (newForce * (newForce - oldForce) * newForce * oldForce < 0) { //  Absolute value of force is decreasing and oldForce has same sign as newForce, (Math.abs(newForce) < Math.abs(oldForce) && oldForce * newForce > 0)
+        if ((newForce - oldForce) * newForce < 0) { //  Absolute value of force is decreasing and oldForce has same sign as newForce, (Math.abs(newForce) < Math.abs(oldForce) && oldForce * newForce > 0)
             newForce = newForce * (1 - dampeningFactor);
         }
-        
-
         return newForce;
     }
 
@@ -96,8 +103,8 @@ public class Beam {
             calculatedForce = 0;
             return;
         }
-        double newForce = materialStiffness / length * (length -  this.getNodeDistance());
-                
+        double newForce = materialStiffness / length * (length - this.getNodeDistance());
+
         if (Math.abs(newForce) > strength) {
             isBroken = true;
             calculatedForce = 0;
@@ -118,7 +125,6 @@ public class Beam {
         }
 
         throw new IllegalArgumentException("Node not in beam");
-
     }
 
     private Vector directionUnitVector() {
@@ -142,6 +148,9 @@ public class Beam {
         return nodes;
     }
 
+    /**
+     *Sets the length of the Beam to match the distance between the Nodes.
+     */
     public final void setLengthToNodeDistance() {
         double newLength = getNodeDistance();
 
@@ -200,9 +209,9 @@ public class Beam {
     }
 
     private double experimentalDampen(double newForce, double oldForce) {
-    if (oldForce != 0){
+        if (oldForce != 0) {
             newForce = newForce - oldForce * dampeningFactor2 * Math.min(1, Math.max(0, (1 - Math.abs(newForce) / Math.abs(oldForce) / dampeningFactor3)));
         }
-    return newForce;
+        return newForce;
     }
 }

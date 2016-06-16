@@ -16,11 +16,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import physics.Space;
 
-
-
-
 /**
- *
+ *This class handles the operation of the application
  * @author janne
  */
 public class App {
@@ -28,98 +25,76 @@ public class App {
     Scanner scanner;
     Boolean keepGoing;
     Space space;
-    
+
+    /**
+     *
+     */
     public App() {
         space = new Space();
-        
-
-        
-        
     }
- 
-         
+
     public void textUI() {
         scanner = new Scanner(System.in);
-        
-        
-        
+
         int lines = 100;
         int calculationsPerLine = 100;
-        
 
-        
-//        lines = scanner.nextInt();
-  //      calculationsPerLine = scanner.nextInt();
-        
+        lines = scanner.nextInt();
+        calculationsPerLine = scanner.nextInt();
         calculationsPerLine = 10;
-        
+
         int i = 0;
-        
-        
+
         printStatus();
-        
+
         while (i < lines) {
-            
+
             if (lines < 0) {
                 break;
             }
-            
-            
+
             stepFor(calculationsPerLine);
             printStatus();
             i++;
         }
-          
-    }    
-          
-    
+    }
 
     public Space getSpace() {
         return space;
     }
-    
+
     public void addNode(Node node) {
         space.addNode(node);
     }
-    
-    
+
+    /**
+     *Calculates the new state of the Space for the given number of times.
+     * 
+     * @param steps
+     */
     public void stepFor(int steps) {
-               
+
         space.stepFor(steps);
-     
     }
- 
-    
-    
-   
+
     public void printStatus() {
         space.printStatus();
-    }    
-
-    private void printNode(Node node) {
-        System.out.print(node);
     }
 
-    private void setObjects(String fileName) throws IOException { 
-        
-        
+    private void setObjects(String fileName) throws IOException {
+
         Builder builder = new Builder(space);
- /*       builder.build(
-); */
-       
-        
+
         builder.buildFromFile(fileName);
- 
     }
 
-    public void load(String fileName) throws IOException {
-        
-        
-        
-        setObjects(fileName);
-        
-    }
-    
+    /**
+     *Loads a new Space from the given file.
+     * @param filePath The path of the file
+     * @throws IOException
+     */
+    public void load(String filePath) throws IOException {
 
-    
+        setObjects(filePath);
+    }
 }

@@ -14,3 +14,6 @@ Päivä | Tunnit | Kuvaus
 07.06.2016 | 4h | Tiedoston valinnan hienosäätöä ym.
 08.06.2016 | 3h | Koodin siistimistä
 09.06.2016 | 5h | Lisää testejä ja koodin siistimistä
+10.06.2016 | 5h | Lisätty play/pause nappi, ja muuta pientä säätöä
+16.06.2016 | 4h | Koodin siistimistä ja javadocia
+

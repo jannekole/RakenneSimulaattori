@@ -18,28 +18,28 @@ import physics.Vector;
 
 /**
  * A class to build structures based on user generated text documents.
- * 
+ *
  * @author janne
  */
 public class Builder {
-    
-    Space space;    
+
+    Space space;
     HashMap<String, Node> nodes;
-    
-    
-    
+
     static final String COMPONENTSEPARATOR = "\n"; // new line
     static final String FIELDSEPARATOR = ";";
     static final String VALUESEPARATOR = "\\s";    // white space
-    
+
+    /**
+     *
+     * @param space The Space to build the components into
+     */
     public Builder(Space space) {
         this.space = space;
         this.nodes = new HashMap();
     }
-    
 
-    
-    public void buildNode(String[] valueStrings) {
+    private void buildNode(String[] valueStrings) {
         double x;
         double y;
         double gravity;
@@ -57,10 +57,13 @@ public class Builder {
         String nodeName = getValue("node", valueStrings);
         Node node = new Node(position, gravity, updateInterval);
 
+        setNodeConstanSpeed(node, valueStrings);
+
         nodes.put(nodeName, node);
 
         space.addNode(node);
     }
+
     private void buildBeam(String[] valueStrings) throws IOException {
         Node node1;
         Node node2;
@@ -92,13 +95,12 @@ public class Builder {
             throw new IOException("Node " + nodeName2 + " not found.");
         }
 
-//        node2 = nodes.get(nodeName2);
+
         try {
             space.addBeam(new Beam(node1, node2, materialStiffness, mass, strength, length));
         } catch (Exception e) {
             throw new IOException(e.getMessage());
         }
-
     }
 
     private String getValue(String tag, String[] valueStrings) {
@@ -106,42 +108,42 @@ public class Builder {
             valueString = valueString.trim();
             String[] splitText = valueString.split(VALUESEPARATOR);
             if (splitText[0].equalsIgnoreCase(tag)) {
-                return splitText[1];
+                if (splitText.length >= 2) {
+                    return splitText[1];
+                }
             }
-
-            
         }
-        return null;
+        return "";
     }
 
     private void buildComponent(String component) throws IOException {
-        
+
         component = component.trim();
-        String [] componentFields = component.split(FIELDSEPARATOR);
+        String[] componentFields = component.split(FIELDSEPARATOR);
         String componentType = componentFields[0].trim();
-        
-        
+
         if (componentType.startsWith("node")) {
             buildNode(componentFields);
         } else if (componentType.startsWith("beam")) {
             buildBeam(componentFields);
         }
-        
-        
-
     }
 
-    void buildFromFile(String filename) throws IOException {
+    /**
+     *Builds the components given in the file 
+     * @param filename
+     * @throws IOException
+     */
+    public void buildFromFile(String filename) throws IOException {
 
         String data = stringFromFile(filename);
         buildFromString(data);
-
     }
-    
-    public void buildFromString(String string) throws IOException {
-        
+
+    private void buildFromString(String string) throws IOException {
+
         space.zeroComponents();
-        
+
         String[] components;
         components = string.split(COMPONENTSEPARATOR);
         for (int rowIndex = 0; rowIndex < components.length; rowIndex++) {
@@ -151,15 +153,8 @@ public class Builder {
             } catch (IOException e) {
                 throw new IOException("Error in file on row " + (rowIndex + 1) + ": " + e.getMessage());
             }
-
         }
-        //väliaikainen ratkaisu:
-        space.getNode(0).setXConstantVelocity(true); 
-        space.getNode(0).setYConstantVelocity(true);
-        space.getNode(1).setXConstantVelocity(true);
-        space.getNode(1).setYConstantVelocity(true);
-
-    }    
+    }
 
     private String stringFromFile(String filename) throws IOException {
 
@@ -170,12 +165,19 @@ public class Builder {
         in = new FileReader(filename);
         BufferedReader bufferedReader = new BufferedReader(in);
         String line;
+        
         while ((line = bufferedReader.readLine()) != null) {
             data = data + line + "\n";
-
-            // System.out.println(data);
         }
 
         return data;
+    }
+
+    private void setNodeConstanSpeed(Node node, String[] valueStrings) {
+        boolean isConstantVelocityX = getValue("constantx", valueStrings).equalsIgnoreCase("true");
+        node.setXConstantVelocity(isConstantVelocityX);
+
+        boolean isConstantVelocityY = getValue("constanty", valueStrings).equalsIgnoreCase("true");
+        node.setYConstantVelocity(isConstantVelocityY);
     }
 }
