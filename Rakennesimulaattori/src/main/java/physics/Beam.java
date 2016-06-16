@@ -40,7 +40,7 @@ public class Beam {
      * @param mass
      * @param strength
      */
-        public Beam(Node node1, Node node2, double materialStiffness, int mass, int strength) {
+    public Beam(Node node1, Node node2, double materialStiffness, int mass, int strength) {
         this(node1, node2, materialStiffness, mass, strength, 0);
     }
 
