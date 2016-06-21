@@ -1,5 +1,5 @@
-node	0	;	x	15	;	y	-790
-node	1	;	x	0	;	y	-800
+node	0	;	x	15	;	y	-790;	constanty	TRUE	;	constantx	TRUE
+node	1	;	x	0	;	y	-800;	constanty	TRUE	;	constantx	TRUE
 node	2	;	x	0	;	y	-780
 node	3	;	x	0	;	y	-760
 node	4	;	x	0	;	y	-740
@@ -14,8 +14,32 @@ node	12	;	x	0	;	y	-580
 node	13	;	x	0	;	y	-560
 node	14	;	x	0	;	y	-540
 node	15	;	x	0	;	y	-520
-
-
+node	16	;	x	0	;	y	-500
+node	17	;	x	0	;	y	-480
+node	18	;	x	0	;	y	-460
+node	19	;	x	0	;	y	-440
+node	20	;	x	0	;	y	-420
+node	21	;	x	0	;	y	-400
+node	22	;	x	0	;	y	-380
+node	23	;	x	0	;	y	-360
+node	24	;	x	0	;	y	-340
+node	25	;	x	0	;	y	-320
+node	26	;	x	0	;	y	-300
+node	27	;	x	0	;	y	-280
+node	28	;	x	0	;	y	-260
+node	29	;	x	0	;	y	-240
+node	30	;	x	0	;	y	-220
+node	31	;	x	0	;	y	-200
+node	32	;	x	0	;	y	-180
+node	33	;	x	0	;	y	-160
+node	34	;	x	0	;	y	-140
+node	35	;	x	0	;	y	-120
+node	36	;	x	0	;	y	-100
+node	37	;	x	0	;	y	-80
+node	38	;	x	0	;	y	-60
+node	39	;	x	0	;	y	-40
+node	40	;	x	0	;	y	-20
+							
 node	42	;	x	15	;	y	-770
 node	43	;	x	15	;	y	-750
 node	44	;	x	15	;	y	-730
@@ -29,204 +53,184 @@ node	51	;	x	15	;	y	-590
 node	52	;	x	15	;	y	-570
 node	53	;	x	15	;	y	-550
 node	54	;	x	15	;	y	-530
+node	55	;	x	15	;	y	-510
+node	56	;	x	15	;	y	-490
+node	57	;	x	15	;	y	-470
+node	58	;	x	15	;	y	-450
+node	59	;	x	15	;	y	-430
+node	60	;	x	15	;	y	-410
+node	61	;	x	15	;	y	-390
+node	62	;	x	15	;	y	-370
+node	63	;	x	15	;	y	-350
+node	64	;	x	15	;	y	-330
+node	65	;	x	15	;	y	-310
+node	66	;	x	15	;	y	-290
+node	67	;	x	15	;	y	-270
+node	68	;	x	15	;	y	-250
+node	69	;	x	15	;	y	-230
+node	70	;	x	15	;	y	-210
+node	71	;	x	15	;	y	-190
+node	72	;	x	15	;	y	-170
+node	73	;	x	15	;	y	-150
+node	74	;	x	15	;	y	-130
+node	75	;	x	15	;	y	-110
+node	76	;	x	15	;	y	-90
+node	77	;	x	15	;	y	-70
+node	78	;	x	15	;	y	-50
+node	79	;	x	15	;	y	-30
 
-
-beam	;	a	1	;	b	2	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	2	;	b	3	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	3	;	b	4	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	4	;	b	5	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	5	;	b	6	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	6	;	b	7	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	7	;	b	8	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	8	;	b	9	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	9	;	b	10	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	10	;	b	11	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	11	;	b	12	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	12	;	b	13	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	13	;	b	14	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	14	;	b	15	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	15	;	b	16	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	16	;	b	17	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	17	;	b	18	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	18	;	b	19	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	19	;	b	20	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	20	;	b	21	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	21	;	b	22	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	22	;	b	23	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	23	;	b	24	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	24	;	b	25	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	25	;	b	26	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	26	;	b	27	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	27	;	b	28	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	28	;	b	29	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	29	;	b	30	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	30	;	b	31	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	31	;	b	32	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	32	;	b	33	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	33	;	b	34	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	34	;	b	35	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	35	;	b	36	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	36	;	b	37	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	37	;	b	38	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	38	;	b	39	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	39	;	b	40	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-																		
-beam	;	a	41	;	b	42	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	42	;	b	43	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	43	;	b	44	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	44	;	b	45	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	45	;	b	46	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	46	;	b	47	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	47	;	b	48	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	48	;	b	49	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	49	;	b	50	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	50	;	b	51	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	51	;	b	52	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	52	;	b	53	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	53	;	b	54	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	54	;	b	55	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	55	;	b	56	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	56	;	b	57	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	57	;	b	58	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	58	;	b	59	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	59	;	b	60	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	60	;	b	61	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	61	;	b	62	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	62	;	b	63	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	63	;	b	64	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	64	;	b	65	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	65	;	b	66	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	66	;	b	67	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	67	;	b	68	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	68	;	b	69	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	69	;	b	70	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	70	;	b	71	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	71	;	b	72	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	72	;	b	73	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	73	;	b	74	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	74	;	b	75	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	75	;	b	76	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	76	;	b	77	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	77	;	b	78	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	78	;	b	79	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	79	;	b	80	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-																		
-beam	;	a	81	;	b	82	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	82	;	b	83	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	83	;	b	84	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	84	;	b	85	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	85	;	b	86	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	86	;	b	87	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	87	;	b	88	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	88	;	b	89	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	89	;	b	90	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	90	;	b	91	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	91	;	b	92	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	92	;	b	93	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	93	;	b	94	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	94	;	b	95	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	95	;	b	96	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	96	;	b	97	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	97	;	b	98	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	98	;	b	99	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	99	;	b	100	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	100	;	b	101	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	101	;	b	102	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	102	;	b	103	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	103	;	b	104	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	104	;	b	105	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	105	;	b	106	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	106	;	b	107	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	107	;	b	108	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	108	;	b	109	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	109	;	b	110	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	110	;	b	111	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	111	;	b	112	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	112	;	b	113	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	113	;	b	114	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	114	;	b	115	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	115	;	b	116	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	116	;	b	117	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	117	;	b	118	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	118	;	b	119	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	119	;	b	120	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-																		
-beam	;	a	121	;	b	122	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	122	;	b	123	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	123	;	b	124	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	124	;	b	125	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	125	;	b	126	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	126	;	b	127	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	127	;	b	128	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	128	;	b	129	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	129	;	b	130	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	130	;	b	131	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	131	;	b	132	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	132	;	b	133	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	133	;	b	134	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	134	;	b	135	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	135	;	b	136	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	136	;	b	137	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	137	;	b	138	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	138	;	b	139	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	139	;	b	140	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	140	;	b	141	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	141	;	b	142	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	142	;	b	143	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	143	;	b	144	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	144	;	b	145	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	145	;	b	146	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	146	;	b	147	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	147	;	b	148	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	148	;	b	149	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	149	;	b	150	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	150	;	b	151	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	151	;	b	152	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	152	;	b	153	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	153	;	b	154	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	154	;	b	155	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	155	;	b	156	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	156	;	b	157	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	157	;	b	158	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	158	;	b	159	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	159	;	b	160	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-																		
-beam	;	a	161	;	b	162	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	162	;	b	163	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	163	;	b	164	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	164	;	b	165	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	165	;	b	166	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	166	;	b	167	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	167	;	b	168	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	168	;	b	169	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	169	;	b	170	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	170	;	b	171	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	171	;	b	172	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	172	;	b	173	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	173	;	b	174	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	174	;	b	175	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	175	;	b	176	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	176	;	b	177	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	177	;	b	178	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	178	;	b	179	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	179	;	b	180	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	180	;	b	181	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	181	;	b	182	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	182	;	b	183	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	183	;	b	184	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	184	;	b	185	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	185	;	b	186	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	186	;	b	187	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	187	;	b	188	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	188	;	b	189	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	189	;	b	190	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	190	;	b	191	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	191	;	b	192	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	192	;	b	193	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	193	;	b	194	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	194	;	b	195	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	195	;	b	196	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	196	;	b	197	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	197	;	b	198	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	198	;	b	199	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
-beam	;	a	199	;	b	200	;	L	0	;	sf	1000000	;	m	5	;	sr	12000
+beam	;	a	1	;	b	2	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	2	;	b	3	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	3	;	b	4	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	4	;	b	5	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	5	;	b	6	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	6	;	b	7	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	7	;	b	8	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	8	;	b	9	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	9	;	b	10	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	10	;	b	11	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	11	;	b	12	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	12	;	b	13	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	13	;	b	14	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	14	;	b	15	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	15	;	b	16	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	16	;	b	17	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	17	;	b	18	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	18	;	b	19	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	19	;	b	20	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	20	;	b	21	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	21	;	b	22	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	22	;	b	23	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	23	;	b	24	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	24	;	b	25	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	25	;	b	26	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	26	;	b	27	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	27	;	b	28	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	28	;	b	29	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	29	;	b	30	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	30	;	b	31	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	31	;	b	32	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	32	;	b	33	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	33	;	b	34	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	34	;	b	35	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	35	;	b	36	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	36	;	b	37	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	37	;	b	38	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	38	;	b	39	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	39	;	b	40	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	0	;	b	42	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	42	;	b	43	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	43	;	b	44	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	44	;	b	45	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	45	;	b	46	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	46	;	b	47	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	47	;	b	48	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	48	;	b	49	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	49	;	b	50	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	50	;	b	51	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	51	;	b	52	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	52	;	b	53	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	53	;	b	54	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	54	;	b	55	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	55	;	b	56	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	56	;	b	57	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	57	;	b	58	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	58	;	b	59	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	59	;	b	60	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	60	;	b	61	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	61	;	b	62	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	62	;	b	63	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	63	;	b	64	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	64	;	b	65	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	65	;	b	66	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	66	;	b	67	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	67	;	b	68	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	68	;	b	69	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	69	;	b	70	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	70	;	b	71	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	71	;	b	72	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	72	;	b	73	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	73	;	b	74	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	74	;	b	75	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	75	;	b	76	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	76	;	b	77	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	77	;	b	78	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	78	;	b	79	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	1	;	b	0	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	2	;	b	42	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	3	;	b	43	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	4	;	b	44	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	5	;	b	45	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	6	;	b	46	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	7	;	b	47	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	8	;	b	48	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	9	;	b	49	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	10	;	b	50	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	11	;	b	51	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	12	;	b	52	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	13	;	b	53	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	14	;	b	54	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	15	;	b	55	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	16	;	b	56	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	17	;	b	57	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	18	;	b	58	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	19	;	b	59	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	20	;	b	60	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	21	;	b	61	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	22	;	b	62	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	23	;	b	63	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	24	;	b	64	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	25	;	b	65	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	26	;	b	66	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	27	;	b	67	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	28	;	b	68	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	29	;	b	69	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	30	;	b	70	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	31	;	b	71	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	32	;	b	72	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	33	;	b	73	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	34	;	b	74	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	35	;	b	75	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	36	;	b	76	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	37	;	b	77	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	38	;	b	78	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	39	;	b	79	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	2	;	b	0	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	3	;	b	42	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	4	;	b	43	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	5	;	b	44	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	6	;	b	45	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	7	;	b	46	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	8	;	b	47	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	9	;	b	48	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	10	;	b	49	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	11	;	b	50	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	12	;	b	51	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	13	;	b	52	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	14	;	b	53	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	15	;	b	54	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	16	;	b	55	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	17	;	b	56	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	18	;	b	57	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	19	;	b	58	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	20	;	b	59	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	21	;	b	60	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	22	;	b	61	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	23	;	b	62	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	24	;	b	63	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	25	;	b	64	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	26	;	b	65	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	27	;	b	66	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	28	;	b	67	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	29	;	b	68	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	30	;	b	69	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	31	;	b	70	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	32	;	b	71	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	33	;	b	72	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	34	;	b	73	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	35	;	b	74	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	36	;	b	75	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	37	;	b	76	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	38	;	b	77	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	39	;	b	78	;	L	0	;	sf	300000	;	m	5	;	sr	12000
+beam	;	a	40	;	b	79	;	L	0	;	sf	300000	;	m	5	;	sr	12000

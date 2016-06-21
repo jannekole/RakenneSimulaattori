@@ -52,7 +52,7 @@ public class GraphicBeam {
             g2D.setStroke(new BasicStroke(1, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
             
         }
-        g2D.drawLine(x1 + xOffset, -y1 + yOffset, x2 + xOffset, -y2 + yOffset);
+        g2D.drawLine(x1 + xOffset, -y1 - yOffset, x2 + xOffset, -y2 - yOffset);
         
     }
 

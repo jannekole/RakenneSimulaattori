@@ -22,6 +22,7 @@ import static org.junit.Assert.*;
  * @author janne
  */
 public class BeamTest {
+    Space space;
     Beam beam;
     Node node1;
     Node node2;
@@ -40,8 +41,11 @@ public class BeamTest {
     
     @Before
     public void setUp() {
-        node1 = new Node(new Vector(0,0), 10, 0.1);
-        node2 = new Node(new Vector(100,0), 10, 0.1);
+        space = new Space();
+        
+        
+        node1 = new Node(new Vector(0,0), space);
+        node2 = new Node(new Vector(100,0), space);
         float length = 100;
         float stiffness = 100;
         int mass = 100;

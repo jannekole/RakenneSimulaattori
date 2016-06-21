@@ -9,60 +9,47 @@ package gui;
  *
  * @author janne
  */
-import gui.Gui;
-import javax.swing.SwingUtilities;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.BorderFactory;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseMotionListener;
-import java.awt.event.MouseMotionAdapter;
 import java.io.IOException;
 import java.util.ArrayList;
-import logic.App;
 import physics.Node;
 import javax.swing.Timer;
+import logic.Builder;
 import physics.Beam;
 import physics.Space;
 
-public class DrawPanel extends JPanel {
+public class AnimationFrame extends JPanel {
 
-    int initialDelay = 1000; //milliseconds
     float speedMultiplier = 5;
 
     ArrayList<GraphicNode> graphicNodes;
     ArrayList<GraphicBeam> graphicBeams;
 
-    private int x = 0;
-    private int y = 0;
-    private int diameter = 20;
-
-    private int xOffset = 600;
-    private int yOffset = 000;
+    private int xOffset;
+    private int yOffset;
 
     String filePath;
 
     Timer timer;
 
-    App app;
+    Space space;
 
-    public DrawPanel() {
+    public AnimationFrame() {
         this.filePath = "";
 
-        this.app = new App();
+        this.space = new Space();
 
         graphicNodes = new ArrayList();
         graphicBeams = new ArrayList();
 
-        timer = setTimer();
+        xOffset = 600;
+        yOffset = -50;
+        
+        timer = newTimer();
     }
 
     public void restart() throws IOException {
@@ -74,18 +61,15 @@ public class DrawPanel extends JPanel {
         this.filePath = filePath;
 
         deleteComponents();
+        
+        Builder builder = new Builder(space);
+        space = builder.buildFromFile(filePath);
 
-        app.load(filePath);
-
-        ArrayList<Node> nodes = app.getSpace().getNodes();
-
-        for (Node node : nodes) {
+        for (Node node : space.getNodes()) {
             addNode(node);
         }
 
-        ArrayList<Beam> beams = app.getSpace().getBeams();
-
-        for (Beam beam : beams) {
+        for (Beam beam : space.getBeams()) {
             addBeam(beam);
         }
         
@@ -130,18 +114,18 @@ public class DrawPanel extends JPanel {
         }
     }
 
-    private Timer setTimer() {
+    private Timer newTimer() {
 
         int frameRate = 50;
 
         int delay = 1000 / frameRate;
-        final int calculationsPerFrame = (int) (speedMultiplier / app.getSpace().getUpdateInterval() * delay / 1000);
+        final int calculationsPerFrame = (int) (speedMultiplier / space.getUpdateInterval() * delay / 1000);
 
         ActionListener taskPerformer = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
 
-                app.stepFor(calculationsPerFrame);
+                space.stepFor(calculationsPerFrame);
                 
                 repaint();
             }
@@ -152,7 +136,7 @@ public class DrawPanel extends JPanel {
     }
 
     void stepFor(int steps) {
-        app.stepFor(steps);
+        space.stepFor(steps);
     }
 
     void pause() {

@@ -5,14 +5,8 @@
  */
 package logic;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import physics.Beam;
 import physics.Node;
-import physics.Vector;
-
-import java.util.ArrayList;
-
 import java.util.Scanner;
 import physics.Space;
 
@@ -78,16 +72,9 @@ public class App {
     }
 
     public void printStatus() {
-        space.printStatus();
+        System.out.println(space.toString());
     }
-
-    private void setObjects(String fileName) throws IOException {
-
-        Builder builder = new Builder(space);
-
-        builder.buildFromFile(fileName);
-    }
-
+    
     /**
      *Loads a new Space from the given file.
      * @param filePath The path of the file
@@ -95,6 +82,11 @@ public class App {
      */
     public void load(String filePath) throws IOException {
 
-        setObjects(filePath);
+        Builder builder = new Builder(space);
+
+        builder.buildFromFile(filePath);
     }
+
+
+
 }

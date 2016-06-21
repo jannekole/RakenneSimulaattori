@@ -5,17 +5,12 @@
  */
 package gui;
 
-import java.awt.Color;
-import java.awt.Dimension;
+
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 import javax.swing.JFileChooser;
-import javax.swing.Timer;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import logic.App;
-import physics.Space;
 import java.io.File;
 import javax.swing.JOptionPane;
 
@@ -40,7 +35,7 @@ public class Gui extends javax.swing.JFrame {
         jFrame1 = new javax.swing.JFrame();
         skipForwardButton = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
-        drawPanel = new DrawPanel();   //EDITED
+        drawPanel = new AnimationFrame();   //EDITED
         jTextField2 = new javax.swing.JTextField();
         canvas1 = new java.awt.Canvas();
         reloadButton = new javax.swing.JButton();
@@ -235,7 +230,7 @@ public class Gui extends javax.swing.JFrame {
     private javax.swing.JButton reloadButton;
     private java.awt.Canvas canvas1;
     private javax.swing.JFrame jFrame1;
-    private DrawPanel drawPanel;
+    private AnimationFrame drawPanel;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JButton openFileButton;

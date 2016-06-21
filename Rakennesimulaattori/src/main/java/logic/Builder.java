@@ -43,7 +43,6 @@ public class Builder {
         double x;
         double y;
         double gravity;
-        double updateInterval;
         Vector position;
 
         gravity = space.getGravity();
@@ -51,11 +50,10 @@ public class Builder {
         x = Double.parseDouble(getValue("x", valueStrings));
         y = Double.parseDouble(getValue("y", valueStrings));
 
-        updateInterval = space.getUpdateInterval();
         position = new Vector(x, y);
 
         String nodeName = getValue("node", valueStrings);
-        Node node = new Node(position, gravity, updateInterval);
+        Node node = new Node(position, space);
 
         setNodeConstanSpeed(node, valueStrings);
 
@@ -134,15 +132,16 @@ public class Builder {
      * @param filename
      * @throws IOException
      */
-    public void buildFromFile(String filename) throws IOException {
+    public Space buildFromFile(String filename) throws IOException {
 
         String data = stringFromFile(filename);
         buildFromString(data);
+        return space;
     }
 
     private void buildFromString(String string) throws IOException {
 
-        space.zeroComponents();
+        space.setEmpty();
 
         String[] components;
         components = string.split(COMPONENTSEPARATOR);

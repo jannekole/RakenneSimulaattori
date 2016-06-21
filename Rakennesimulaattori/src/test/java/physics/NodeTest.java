@@ -21,6 +21,8 @@ import static org.junit.Assert.*;
 public class NodeTest {
     double updateInterval;
     
+    Space space;
+    
     Node node1;
     Node node2;
     Node node3;
@@ -44,11 +46,14 @@ public class NodeTest {
     public void setUp() {
         
         updateInterval = 0.1;
+        space = new Space();
         
-        node1 = new Node(new Vector(24,28), 10, updateInterval);
-        node2 = new Node(new Vector(0,0), 0, updateInterval);
-        node3 = new Node(new Vector(100,0), 10, updateInterval);
-        node4 = new Node(new Vector(0,100), 10, updateInterval);
+        space.setUpdateInterval(updateInterval);
+        
+        node1 = new Node(new Vector(24,28), space);
+        node2 = new Node(new Vector(0,0), space);
+        node3 = new Node(new Vector(100,0),space);
+        node4 = new Node(new Vector(0,100), space);
         
         
         
@@ -157,23 +162,28 @@ public class NodeTest {
     }
     @Test(expected = IllegalArgumentException.class)
     public void nullPositionVectorReturnsException() {
-        Node node9 = new Node(null, 10, 0.1);
+        
+        
+        Node node9 = new Node(null, space);
 
     }
+/*
     @Test(expected = IllegalArgumentException.class)
     public void negativeUpdateIntervalReturnsException() {
         Node node9 = new Node(new Vector(10, 10), 10, -0.1);
 
     }
+    
+
     @Test(expected = IllegalArgumentException.class)
     public void zeroUpdateIntervalReturnsException() {
         Node node9 = new Node(new Vector(10, 10), 10, 0);
 
     }
-
+*/
     @Test(expected = IllegalArgumentException.class)
     public void setNullVelocityVectorReturnsException() {
-        Node node9 = new Node(new Vector(10, 10), 10, 0.1);
+        Node node9 = new Node(new Vector(10, 10), space);
         node9.setInitialVelocity(null);
 
     }

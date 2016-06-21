@@ -45,7 +45,7 @@ public class GraphicNode {
     public void paintNode(Graphics g) {
         setCoordinates();
         g.setColor(Color.BLACK);
-        g.fillOval(x + xOffset - radius, -y + yOffset - radius, diameter, diameter);
+        g.fillOval(x + xOffset - radius, -y - yOffset - radius, diameter, diameter);
         
     }
 

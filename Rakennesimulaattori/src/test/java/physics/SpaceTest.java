@@ -46,12 +46,10 @@ public class SpaceTest {
         space.setGravity(10);
         space.setUpdateInterval(0.1);
         
-        gravity = space.getGravity();
-        updateInterval = space.getUpdateInterval();
         
-        node1 = new Node(new Vector(20, 0), gravity, updateInterval);
-        node2 = new Node(new Vector(100, 0), gravity, updateInterval);
-        node3 = new Node(new Vector(180, 0), gravity, updateInterval);
+        node1 = new Node(new Vector(20, 0), space);
+        node2 = new Node(new Vector(100, 0), space);
+        node3 = new Node(new Vector(180, 0), space);
         
         length = 100.0;
         stiffness = 100.0;

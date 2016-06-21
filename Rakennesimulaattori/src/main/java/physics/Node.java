@@ -17,41 +17,44 @@ import java.util.ArrayList;
 public class Node {
 
     private double gravity;
-    private double updateInterval;
 
-    private ArrayList<Beam> beams = new ArrayList();
 
-    private Vector startPositionV;
+    private ArrayList<Beam> attachedBeams = new ArrayList();
+
     private Vector positionV;
     private Vector velocityV;
-    private Vector accelerationV;
 
     private Vector initialVelocityV;
 
     private boolean xConstantVelocity;
     private boolean yConstantVelocity;
+    
+    private Space space;
 
     /**
      *
      * @param position The initial position of the node.
-     * @param gravity The gravitational acceleration in m/s^2.
-     * @param updateInterval The time between each new calculation.
+     * @param space The Space object where the Node gets universal parameters.
      */
-    public Node(Vector position, double gravity, double updateInterval) {
+    public Node(Vector position, Space space) {
 
         setPosition(position);
 
         setInitialVelocity(new Vector(0, 0));
+        
+        if (space != null) {
+            this.space = space;
+        } else {
+            throw new IllegalArgumentException("space cannot be null.");
+        }
 
-        this.accelerationV = new Vector(0, 0);
-
-        this.gravity = gravity;
-        setUpdateInterval(updateInterval);
+        
+//        setUpdateInterval(updateInterval);
 
         this.xConstantVelocity = false;
         this.yConstantVelocity = false;
     }
-
+/*
     public final void setUpdateInterval(double updateInterval) {
         if (updateInterval > 0) {
             this.updateInterval = updateInterval;
@@ -59,10 +62,9 @@ public class Node {
             throw new IllegalArgumentException("UpdateInterval must be greater than 0.");
         }
     }
-
+*/
     public final void setPosition(Vector position) {
         if (position != null) {
-            this.startPositionV = position;
             this.positionV = position;
         } else {
             throw new IllegalArgumentException("Position vector cannot be null.");
@@ -74,7 +76,7 @@ public class Node {
     }
 
     public void addBeam(Beam beam) {
-        beams.add(beam);
+        attachedBeams.add(beam);
     }
 
     public final void setInitialVelocity(Vector initialVelocityV) {
@@ -95,6 +97,7 @@ public class Node {
      */
     public void calculateNewState() {
 
+        double updateInterval = space.getUpdateInterval();
         Vector velocityDifferenceV = accelerationVector().multiply(updateInterval);
         Vector averageVelocityV = velocityV.add(velocityDifferenceV.multiply(0.5));
 
@@ -120,7 +123,7 @@ public class Node {
 
     Vector forceSum() {
         Vector sum = new Vector(0, 0);
-        for (Beam beam : beams) {
+        for (Beam beam : attachedBeams) {
             sum = sum.add(beam.getForceVector(this));
         }
         sum = sum.add(gravityForce());
@@ -129,14 +132,14 @@ public class Node {
 
     public double massSum() {
         int sum = 0;
-        for (Beam beam : beams) {
+        for (Beam beam : attachedBeams) {
             sum += beam.getMass();
         }
         return sum / 2;     //mass is halved because only one end of the beam is taken into account
     }
 
     private Vector gravityForce() {
-        double gravityF = -gravity * massSum();
+        double gravityF = - space.getGravity()* massSum();
         return new Vector(0, gravityF);
     }
 
@@ -160,5 +163,4 @@ public class Node {
     public void setYConstantVelocity(boolean yConstantVelocity) {
         this.yConstantVelocity = yConstantVelocity;
     }
-
 }

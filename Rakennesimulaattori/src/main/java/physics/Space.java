@@ -13,8 +13,8 @@ import java.util.ArrayList;
  */
 public class Space {
 
-    double gravity;
-    double updateInterval;
+    private double gravity;
+    private double updateInterval;
 
     ArrayList<Node> nodes;
     ArrayList<Beam> beams;
@@ -23,7 +23,7 @@ public class Space {
         setGravity(9.81);
         setUpdateInterval(0.0001);
 
-        zeroComponents();
+        setEmpty();
     }
 
     public final void setGravity(double gravity) {
@@ -83,17 +83,15 @@ public class Space {
         }
     }
 
-    /**
-     *
-     */
-    public void printStatus() {
-
+    @Override
+    public String toString() {
+        String returnString = "";
         for (int i = 0; i < getNodes().size(); i++) {
             Node node = getNode(i);
-            System.out.print("__  Node " + (i + 1) + ": " + node);
+            returnString = returnString + "__  Node " + (i + 1) + ": " + node;
 
         }
-        System.out.print("\n");
+        return returnString;
     }
 
     public Node getNode(int i) {
@@ -103,7 +101,7 @@ public class Space {
     /**
      *This method deletes all the components in Space. 
      */
-    public final void zeroComponents() {
+    public final void setEmpty() {
         nodes = new ArrayList();
         beams = new ArrayList();
     }
