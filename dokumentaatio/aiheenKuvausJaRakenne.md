@@ -10,7 +10,7 @@ Ihmiset jotka haluavat leikkiä virtuaalisilla rakennelmilla
 
 **Käyttäjän toiminnot:**
 
-* Rakenteiden rakentaminen lisäämällä/poistamalla palkkeja ja yhdistelemällä niitä toisiinsa
+* Rakennelman lataaminen tiedostosta
 * Simuloinnin käynnistäminen ja katsominen
  
 **Luokkakaavio:**
