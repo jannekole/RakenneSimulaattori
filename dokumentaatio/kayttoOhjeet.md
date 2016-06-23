@@ -52,9 +52,9 @@ määrittää rakennelman sijainnin ikkunassa. Koordinaatiston origo sijaitsee t
 määrittelee pisteen sijainnin koordinaatistossa, johon palkkeja voi kiinnittää. Jokaiselle pisteelle täytyy antaa numero sanan node jälkeen, johon palkit voivat viitata. Kahdella pisteellä ei saa olla samaa numeroa, mutta muuten ne voivat olla mitä tahansa kokonaislukuja, missä tahansa järjestyksessä.
 
 noden muut pakolliset parametrit ovat:
-######x:		
+**x:**		
 Pisteen x -koordinaatti.
-######y:		
+**y:**		
 Pisteen y -koordinaatti.	
 
 Jos haluaa että piste pysyy simulaation aikana paikallaan (esimerkiksi rakennelman maassa kiinni oleva piste), tulee rivissä olla "constanty TRUE; constantx TRUE;". constantx:n ja constanty:n avulla asetetaan pisteen x ja y -koordinaatit vakioiksi. Halutessaan voi käyttää vain toista, jolloin piste pääsee liukumaan yhdellä akselilla.
