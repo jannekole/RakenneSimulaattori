@@ -4,7 +4,7 @@ Rakennesimulaattorilla voi simuloida palkeista tehtyjä rakenteita.
 
 ##Ohjelman käyttö
 
-**Open file** -napilla voidaan valita tiedosto josta rakennelma ladataan.
+**Open file** -napilla voidaan valita tiedosto josta rakennelma ladataan. Kansiosta Rakennesimulaattori pitäisi löytyä joitain .txt -päätteisiä rakennelmia joita voi kokeilla.
 
 **Reload** -nappi lataa aikaisemmin ladatun tiedoston uudestaan.
 
