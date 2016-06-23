@@ -29,6 +29,7 @@ public class Builder {
     static final String COMPONENTSEPARATOR = "\n"; // new line
     static final String FIELDSEPARATOR = ";";
     static final String VALUESEPARATOR = "\\s";    // white space
+    private Vector offset;
 
     /**
      * Constructs a new Builder with the given Space.
@@ -37,21 +38,19 @@ public class Builder {
     public Builder(Space space) {
         this.space = space;
         this.nodes = new HashMap();
+        this.offset = new Vector(0, 0);
     }
 
 
     private void buildNode(String[] valueStrings) {
         double x;
         double y;
-        double gravity;
         Vector position;
-
-        gravity = space.getGravity();
 
         x = Double.parseDouble(getValue("x", valueStrings));
         y = Double.parseDouble(getValue("y", valueStrings));
 
-        position = new Vector(x, y);
+        position = new Vector(x, y).add(offset);
 
         String nodeName = getValue("node", valueStrings);
         Node node = new Node(position, space);
@@ -75,10 +74,10 @@ public class Builder {
         int mass;
         int strength;
 
-        materialStiffness = Double.parseDouble(getValue("sf", valueStrings));
-        mass = Integer.parseInt(getValue("m", valueStrings));
-        strength = Integer.parseInt(getValue("sr", valueStrings));
-        length = Double.parseDouble(getValue("l", valueStrings));
+        materialStiffness = Double.parseDouble(getValue("stiffness", valueStrings));
+        mass = Integer.parseInt(getValue("mass", valueStrings));
+        strength = Integer.parseInt(getValue("strength", valueStrings));
+        length = Double.parseDouble(getValue("length", valueStrings));
 
         nodeName1 = getValue("a", valueStrings);
         nodeName2 = getValue("b", valueStrings);
@@ -125,7 +124,9 @@ public class Builder {
             buildNode(componentFields);
         } else if (componentType.startsWith("beam")) {
             buildBeam(componentFields);
-        }
+        } else if (componentType.startsWith("offset")) {
+            setOffset(componentFields);
+        } 
     }
 
     /**
@@ -180,5 +181,11 @@ public class Builder {
 
         boolean isConstantVelocityY = getValue("constanty", valueStrings).equalsIgnoreCase("true");
         node.setYConstantVelocity(isConstantVelocityY);
+    }
+
+    private void setOffset(String[] componentFields) {
+        int xOffset = Integer.parseInt(getValue("xoffset", componentFields));
+        int yOffset = Integer.parseInt(getValue("yoffset", componentFields));
+        offset = new Vector(xOffset, yOffset);
     }
 }

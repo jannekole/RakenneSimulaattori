@@ -46,8 +46,8 @@ public class AnimationFrame extends JPanel {
         graphicNodes = new ArrayList();
         graphicBeams = new ArrayList();
 
-        xOffset = 600;
-        yOffset = -50;
+        xOffset = 10;
+        yOffset = -10;
         
         timer = newTimer();
     }

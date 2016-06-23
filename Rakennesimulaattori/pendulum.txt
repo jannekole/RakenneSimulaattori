@@ -9,12 +9,12 @@ node	7	;	x	40	;	y	0
 node	8	;	x	60	;	y	0
 node	9	;	x	80	;	y	0
 
-beam	;	a	0	;	b	1	;	L	0	;	sf	30000	;	m	5	;	sr	12000
-beam	;	a	1	;	b	2	;	L	0	;	sf	30000	;	m	5	;	sr	12000
-beam	;	a	2	;	b	3	;	L	0	;	sf	30000	;	m	5	;	sr	12000
-beam	;	a	3	;	b	4	;	L	0	;	sf	30000	;	m	5	;	sr	12000
-beam	;	a	4	;	b	5	;	L	0	;	sf	30000	;	m	5	;	sr	12000
-beam	;	a	5	;	b	6	;	L	0	;	sf	30000	;	m	5	;	sr	12000
-beam	;	a	6	;	b	7	;	L	0	;	sf	30000	;	m	5	;	sr	12000
-beam	;	a	7	;	b	8	;	L	0	;	sf	30000	;	m	5	;	sr	12000
-beam	;	a	8	;	b	9	;	L	0	;	sf	30000	;	m	5	;	sr	12000
+beam	;	a	0	;	b	1	;	length	0	;	stiffness	30000	;	mass	5	;	strength	12000
+beam	;	a	1	;	b	2	;	length	0	;	stiffness	30000	;	mass	5	;	strength	12000
+beam	;	a	2	;	b	3	;	length	0	;	stiffness	30000	;	mass	5	;	strength	12000
+beam	;	a	3	;	b	4	;	length	0	;	stiffness	30000	;	mass	5	;	strength	12000
+beam	;	a	4	;	b	5	;	length	0	;	stiffness	30000	;	mass	5	;	strength	12000
+beam	;	a	5	;	b	6	;	length	0	;	stiffness	30000	;	mass	5	;	strength	12000
+beam	;	a	6	;	b	7	;	length	0	;	stiffness	30000	;	mass	5	;	strength	12000
+beam	;	a	7	;	b	8	;	length	0	;	stiffness	30000	;	mass	5	;	strength	12000
+beam	;	a	8	;	b	9	;	length	0	;	stiffness	30000	;	mass	5	;	strength	12000
