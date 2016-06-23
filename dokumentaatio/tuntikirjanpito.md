@@ -18,6 +18,6 @@ Päivä | Tunnit | Kuvaus
 16.06.2016 | 4h | Koodin siistimistä ja javadocia
 21.06.2016 | 3h | Lisää siistimistä
 22.06.2016 | 5h | Lisää siistimistä, eroon App luokasta
-23.06.2016 | 5h | Vähänä siistimistä, Builderille testit, palautukseen tarvittavia hommia
+23.06.2016 | 8h | Vähänä siistimistä, Builderille lisäominaisuus ja testit, palautukseen tarvittavia hommia
 
 
