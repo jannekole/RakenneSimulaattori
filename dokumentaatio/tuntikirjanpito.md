@@ -16,4 +16,8 @@ Päivä | Tunnit | Kuvaus
 09.06.2016 | 5h | Lisää testejä ja koodin siistimistä
 10.06.2016 | 5h | Lisätty play/pause nappi, ja muuta pientä säätöä
 16.06.2016 | 4h | Koodin siistimistä ja javadocia
+21.06.2016 | 3h | Lisää siistimistä
+22.06.2016 | 5h | Lisää siistimistä, eroon App luokasta
+23.06.2016 | 5h | Vähänä siistimistä, Builderille testit, palautukseen tarvittavia hommia
+
 

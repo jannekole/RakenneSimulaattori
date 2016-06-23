@@ -72,7 +72,7 @@ public class Space {
     /**
      *Calculates the new state of every beam and node for the given number of times.
      * 
-     * @param steps 
+     * @param steps the amount of times to calculate the new state 
      */
     public void stepFor(int steps) {
 

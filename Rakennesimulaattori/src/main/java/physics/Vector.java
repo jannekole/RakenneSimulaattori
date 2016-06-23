@@ -18,7 +18,8 @@ public class Vector {
     private double y;
 
     /**
-     *
+     * Constructs a new two dimensional vector.
+     * 
      * @param x The horizontal position
      * @param y The vertical position
      */
@@ -43,7 +44,7 @@ public class Vector {
     }
 
     /**
-     *Gives the length of a vector (sqrt(x^2 + y^2))
+     * Gives the length of a vector (sqrt(x^2 + y^2)).
      * 
      * @return The length
      */
