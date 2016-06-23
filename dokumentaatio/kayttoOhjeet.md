@@ -44,30 +44,37 @@ beam	;	a	4	;	b	2	;	length	0	;	stiffness	300000	;	mass	5	;	strength	12000
 
 
 Rakennelman luomiseen käytttävä rivi tulee aloittaa sanalla offset, node, tai beam. Rivien parametrit annetaan kirjoittamalla avainsana, ja whitespacen (välilyönti tai tab) erottama arvo. Parametrien väliin tulee puolipiste.
-**offset**
+
+#####offset
 määrittää rakennelman sijainnin ikkunassa. Koordinaatiston origo sijaitsee tavallisesti kymmenen pikseliä ikkunan yäreunasta alas ja vasemmasta reunasta oikealle, mxoffset:n ja yoffset:n avulla sitä voi siirtää haluttuun suuntaan. offset tulee olla ennen muita osia, koska se vaikuttaa vain sen jälkeen tuleviiin rakennelman osiin. Jos offsettia ei määritellä, koordinaatistoa ei siirretä.
 
-**node**
+#####node
 määrittelee pisteen sijainnin koordinaatistossa, johon palkkeja voi kiinnittää. Jokaiselle pisteelle täytyy antaa numero sanan node jälkeen, johon palkit voivat viitata. Kahdella pisteellä ei saa olla samaa numeroa, mutta muuten ne voivat olla mitä tahansa kokonaislukuja, missä tahansa järjestyksessä.
 
 noden muut pakolliset parametrit ovat:
-x:		Pisteen x -koordinaatti.
-y:		Pisteen y -koordinaatti.	
+######x:		
+Pisteen x -koordinaatti.
+######y:		
+Pisteen y -koordinaatti.	
 
 Jos haluaa että piste pysyy simulaation aikana paikallaan (esimerkiksi rakennelman maassa kiinni oleva piste), tulee rivissä olla "constanty TRUE; constantx TRUE;". constantx:n ja constanty:n avulla asetetaan pisteen x ja y -koordinaatit vakioiksi. Halutessaan voi käyttää vain toista, jolloin piste pääsee liukumaan yhdellä akselilla.
  
-**beam**
+#####beam
 määrittelee palkkien ominaisuudet. Parametrit a ja b kertovat mihin pisteisiin palkin halutaan kiinnittyvän. A:n ja b:n arvoksi tulee antaa jonkin noden numero. Nodeen voi viitata vain jos node on jo määritelty ylemmällä rivillä. Jokaisen palkin täytyy kiinnittyä täsmälleen kahteen pisteeseen, mutta yhteen pisteeseen voi kiinnittää minkä tahansa määrän palkkeja.
 
 beamin muut parametrit ovat:
 
-**length:** 	Palkin pituus lepotilassa. Asettamalla sen arvoksi 0, ohjelma asettaa palkin pituudeksi siihen liitettyjen pisteiden etäisyyden, eli simulaation lähiessä käyntiin, palkki on lepotilassa.
+######length:
+Palkin pituus lepotilassa. Asettamalla sen arvoksi 0, ohjelma asettaa palkin pituudeksi siihen liitettyjen pisteiden etäisyyden, eli simulaation lähiessä käyntiin, palkki on lepotilassa.
 
-**stiffness:**	Palkin jäykkyys. Suurempi arvo tarkoittaa jäykempää palkkia. Jäykkyys annetaan jäykkyytenä pituuteen suhteutettuna, joten pidempi palkki puristuu tai venyy enemmän samalla jäykkyyden arvolla ja samalla rasittavalla voimalla. 
+######stiffness:
+Palkin jäykkyys. Suurempi arvo tarkoittaa jäykempää palkkia. Jäykkyys annetaan jäykkyytenä pituuteen suhteutettuna, joten pidempi palkki puristuu tai venyy enemmän samalla jäykkyyden arvolla ja samalla rasittavalla voimalla. 
 
-**mass:**		Palkin massa. Suurempi massa lisää rakennelmaan kohdistuvaa rasitusta.
+######mass:
+Palkin massa. Suurempi massa lisää rakennelmaan kohdistuvaa rasitusta.
 
-**strength:** 	Palkin maksimikuorma.
+######strength:
+Palkin maksimikuorma.
 
 
 
