@@ -53,11 +53,9 @@ määrittelee pisteen sijainnin koordinaatistossa, johon palkkeja voi kiinnittä
 
 noden muut pakolliset parametrit ovat:
 
-**x:**		
-Pisteen x -koordinaatti.
+**x:**	Pisteen x -koordinaatti.
 
-**y:**		
-Pisteen y -koordinaatti.	
+**y:** Pisteen y -koordinaatti.	
 
 Jos haluaa että piste pysyy simulaation aikana paikallaan (esimerkiksi rakennelman maassa kiinni oleva piste), tulee rivissä olla "constanty TRUE; constantx TRUE;". constantx:n ja constanty:n avulla asetetaan pisteen x ja y -koordinaatit vakioiksi. Halutessaan voi käyttää vain toista, jolloin piste pääsee liukumaan yhdellä akselilla.
  
