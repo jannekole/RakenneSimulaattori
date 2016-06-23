@@ -13,4 +13,4 @@ Open file- nappi antaa valita simuloitavan rakenteen, Play/Pause käynnistää j
 * [ Checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/jannekole/RakenneSimulaattori/blob/master/dokumentaatio/checkstyle.html) (Sisältää myös käyttöliittymän luokat kun en jostain syystä saa niitä jätettyä pois)
 * [ JavaDoc](https://htmlpreview.github.io/?https://github.com/jannekole/RakenneSimulaattori/blob/master/dokumentaatio/apidocs/index.html)
 * [ Tuntikirjanpito](https://github.com/jannekole/RakenneSimulaattori/blob/master/dokumentaatio/tuntikirjanpito.md)
-* [ Käyttöohjeet](https://github.com/jannekole/RakenneSimulaattori/blob/master/dokumentaatio/kayttoOhjeet)
+* [ Käyttöohjeet](https://github.com/jannekole/RakenneSimulaattori/blob/master/dokumentaatio/kayttoOhjeet.md)
