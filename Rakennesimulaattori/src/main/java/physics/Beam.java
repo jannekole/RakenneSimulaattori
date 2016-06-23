@@ -7,6 +7,7 @@ import java.util.ArrayList;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 /**
  * Beams behave like springs, and calculate the forces impacted on Nodes based
  * on the parameters and the distance between the two nodes.
@@ -15,36 +16,45 @@ import java.util.ArrayList;
  */
 public class Beam {
 
-    int mass;
-    double length;
-    double stiffness;
-    int strength;
-
-    double materialStiffness;
-
-    double calculatedForce;
-
-    double dampeningFactor = 0.2;
-    double dampeningFactor2 = 0; //triangle height
-    double dampeningFactor3 = 0; //triangle width newForce/oldForce
-
-    boolean isBroken;
+    private double mass;
+    private double length;
+    private double strength;
+    private double materialStiffness;
+    
+    private double calculatedForce;
+    
+    private boolean isBroken;
+    
+    private double dampeningFactor = 0.2;
+    
+    private boolean useExperimentalDampening = false;
+    
+    private double experimentalDampeningFactor1 = 0; //  triangle height
+    private double experimentalDampeningFactor2 = 0; //  triangle width newForce/oldForce
 
     ArrayList<Node> nodes;
 
     /**
-     *
+     * Constructs a Beam with the given parameters that is attached to the given Nodes. Sets the length of the beam to the distance between the Nodes.
      * @param node1 A node to attach to the Beam.
      * @param node2 A node to attach to the Beam.
-     * @param materialStiffness  
-     * @param mass
-     * @param strength
+     * @param materialStiffness The stiffness of the Beam. This parameter gives the stiffness of the material, so a longer Beam with the same materialStiffness will stretch/compress more with the same force.
+     * @param mass The mass of the Beam
+     * @param strength The maximum force that the Beam can take before breaking.
      */
-    public Beam(Node node1, Node node2, double materialStiffness, int mass, int strength) {
+    public Beam(Node node1, Node node2, double materialStiffness, double mass, double strength) {
         this(node1, node2, materialStiffness, mass, strength, 0);
     }
-
-    public Beam(Node node1, Node node2, double materialStiffness, int mass, int strength, double length) {
+    /**
+     * Constructs a Beam with the given parameters that is attached to the given Nodes.
+     * @param node1 A node to attach to the Beam.
+     * @param node2 A node to attach to the Beam.
+     * @param materialStiffness The stiffness of the Beam. This parameter gives the stiffness of the material, so a longer Beam with the same materialStiffness will stretch/compress more with the same force.
+     * @param mass The mass of the Beam
+     * @param strength The maximum force that the Beam can take before breaking.
+     * @param length Sets the length of the Beam. If set to 0, the Beam will set the length to match the distance between the attached nodes.
+     */
+    public Beam(Node node1, Node node2, double materialStiffness, double mass, double strength, double length) {
 
         this.nodes = new ArrayList();
 
@@ -68,7 +78,7 @@ public class Beam {
         }
     }
 
-    public final void addNode(Node node) {
+    private void addNode(Node node) {
         if (!nodes.contains(node) && nodes.size() < 2 && node != null) {
             nodes.add(node);
         } else {
@@ -77,65 +87,74 @@ public class Beam {
     }
 
     /**
-     *
      * @return Returns the distance between the two nodes attached to the Beam.
      */
-    public double getNodeDistance() {
-        return nodes.get(0).getPosition().distance(nodes.get(1).getPosition());
-    }
-
-    public Vector beamVector() {
-        return nodes.get(0).getPosition().subtract(nodes.get(1).getPosition());
+    private double getNodeDistance() {
+        return nodes.get(0).getPositionV().distance(nodes.get(1).getPositionV());
     }
 
     private double dampen(double newForce) {
         double oldForce = calculatedForce;
-
-        // newForce = experimentalDampen(newForce, oldForce);
-        if ((newForce - oldForce) * newForce < 0) { //  Absolute value of force is decreasing and oldForce has same sign as newForce, (Math.abs(newForce) < Math.abs(oldForce) && oldForce * newForce > 0)
+        
+        if (useExperimentalDampening) {
+            newForce = experimentalDampen(newForce, oldForce);
+        }
+        if ((newForce - oldForce) * newForce < 0) { //  Absolute value of force is decreasing and oldForce has same sign as newForce, or (Math.abs(newForce) < Math.abs(oldForce) && oldForce * newForce > 0)
             newForce = newForce * (1 - dampeningFactor);
         }
         return newForce;
     }
 
-    void calculateNewState() {
-        if (isBroken) {
-            calculatedForce = 0;
-            return;
-        }
+    /**
+     * Calculates the new state of the Beam. This updates the force of the Beam, and if the force exceeds the Beam's strength, the Beam breaks and the force is set to zero. A broken Beam always has a force of zero.
+     */
+    public void calculateNewState() {
         double newForce = materialStiffness / length * (length - this.getNodeDistance());
 
         if (Math.abs(newForce) > strength) {
             isBroken = true;
-            calculatedForce = 0;
-            return;
         }
-        calculatedForce = dampen(newForce);
+        
+        if (isBroken) {
+            calculatedForce = 0;
+        } else {
+            calculatedForce = dampen(newForce);
+        }
     }
 
     public double getForce() {
         return calculatedForce;
     }
 
+    /**
+     * Returns the force that is applied to the given node.
+     * @param node One of the Nodes that is attached to the Beam.
+     * @return The Force vector that represents the force applied by this beam.
+     */
     public Vector getForceVector(Node node) {
         if (node == nodes.get(0)) {
             return this.directionUnitVector().multiply(this.getForce());
         } else if (node == nodes.get(1)) {
             return this.directionUnitVector().multiply(this.getForce() * (-1));
+        } else {
+            throw new IllegalArgumentException("Node not in beam");
         }
-
-        throw new IllegalArgumentException("Node not in beam");
+        
     }
 
     private Vector directionUnitVector() {
-        return nodes.get(0).getPosition().subtract(nodes.get(1).getPosition()).multiply(1 / this.getNodeDistance());
+        return nodes.get(0).getPositionV().subtract(nodes.get(1).getPositionV()).multiply(1 / this.getNodeDistance());
     }
 
-    public int getMass() {
+    public double getMass() {
         return mass;
     }
 
-    public final void setMass(int mass) {
+    /**
+     * Sets the mass of the Beam.
+     * @param mass must be greater than 0.
+     */
+    public final void setMass(double mass) {
 
         if (mass > 0) {
             this.mass = mass;
@@ -169,6 +188,10 @@ public class Beam {
         return materialStiffness;
     }
 
+    /**
+     * Sets the stiffness of the Beam. 
+     * @param materialStiffness This parameter gives the stiffness of the material, so a longer Beam with the same materialStiffness will stretch/compress more with the same force. Must be greater than 0.
+     */
     public final void setMaterialStiffness(double materialStiffness) {
 
         if (materialStiffness > 0) {
@@ -178,11 +201,15 @@ public class Beam {
         }
     }
 
-    public int getStrength() {
+    public double getStrength() {
         return strength;
     }
 
-    public final void setStrength(int strength) {
+    /**
+     * Sets the strength of the Beam. 
+     * @param strength The maximum force that the Beam can withstand. Must be greater than 0.
+     */
+    public final void setStrength(double strength) {
 
         if (strength > 0) {
             this.strength = strength;
@@ -199,6 +226,10 @@ public class Beam {
         this.dampeningFactor = dampeningFactor;
     }
 
+    /**
+     * Sets the resting length of the Beam.
+     * @param length must be greater than 0
+     */
     public final void setLength(double length) {
 
         if (length > 0) {
@@ -210,7 +241,7 @@ public class Beam {
 
     private double experimentalDampen(double newForce, double oldForce) {
         if (oldForce != 0) {
-            newForce = newForce - oldForce * dampeningFactor2 * Math.min(1, Math.max(0, (1 - Math.abs(newForce) / Math.abs(oldForce) / dampeningFactor3)));
+            newForce = newForce - oldForce * experimentalDampeningFactor1 * Math.min(1, Math.max(0, (1 - Math.abs(newForce) / Math.abs(oldForce) / experimentalDampeningFactor2)));
         }
         return newForce;
     }

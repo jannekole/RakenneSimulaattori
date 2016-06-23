@@ -92,8 +92,8 @@ public class SpaceTest {
         double acceleration = force / massOnNode;
         double averageVelocity = acceleration * 0.1 / 2;
         
-        assertEquals(20 - averageVelocity * 0.1, node1.getPosition().getX(), 0.0001);
-        assertEquals(yPos, node1.getPosition().getY(), 0.0001);
+        assertEquals(20 - averageVelocity * 0.1, node1.getPositionV().getX(), 0.0001);
+        assertEquals(yPos, node1.getPositionV().getY(), 0.0001);
         
     }
     @Test
@@ -103,7 +103,7 @@ public class SpaceTest {
         
         double yPos = -10.0 * 0.1 / 2 * 0.1;
         
-        assertEquals(100, node2.getPosition().getX(), 0.0001);
-        assertEquals(yPos, node2.getPosition().getY(), 0.0001);
+        assertEquals(100, node2.getPositionV().getX(), 0.0001);
+        assertEquals(yPos, node2.getPositionV().getY(), 0.0001);
     }
 }

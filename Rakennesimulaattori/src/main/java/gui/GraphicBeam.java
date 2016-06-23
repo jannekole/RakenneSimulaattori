@@ -58,12 +58,12 @@ public class GraphicBeam {
 
     public void setCoordinates() {
        
-        x1 = (int) beam.getNodes().get(0).getPosition().getX();
-        y1 = (int) beam.getNodes().get(0).getPosition().getY();
+        x1 = (int) beam.getNodes().get(0).getPositionV().getX();
+        y1 = (int) beam.getNodes().get(0).getPositionV().getY();
         
         
-        x2 = (int) beam.getNodes().get(1).getPosition().getX();
-        y2 = (int) beam.getNodes().get(1).getPosition().getY();
+        x2 = (int) beam.getNodes().get(1).getPositionV().getX();
+        y2 = (int) beam.getNodes().get(1).getPositionV().getY();
         
         isBroken = beam.isBroken();
         

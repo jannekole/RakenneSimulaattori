@@ -1,4 +1,4 @@
-node	0	;	x	-100	;	y	0	;	constanty	true	;	constantx	true
+node	0	;	x	-100	;	y	987	;	constanty	true	;	constantx	true
 node	1	;	x	-80	;	y	0
 node	2	;	x	-60	;	y	0
 node	3	;	x	-40	;	y	0
@@ -6,10 +6,10 @@ node	4	;	x	-20	;	y	0
 node	5	;	x	0	;	y	0
 node	6	;	x	20	;	y	0
 node	7	;	x	40	;	y	0
-node	8	;	x	60	;	y	0
-node	9	;	x	80	;	y	0
+node	8	;	x	60	;	y	4321	;	constantx	false	;	constanty	true
+node	9	;	x	80	;	y	20	;	constantx	true 	;	constanty	false
 
-beam	;	a	0	;	b	1	;	L	0	;	sf	30000	;	m	5	;	sr	12000
+beam	;	a	0	;	b	1	;	L	4321	;	sf	12345	;	m	54	;	sr	789
 beam	;	a	1	;	b	2	;	L	0	;	sf	30000	;	m	5	;	sr	12000
 beam	;	a	2	;	b	3	;	L	0	;	sf	30000	;	m	5	;	sr	12000
 beam	;	a	3	;	b	4	;	L	0	;	sf	30000	;	m	5	;	sr	12000

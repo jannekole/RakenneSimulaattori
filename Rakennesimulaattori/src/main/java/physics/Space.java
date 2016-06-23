@@ -19,6 +19,9 @@ public class Space {
     ArrayList<Node> nodes;
     ArrayList<Beam> beams;
 
+    /**
+     * Constructs a new Space with the default gravity and update interval.
+     */
     public Space() {
         setGravity(9.81);
         setUpdateInterval(0.0001);
@@ -34,10 +37,18 @@ public class Space {
         this.updateInterval = updateInterval;
     }
 
+    /**
+     * Adds a Node to Space.
+     * @param node the node to be added
+     */
     public void addNode(Node node) {
         nodes.add(node);
     }
 
+    /**
+     * Adds a Beam to Space.
+     * @param beam the Beam to be added
+     */
     public void addBeam(Beam beam) {
         beams.add(beam);
     }
@@ -87,15 +98,11 @@ public class Space {
     public String toString() {
         String returnString = "";
         for (int i = 0; i < getNodes().size(); i++) {
-            Node node = getNode(i);
+            Node node = getNodes().get(i);
             returnString = returnString + "__  Node " + (i + 1) + ": " + node;
 
         }
         return returnString;
-    }
-
-    public Node getNode(int i) {
-        return nodes.get(i);
     }
 
     /**

@@ -71,14 +71,14 @@ public class NodeTest {
     @Test
     public void positionIsCorrectX() {
 
-        assertEquals(24, node1.getPosition().getX(), 0.001);
+        assertEquals(24, node1.getPositionV().getX(), 0.001);
         
     }
     
     @Test
     public void positionIsCorrectY() {
 
-        assertEquals(28, node1.getPosition().getY(), 0.001);
+        assertEquals(28, node1.getPositionV().getY(), 0.001);
         
     }    
     
@@ -86,14 +86,14 @@ public class NodeTest {
     public void positionIsCorrectAftersetPositionX() {
         Vector newPosition = new Vector(48 , 77);
         node1.setPosition(newPosition);
-        assertEquals(48, node1.getPosition().getX(), 0.001);
+        assertEquals(48, node1.getPositionV().getX(), 0.001);
         
     }
     @Test
     public void positionIsCorrectAftersetPositionY() {
         Vector newPosition = new Vector(48 , 77);
         node1.setPosition(newPosition);
-        assertEquals(77, node1.getPosition().getY(), 0.001);
+        assertEquals(77, node1.getPositionV().getY(), 0.001);
         
     }
     @Test
@@ -117,6 +117,8 @@ public class NodeTest {
         int mass = 100;
         int strength = 30;
         
+        space.setGravity(0);
+        
         Vector position3 = new Vector(120, 0);
         node3.setPosition(position3);
  
@@ -129,8 +131,8 @@ public class NodeTest {
         beam1.calculateNewState();
         beam2.calculateNewState();
       
-        assertEquals(20, node2.forceSum().x, 0.01);
-        assertEquals(10, node2.forceSum().y, 0.01);
+        assertEquals(20, node2.forceSum().getX(), 0.01);
+        assertEquals(10, node2.forceSum().getY(), 0.01);
     }
     @Test
     public void testAccelerationIsCorrect() {
@@ -138,6 +140,8 @@ public class NodeTest {
         float stiffness = 100;
         int mass = 100;
         int strength = 30;
+        
+        space.setGravity(0);
         
         Vector position3 = new Vector(120, 0);
         node3.setPosition(position3);
@@ -156,8 +160,8 @@ public class NodeTest {
         node4.calculateNewState();
         
         
-        assertEquals(20 / 65f * updateInterval, node2.getVelocityV().x, 0.0001);
-        assertEquals(10 / 65f * updateInterval, node2.getVelocityV().y, 0.0001);
+        assertEquals(20 / 65f * updateInterval, node2.getVelocityV().getX(), 0.0001);
+        assertEquals(10 / 65f * updateInterval, node2.getVelocityV().getY(), 0.0001);
         
     }
     @Test(expected = IllegalArgumentException.class)

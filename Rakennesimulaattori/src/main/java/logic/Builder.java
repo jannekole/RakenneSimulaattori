@@ -31,13 +31,14 @@ public class Builder {
     static final String VALUESEPARATOR = "\\s";    // white space
 
     /**
-     *
+     * Constructs a new Builder with the given Space.
      * @param space The Space to build the components into
      */
     public Builder(Space space) {
         this.space = space;
         this.nodes = new HashMap();
     }
+
 
     private void buildNode(String[] valueStrings) {
         double x;
@@ -128,13 +129,14 @@ public class Builder {
     }
 
     /**
-     *Builds the components given in the file 
-     * @param filename
-     * @throws IOException
+     * Builds the components given in the file.
+     * @param filePath The path of the file that contains the data on the Nodes and Beams
+     * @return The Space with Nodes and Beams loaded from file.
+     * @throws java.io.IOException If there is a problem reading the specified file or the format of the file is not correct
      */
-    public Space buildFromFile(String filename) throws IOException {
+    public Space buildFromFile(String filePath) throws IOException {
 
-        String data = stringFromFile(filename);
+        String data = stringFromFile(filePath);
         buildFromString(data);
         return space;
     }
@@ -155,13 +157,13 @@ public class Builder {
         }
     }
 
-    private String stringFromFile(String filename) throws IOException {
+    private String stringFromFile(String filePath) throws IOException {
 
         FileReader in;
 
         String data = "";
 
-        in = new FileReader(filename);
+        in = new FileReader(filePath);
         BufferedReader bufferedReader = new BufferedReader(in);
         String line;
         

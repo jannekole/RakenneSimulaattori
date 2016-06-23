@@ -16,15 +16,10 @@ import java.util.ArrayList;
  */
 public class Node {
 
-    private double gravity;
-
-
     private ArrayList<Beam> attachedBeams = new ArrayList();
 
     private Vector positionV;
     private Vector velocityV;
-
-    private Vector initialVelocityV;
 
     private boolean xConstantVelocity;
     private boolean yConstantVelocity;
@@ -32,9 +27,9 @@ public class Node {
     private Space space;
 
     /**
-     *
+     * Constructs a new Node.
      * @param position The initial position of the node.
-     * @param space The Space object where the Node gets universal parameters.
+     * @param space The Space where the Node gets universal parameters from.
      */
     public Node(Vector position, Space space) {
 
@@ -45,24 +40,17 @@ public class Node {
         if (space != null) {
             this.space = space;
         } else {
-            throw new IllegalArgumentException("space cannot be null.");
+            throw new IllegalArgumentException("Space cannot be null.");
         }
-
-        
-//        setUpdateInterval(updateInterval);
 
         this.xConstantVelocity = false;
         this.yConstantVelocity = false;
     }
-/*
-    public final void setUpdateInterval(double updateInterval) {
-        if (updateInterval > 0) {
-            this.updateInterval = updateInterval;
-        } else {
-            throw new IllegalArgumentException("UpdateInterval must be greater than 0.");
-        }
-    }
-*/
+
+    /**
+     * Sets the position of the Node.
+     * @param position the position Vector.
+     */
     public final void setPosition(Vector position) {
         if (position != null) {
             this.positionV = position;
@@ -71,57 +59,77 @@ public class Node {
         }
     }
 
-    public Vector getPosition() {
+    public Vector getPositionV() {
         return positionV;
     }
 
+    /**
+     * Adds a Beam to the Node.
+     * @param beam the Beam to be added.
+     */
     public void addBeam(Beam beam) {
-        attachedBeams.add(beam);
+        if (beam != null) {
+            attachedBeams.add(beam);
+        } else {
+            throw new IllegalArgumentException("Beam cannot be null.");
+        }        
     }
 
+    /**
+     * Sets the initial velocity of the Node. Nodes are initially stationary by default.
+     * @param initialVelocityV the velocity Vector
+     */
     public final void setInitialVelocity(Vector initialVelocityV) {
         if (initialVelocityV != null) {
-            this.initialVelocityV = initialVelocityV;
             this.velocityV = initialVelocityV;
         } else {
             throw new IllegalArgumentException("Initial velocity vector cannot be null.");
         }
     }
 
-    private Vector accelerationVector() {
-        return forceSum().multiply(1 / massSum());
+    private Vector accelerationV() {
+        Vector accelerationV = forceSum().multiply(1 / massSum());  // F = ma --> a = F/m 
+        
+        if (isXConstantVelocity()) {
+            accelerationV.setX(0);
+        }
+        if (isYConstantVelocity()) {
+            accelerationV.setY(0);
+        }        
+        
+        return accelerationV;
     }
 
     /**
-     *Calculates the new state of the Node.
+     *Calculates the new state of the Node. This updates the position and velocity vectors.
      */
     public void calculateNewState() {
 
         double updateInterval = space.getUpdateInterval();
-        Vector velocityDifferenceV = accelerationVector().multiply(updateInterval);
-        Vector averageVelocityV = velocityV.add(velocityDifferenceV.multiply(0.5));
+        
+        Vector velocityDifferenceV = accelerationV().multiply(updateInterval);          // the change in velocity is equal to acceleration multiplied by time accelerated
+        Vector averageVelocityV = velocityV.add(velocityDifferenceV.multiply(0.5));     // to calculate the position, average velocity during the interval is needed instead of the final velocity
 
-        Vector newPositionV = positionV.add(averageVelocityV.multiply(updateInterval));
+        Vector newPositionV = positionV.add(averageVelocityV.multiply(updateInterval)); 
         Vector newVelocityV = velocityV.add(velocityDifferenceV);
-
-        if (isXConstantVelocity()) {
-            newPositionV.setX(positionV.getX() + initialVelocityV.getX() * updateInterval);
-            newVelocityV.setX(0);
-        }
-        if (isYConstantVelocity()) {
-            newPositionV.setY(positionV.getY() + initialVelocityV.getY() * updateInterval);
-            newVelocityV.setY(0);
-        }
 
         positionV = newPositionV;
         velocityV = newVelocityV;
     }
 
+    /**
+     * Returns the velocity vector of the Node.
+     * @return the velocity Vector
+     */
     public Vector getVelocityV() {
         return velocityV;
     }
 
-    Vector forceSum() {
+    /**
+     * Returns the sum of all forces (including gravitational) applied on to the Node. 
+     * @return the sum of all forces
+     */
+    public Vector forceSum() {
         Vector sum = new Vector(0, 0);
         for (Beam beam : attachedBeams) {
             sum = sum.add(beam.getForceVector(this));
@@ -130,22 +138,26 @@ public class Node {
         return sum;
     }
 
+    /**
+     * Returns half of the sum of the masses of the beams that are connected to the Node. Only half is returned because the other half of the Beam's mass is counted towards the Node at the other end. 
+     * @return the mass
+     */
     public double massSum() {
         int sum = 0;
         for (Beam beam : attachedBeams) {
             sum += beam.getMass();
         }
-        return sum / 2;     //mass is halved because only one end of the beam is taken into account
+        return sum / 2;
     }
 
     private Vector gravityForce() {
-        double gravityF = - space.getGravity()* massSum();
+        double gravityF = -space.getGravity() * massSum();
         return new Vector(0, gravityF);
     }
 
     @Override
     public String toString() {
-        return "position: " + getPosition().toString() + "  speed: " + getVelocityV().toString() + " acc: " + accelerationVector().toString() + " ";
+        return "position: " + getPositionV().toString() + "  speed: " + getVelocityV().toString() + " acc: " + accelerationV().toString() + " ";
     }
 
     public boolean isXConstantVelocity() {

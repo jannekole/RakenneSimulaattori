@@ -14,8 +14,8 @@ import java.text.DecimalFormat;
  */
 public class Vector {
 
-    double x;
-    double y;
+    private double x;
+    private double y;
 
     /**
      *

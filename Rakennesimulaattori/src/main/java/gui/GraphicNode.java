@@ -51,8 +51,8 @@ public class GraphicNode {
 
     public void setCoordinates() {
        
-        x = (int) node.getPosition().getX();
-        y = (int) node.getPosition().getY();        
+        x = (int) node.getPositionV().getX();
+        y = (int) node.getPositionV().getY();        
     }
     
     public int getX() {

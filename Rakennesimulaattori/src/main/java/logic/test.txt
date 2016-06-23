@@ -1,8 +1,0 @@
-node 1;x 100;y 150;
-node 2;x 0;  y 100;
-node 3;x 100;y 0;  
-
-beam; a 1; b 2; l 120; sf 2000; m 5; sr 8000;  
-beam;a 3; b 2; l 120; sf 2000; m 5; sr 8000;
-beam; a 1 ;b 3; l 120; sf 2000; m 5; sr 8000;
-
