@@ -1,3 +1,5 @@
+offset ; xoffset 400; yoffset 0
+
 node	0	;	x	15	;	y	-790;	constanty	TRUE	;	constantx	TRUE
 node	1	;	x	0	;	y	-800;	constanty	TRUE	;	constantx	TRUE
 node	2	;	x	1	;	y	-780

@@ -24,7 +24,6 @@ Kun Space on siirtynyt askelten määrän eteenpäin, piirtää AnimationFrame j
 Monien muuttujien laskemiseen ja säilömiseen käytetään Vector luokan vektorilaskuja.
 
 
-
 **Luokkakaavio:**
 
 ![](/dokumentaatio/luokkakaavio.png)

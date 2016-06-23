@@ -4,7 +4,7 @@ Rakennesimulaattorilla voi simuloida palkeista tehtyjä rakenteita.
 
 ##Ohjelman käyttö
 
-**Open file** -napilla voidaan valita tiedosto josta rakennelma ladataan. Kansiosta Rakennesimulaattori pitäisi löytyä joitain .txt -päätteisiä rakennelmia joita voi kokeilla.
+**Open file** -napilla voidaan valita tiedosto josta rakennelma ladataan. Kansiosta "valmiitRakenteet" pitäisi löytyä joitain .txt -päätteisiä rakennelmia joita voi kokeilla.
 
 **Reload** -nappi lataa aikaisemmin ladatun tiedoston uudestaan.
 
@@ -76,7 +76,7 @@ Palkin massa. Suurempi massa lisää rakennelmaan kohdistuvaa rasitusta.
 ######strength:
 Palkin maksimikuorma.
 
-Jos tiedostossa on virhe, esimerkiksi jos massa on nolla tai beam viittaa nodeen jota ei ole olemassa, ohjelma ilmoittaa virheen tyypistä ja millä rivillä virhe on.
+Jos tiedostossa on virhe, esimerkiksi jos massa on nolla tai beam viittaa nodeen jota ei ole olemassa, ohjelma ilmoittaa virheen tyypistä ja millä rivillä virhe on. Tätä voi kokeilla esimerkiksi tiedostolla test_error.txt
 
 
 

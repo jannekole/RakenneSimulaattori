@@ -93,7 +93,7 @@ public class Gui extends javax.swing.JFrame {
                 drawPanel.pause();
             }
         });
-        jTextField1.setText("5");
+        jTextField1.setText("5000");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(drawPanel);
         drawPanel.setLayout(jPanel1Layout);
