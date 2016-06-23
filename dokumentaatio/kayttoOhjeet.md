@@ -1,4 +1,4 @@
-#Käyttöohjeet
+﻿#Käyttöohjeet
 
 Rakennesimulaattorilla voi simuloida palkeista tehtyjä rakenteita. 
 
@@ -10,7 +10,7 @@ Rakennesimulaattorilla voi simuloida palkeista tehtyjä rakenteita.
 
 **Play/Pause** -nappi käynnistää ja pysäyttää simuloinnin.
 
-**Step forward** -nappi siirtää simulointia annetun askelmäärän eteenpäin.
+**Step forward** -nappi siirtää simulointia annetun askelmäärän eteenpäin. Jos ei ole numero, ohjelma ei tee mitään.
 
 
 ##Rakennelmien tiedostoformaatti
@@ -75,6 +75,8 @@ Palkin massa. Suurempi massa lisää rakennelmaan kohdistuvaa rasitusta.
 
 ######strength:
 Palkin maksimikuorma.
+
+Jos tiedostossa on virhe, esimerkiksi jos massa on nolla tai beam viittaa nodeen jota ei ole olemassa, ohjelma ilmoittaa virheen tyypistä ja millä rivillä virhe on.
 
 
 
