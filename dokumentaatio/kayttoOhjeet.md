@@ -52,8 +52,10 @@ määrittää rakennelman sijainnin ikkunassa. Koordinaatiston origo sijaitsee t
 määrittelee pisteen sijainnin koordinaatistossa, johon palkkeja voi kiinnittää. Jokaiselle pisteelle täytyy antaa numero sanan node jälkeen, johon palkit voivat viitata. Kahdella pisteellä ei saa olla samaa numeroa, mutta muuten ne voivat olla mitä tahansa kokonaislukuja, missä tahansa järjestyksessä.
 
 noden muut pakolliset parametrit ovat:
+
 **x:**		
 Pisteen x -koordinaatti.
+
 **y:**		
 Pisteen y -koordinaatti.	
 
