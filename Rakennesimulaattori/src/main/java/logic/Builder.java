@@ -16,6 +16,8 @@ import physics.Node;
 import physics.Space;
 import physics.Vector;
 
+
+
 /**
  * A class to build structures based on user generated text documents.
  *
@@ -28,7 +30,7 @@ public class Builder {
 
     static final String COMPONENTSEPARATOR = "\n"; // new line
     static final String FIELDSEPARATOR = ";";
-    static final String VALUESEPARATOR = "\\s";    // white space
+    static final String VALUESEPARATOR = "\\s+";    // white space
     private Vector offset;
 
     /**
@@ -45,12 +47,20 @@ public class Builder {
     private void buildNode(String[] valueStrings) {
         double x;
         double y;
+        double z = 0;
+        
         Vector position;
 
         x = Double.parseDouble(getValue("x", valueStrings));
         y = Double.parseDouble(getValue("y", valueStrings));
+        
+        String zString = getValue("z", valueStrings);
+        
+        if (!zString.equals("")) {
+            z = Double.parseDouble(zString);
+        }
 
-        position = new Vector(x, y).add(offset);
+        position = new Vector(x, y, z).add(offset);
 
         String nodeName = getValue("node", valueStrings);
         Node node = new Node(position, space);

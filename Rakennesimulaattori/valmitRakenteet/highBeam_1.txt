@@ -1,7 +1,7 @@
 offset ; xoffset 50; yoffset 400
 
-node	0	;	x	15	;	y	-790;	constantx true; constanty true
-node	1	;	x	0	;	y	-800;	constantx true; constanty true	
+node	0	;	x	15	;	y	-790;	constantx true; Aconstanty true
+node	1	;	x	0	;	y	-800;	constantx true; Aconstanty true	
 node	2	;	x	0	;	y	-780
 node	3	;	x	0	;	y	-760
 node	4	;	x	0	;	y	-740
@@ -40,7 +40,7 @@ node	36	;	x	0	;	y	-100
 node	37	;	x	0	;	y	-80
 node	38	;	x	0	;	y	-60
 node	39	;	x	0	;	y	-40
-node	40	;	x	0	;	y	-20 
+node	40	;	x	0	;	y	-20 ; z 1
 							
 node	42	;	x	15	;	y	-770
 node	43	;	x	15	;	y	-750

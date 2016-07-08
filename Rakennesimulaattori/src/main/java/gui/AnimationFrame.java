@@ -24,7 +24,7 @@ import physics.Space;
 
 public class AnimationFrame extends JPanel {
 
-    float speedMultiplier = 5;
+    double speedMultiplier = 10;
 
     ArrayList<GraphicNode> graphicNodes;
     ArrayList<GraphicBeam> graphicBeams;
@@ -94,7 +94,7 @@ public class AnimationFrame extends JPanel {
 
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(1000, 900);
+        return new Dimension(1000, 500);
     }
 
     @Override

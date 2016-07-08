@@ -35,7 +35,7 @@ public class Node {
 
         setPosition(position);
 
-        setInitialVelocity(new Vector(0, 0));
+        setInitialVelocity(new Vector(0, 0, 0));
         
         if (space != null) {
             this.space = space;
@@ -130,7 +130,7 @@ public class Node {
      * @return the sum of all forces
      */
     public Vector forceSum() {
-        Vector sum = new Vector(0, 0);
+        Vector sum = new Vector(0, 0, 0);
         for (Beam beam : attachedBeams) {
             sum = sum.add(beam.getForceVector(this));
         }
@@ -152,7 +152,7 @@ public class Node {
 
     private Vector gravityForce() {
         double gravityF = -space.getGravity() * massSum();
-        return new Vector(0, gravityF);
+        return new Vector(0, gravityF, 0);
     }
 
     @Override

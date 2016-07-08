@@ -16,6 +16,7 @@ public class Vector {
 
     private double x;
     private double y;
+    private double z;
 
     /**
      * Constructs a new two dimensional vector.
@@ -26,8 +27,16 @@ public class Vector {
     public Vector(double x, double y) {
         this.x = x;
         this.y = y;
+        this.z = 0;
+    }
+    
+    public Vector(double x, double y, double z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
     }
 
+    
     public double getX() {
         return x;
     }
@@ -36,11 +45,19 @@ public class Vector {
         return y;
     }
 
+    public double getZ() {
+        return z;
+    }
+
+    public void setZ(double z) {
+        this.z = z;
+    }
+
     @Override
     public String toString() {
         DecimalFormat df = new DecimalFormat("00.0000");
 
-        return "x: " + df.format(x) + "; y: " + df.format(y) + "";
+        return "x: " + df.format(x) + "; y: " + df.format(y) + "; z: " + df.format(z) + "";
     }
 
     /**
@@ -49,7 +66,9 @@ public class Vector {
      * @return The length
      */
     public double length() {
-        return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+        return Math.sqrt(x * x + y * y /* + z * z*/);
+//        return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
+        
     }
 
     /**
@@ -69,7 +88,7 @@ public class Vector {
      * @return The resulting vector.
      */
     public Vector add(Vector otherV) {
-        return new Vector(x + otherV.getX(), y + otherV.getY());
+        return new Vector(x + otherV.getX(), y + otherV.getY()/*, z + otherV.getZ()*/);
     }
 
     /**
@@ -79,7 +98,7 @@ public class Vector {
      * @return The resulting vector.
      */
     public Vector subtract(Vector otherV) {
-        return new Vector(x - otherV.getX(), y - otherV.getY());
+        return new Vector(x - otherV.getX(), y - otherV.getY()/*, z - otherV.getZ()*/);
     }
 
     /**
@@ -89,7 +108,7 @@ public class Vector {
      * @return The resulting vector.
      */
     public Vector multiply(double scalar) {
-        return new Vector(this.x * scalar, this.y * scalar);
+        return new Vector(this.x * scalar, this.y * scalar/*, this.z * scalar*/);
     }
 
     public void setX(double x) {
