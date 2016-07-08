@@ -4,7 +4,7 @@ Rakennesimulaattorilla voi simuloida palkeista tehtyjä rakenteita.
 
 ##Ohjelman käyttö
 
-**Open file** -napilla voidaan valita tiedosto josta rakennelma ladataan. Kansiosta "valmiitRakenteet" pitäisi löytyä joitain .txt -päätteisiä rakennelmia joita voi kokeilla.
+**Open file** -napilla voidaan valita tiedosto josta rakennelma ladataan. Kansiosta "Rakennesimulaattori/valmiitRakenteet/" pitäisi löytyä joitain tiedostoja joita voi kokeilla.
 
 **Reload** -nappi lataa aikaisemmin ladatun tiedoston uudestaan.
 
@@ -52,10 +52,10 @@ määrittää rakennelman sijainnin ikkunassa. Koordinaatiston origo sijaitsee t
 määrittelee pisteen sijainnin koordinaatistossa, johon palkkeja voi kiinnittää. Jokaiselle pisteelle täytyy antaa numero sanan node jälkeen, johon palkit voivat viitata. Kahdella pisteellä ei saa olla samaa numeroa, mutta muuten ne voivat olla mitä tahansa kokonaislukuja, missä tahansa järjestyksessä.
 
 noden muut pakolliset parametrit ovat:
-######x:		
-Pisteen x -koordinaatti.
-######y:		
-Pisteen y -koordinaatti.	
+
+**x:**	Pisteen x -koordinaatti.
+
+**y:** Pisteen y -koordinaatti.	
 
 Jos haluaa että piste pysyy simulaation aikana paikallaan (esimerkiksi rakennelman maassa kiinni oleva piste), tulee rivissä olla "constanty TRUE; constantx TRUE;". constantx:n ja constanty:n avulla asetetaan pisteen x ja y -koordinaatit vakioiksi. Halutessaan voi käyttää vain toista, jolloin piste pääsee liukumaan yhdellä akselilla.
  
@@ -64,17 +64,16 @@ määrittelee palkkien ominaisuudet. Parametrit a ja b kertovat mihin pisteisiin
 
 beamin muut parametrit ovat:
 
-######length:
+**length:**
 Palkin pituus lepotilassa. Asettamalla sen arvoksi 0, ohjelma asettaa palkin pituudeksi siihen liitettyjen pisteiden etäisyyden, eli simulaation lähiessä käyntiin, palkki on lepotilassa.
 
-######stiffness:
+**stiffness:**
 Palkin jäykkyys. Suurempi arvo tarkoittaa jäykempää palkkia. Jäykkyys annetaan jäykkyytenä pituuteen suhteutettuna, joten pidempi palkki puristuu tai venyy enemmän samalla jäykkyyden arvolla ja samalla rasittavalla voimalla. 
 
-######mass:
+**mass:**
 Palkin massa. Suurempi massa lisää rakennelmaan kohdistuvaa rasitusta.
 
-######strength:
-Palkin maksimikuorma.
+**strength:**  Palkin maksimikuorma.
 
 Jos tiedostossa on virhe, esimerkiksi jos massa on nolla tai beam viittaa nodeen jota ei ole olemassa, ohjelma ilmoittaa virheen tyypistä ja millä rivillä virhe on. Tätä voi kokeilla esimerkiksi tiedostolla test_error.txt
 
