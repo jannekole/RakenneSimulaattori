@@ -412,29 +412,7 @@ public class MoleculeSampleApp extends Application {
         }
     }
     
-    private Timer newTimer() {
 
-        int frameRate = 50;
-
-        
-        int delay = 1000 / frameRate;
-        int speedMultiplier = 5;
-        
-        final int calculationsPerFrame = (int) (speedMultiplier / space.getUpdateInterval() * delay / 1000);
-
-        ActionListener taskPerformer = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-
-                space.stepFor(calculationsPerFrame);
-                
-                refresh();
-            }
-        };
-
-        Timer timer = new Timer(delay, taskPerformer);
-        return timer;
-    }
 
     /**
      * The main() method is ignored in correctly deployed JavaFX application.

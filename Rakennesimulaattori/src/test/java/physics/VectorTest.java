@@ -83,7 +83,7 @@ public class VectorTest {
     public void vectorToString() {
         Vector vector1 = new Vector(3, 3);
         
-        assertEquals("x: 03,0000; y: 03,0000", vector1.toString());
+        assertEquals("x: 03,0000; y: 03,0000; z: 00,0000", vector1.toString());
     }    
     
 }
