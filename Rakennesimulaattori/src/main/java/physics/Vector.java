@@ -66,8 +66,8 @@ public class Vector {
      * @return The length
      */
     public double length() {
-        return Math.sqrt(x * x + y * y /* + z * z*/);
-//        return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
+        return Math.sqrt(x * x + y * y + z * z);
+//        return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2)); //a LOT worse performance
         
     }
 
@@ -88,7 +88,7 @@ public class Vector {
      * @return The resulting vector.
      */
     public Vector add(Vector otherV) {
-        return new Vector(x + otherV.getX(), y + otherV.getY()/*, z + otherV.getZ()*/);
+        return new Vector(x + otherV.getX(), y + otherV.getY(), z + otherV.getZ());
     }
 
     /**
@@ -98,7 +98,8 @@ public class Vector {
      * @return The resulting vector.
      */
     public Vector subtract(Vector otherV) {
-        return new Vector(x - otherV.getX(), y - otherV.getY()/*, z - otherV.getZ()*/);
+        return new Vector(x - otherV.getX(), y - otherV.getY(), z - otherV.getZ());
+//        return this.add(otherV.multiply(-1));        //worse performance
     }
 
     /**
@@ -108,7 +109,7 @@ public class Vector {
      * @return The resulting vector.
      */
     public Vector multiply(double scalar) {
-        return new Vector(this.x * scalar, this.y * scalar/*, this.z * scalar*/);
+        return new Vector(this.x * scalar, this.y * scalar, this.z * scalar);
     }
 
     public void setX(double x) {

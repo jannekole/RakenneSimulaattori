@@ -8,6 +8,7 @@ package threeD;
 import javafx.geometry.Point3D;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
+import javafx.scene.shape.Box;
 import javafx.scene.shape.Cylinder;
 import javafx.scene.transform.Rotate;
 import javafx.scene.transform.Translate;
@@ -20,6 +21,7 @@ import physics.Beam;
 public class Beam3D {
     Beam beam;
     Cylinder beamCylinder;
+    Box beamBox;
     
     public Beam3D(Beam beam, Xform world) {
         this.beam = beam;
@@ -27,8 +29,10 @@ public class Beam3D {
         final PhongMaterial greyMaterial = new PhongMaterial();
         greyMaterial.setDiffuseColor(Color.DARKGREY);
         greyMaterial.setSpecularColor(Color.GREY);
-        beamCylinder = new Cylinder(1, 0);
-        world.getChildren().add(beamCylinder);
+        //beamCylinder = new Cylinder(1, 0, 4);
+        beamBox = new Box(1, 1, 1);
+
+        world.getChildren().add(beamBox);
     }
 
     public void refresh() {
@@ -66,9 +70,9 @@ public class Beam3D {
 
         
         
-        beamCylinder.setHeight(height);
-        beamCylinder.getTransforms().clear();
-        beamCylinder.getTransforms().addAll(moveToMidpoint, rotateAroundCenter);
+        beamBox.setHeight(height);
+        beamBox.getTransforms().clear();
+        beamBox.getTransforms().addAll(moveToMidpoint, rotateAroundCenter);
 
 
 }

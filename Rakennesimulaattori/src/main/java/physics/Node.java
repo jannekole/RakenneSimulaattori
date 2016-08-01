@@ -23,6 +23,7 @@ public class Node {
 
     private boolean xConstantVelocity;
     private boolean yConstantVelocity;
+    private boolean zConstantVelocity;
     
     private Space space;
 
@@ -45,6 +46,7 @@ public class Node {
 
         this.xConstantVelocity = false;
         this.yConstantVelocity = false;
+        this.zConstantVelocity = false;
     }
 
     /**
@@ -96,7 +98,9 @@ public class Node {
         if (isYConstantVelocity()) {
             accelerationV.setY(0);
         }        
-        
+        if (isZConstantVelocity()) {
+            accelerationV.setZ(0);
+        }   
         return accelerationV;
     }
 
@@ -114,7 +118,7 @@ public class Node {
         Vector newVelocityV = velocityV.add(velocityDifferenceV);
 
         positionV = newPositionV;
-        velocityV = newVelocityV;
+        velocityV = newVelocityV.multiply(1-(0.01 * updateInterval));
     }
 
     /**
@@ -174,5 +178,13 @@ public class Node {
 
     public void setYConstantVelocity(boolean yConstantVelocity) {
         this.yConstantVelocity = yConstantVelocity;
+    }
+
+    public boolean isZConstantVelocity() {
+        return zConstantVelocity;
+    }
+
+    public void setZConstantVelocity(boolean zconstantVelocity) {
+        this.zConstantVelocity = zconstantVelocity;
     }
 }

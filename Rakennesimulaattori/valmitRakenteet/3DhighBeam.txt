@@ -1,0 +1,1002 @@
+																																																																																											
+																																																																																											
+node	1	;	x	0	;	y	-400			;		constantx TRUE	;			constanty TRUE	;		constantz TRUE																																																																										
+node	2	;	x	0	;	y	-380																																																																																				
+node	3	;	x	0	;	y	-360																																																																																				
+node	4	;	x	0	;	y	-340																																																																																				
+node	5	;	x	0	;	y	-320																																																																																				
+node	6	;	x	0	;	y	-300																																																																																				
+node	7	;	x	0	;	y	-280																																																																																				
+node	8	;	x	0	;	y	-260																																																																																				
+node	9	;	x	0	;	y	-240																																																																																				
+node	10	;	x	0	;	y	-220																																																																																				
+node	11	;	x	0	;	y	-200																																																																																				
+node	12	;	x	0	;	y	-180																																																																																				
+node	13	;	x	0	;	y	-160																																																																																				
+node	14	;	x	0	;	y	-140																																																																																				
+node	15	;	x	0	;	y	-120																																																																																				
+node	16	;	x	0	;	y	-100																																																																																				
+node	17	;	x	0	;	y	-80																																																																																				
+node	18	;	x	0	;	y	-60																																																																																				
+node	19	;	x	0	;	y	-40																																																																																				
+node	20	;	x	0	;	y	-20																																																																																				
+node	21	;	x	0	;	y	0																																																																																				
+node	22	;	x	0	;	y	20																																																																																				
+node	23	;	x	0	;	y	40																																																																																				
+node	24	;	x	0	;	y	60																																																																																				
+node	25	;	x	0	;	y	80																																																																																				
+node	26	;	x	0	;	y	100																																																																																				
+node	27	;	x	0	;	y	120																																																																																				
+node	28	;	x	0	;	y	140																																																																																				
+node	29	;	x	0	;	y	160																																																																																				
+node	30	;	x	0	;	y	180																																																																																				
+node	31	;	x	0	;	y	200																																																																																				
+node	32	;	x	0	;	y	220																																																																																				
+node	33	;	x	0	;	y	240																																																																																				
+node	34	;	x	0	;	y	260																																																																																				
+node	35	;	x	0	;	y	280																																																																																				
+node	36	;	x	0	;	y	300																																																																																				
+node	37	;	x	0	;	y	320																																																																																				
+node	38	;	x	0	;	y	340																																																																																				
+node	39	;	x	0	;	y	360																																																																																				
+node	40	;	x	0	;	y	380																																																																																				
+										2																																																																																	
+																																																																																											
+node	41	;	x	20	;	y	-400			;		constantx TRUE	;			constanty TRUE		;		constantz TRUE																																																																										
+node	42	;	x	20	;	y	-380																																																																																				
+node	43	;	x	20	;	y	-360																																																																																				
+node	44	;	x	20	;	y	-340																																																																																				
+node	45	;	x	20	;	y	-320																																																																																				
+node	46	;	x	20	;	y	-300																																																																																				
+node	47	;	x	20	;	y	-280																																																																																				
+node	48	;	x	20	;	y	-260																																																																																				
+node	49	;	x	20	;	y	-240																																																																																				
+node	50	;	x	20	;	y	-220																																																																																				
+node	51	;	x	20	;	y	-200																																																																																				
+node	52	;	x	20	;	y	-180																																																																																				
+node	53	;	x	20	;	y	-160																																																																																				
+node	54	;	x	20	;	y	-140																																																																																				
+node	55	;	x	20	;	y	-120																																																																																				
+node	56	;	x	20	;	y	-100																																																																																				
+node	57	;	x	20	;	y	-80																																																																																				
+node	58	;	x	20	;	y	-60																																																																																				
+node	59	;	x	20	;	y	-40																																																																																				
+node	60	;	x	20	;	y	-20																																																																																				
+node	61	;	x	20	;	y	0																																																																																				
+node	62	;	x	20	;	y	20																																																																																				
+node	63	;	x	20	;	y	40																																																																																				
+node	64	;	x	20	;	y	60																																																																																				
+node	65	;	x	20	;	y	80																																																																																				
+node	66	;	x	20	;	y	100																																																																																				
+node	67	;	x	20	;	y	120																																																																																				
+node	68	;	x	20	;	y	140																																																																																				
+node	69	;	x	20	;	y	160																																																																																				
+node	70	;	x	20	;	y	180																																																																																				
+node	71	;	x	20	;	y	200																																																																																				
+node	72	;	x	20	;	y	220																																																																																				
+node	73	;	x	20	;	y	240																																																																																				
+node	74	;	x	20	;	y	260																																																																																				
+node	75	;	x	20	;	y	280																																																																																				
+node	76	;	x	20	;	y	300																																																																																				
+node	77	;	x	20	;	y	320			dia1																																																																																	
+node	78	;	x	20	;	y	340																																																																																				
+node	79	;	x	20	;	y	360																																																																																				
+node	80	;	x	20	;	y	380																																																																																				
+																																																																																											
+node	81	;	x	10	;	y	-380	;	z	14.142			;		constantx TRUE	;			constanty TRUE	;		constantz TRUE																																																																								
+node	82	;	x	10	;	y	-360	;	z	14.142																																																																																	
+node	83	;	x	10	;	y	-340	;	z	14.142																																																																																	
+node	84	;	x	10	;	y	-320	;	z	14.142																																																																																	
+node	85	;	x	10	;	y	-300	;	z	14.142																																																																																	
+node	86	;	x	10	;	y	-280	;	z	14.142																																																																																	
+node	87	;	x	10	;	y	-260	;	z	14.142																																																																																	
+node	88	;	x	10	;	y	-240	;	z	14.142																																																																																	
+node	89	;	x	10	;	y	-220	;	z	14.142																																																																																	
+node	90	;	x	10	;	y	-200	;	z	14.142																																																																																	
+node	91	;	x	10	;	y	-180	;	z	14.142																																																																																	
+node	92	;	x	10	;	y	-160	;	z	14.142																																																																																	
+node	93	;	x	10	;	y	-140	;	z	14.142																																																																																	
+node	94	;	x	10	;	y	-120	;	z	14.142																																																																																	
+node	95	;	x	10	;	y	-100	;	z	14.142																																																																																	
+node	96	;	x	10	;	y	-80	;	z	14.142																																																																																	
+node	97	;	x	10	;	y	-60	;	z	14.142																																																																																	
+node	98	;	x	10	;	y	-40	;	z	14.142																																																																																	
+node	99	;	x	10	;	y	-20	;	z	14.142																																																																																	
+node	100	;	x	10	;	y	0	;	z	14.142																																																																																	
+node	101	;	x	10	;	y	20	;	z	14.142																																																																																	
+node	102	;	x	10	;	y	40	;	z	14.142																																																																																	
+node	103	;	x	10	;	y	60	;	z	14.142																																																																																	
+node	104	;	x	10	;	y	80	;	z	14.142																																																																																	
+node	105	;	x	10	;	y	100	;	z	14.142																																																																																	
+node	106	;	x	10	;	y	120	;	z	14.142																																																																																	
+node	107	;	x	10	;	y	140	;	z	14.142																																																																																	
+node	108	;	x	10	;	y	160	;	z	14.142																																																																																	
+node	109	;	x	10	;	y	180	;	z	14.142																																																																																	
+node	110	;	x	10	;	y	200	;	z	14.142																																																																																	
+node	111	;	x	10	;	y	220	;	z	14.142																																																																																	
+node	112	;	x	10	;	y	240	;	z	14.142																																																																																	
+node	113	;	x	10	;	y	260	;	z	14.142																																																																																	
+node	114	;	x	10	;	y	280	;	z	14.142																																																																																	
+node	115	;	x	10	;	y	300	;	z	14.142																																																																																	
+node	116	;	x	10	;	y	320	;	z	14.142																																																																																	
+node	117	;	x	10	;	y	340	;	z	14.142																																																																																	
+node	118	;	x	10	;	y	360	;	z	14.142																																																																																	
+node	119	;	x	10	;	y	380	;	z	14.142																																																																																	
+node	120	;	x	10	;	y	400	;	z	14.142																																																																																	
+																																																																																											
+											up																																																																																
+												beam	;	a	1	;	b	2	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	2	;	b	3	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	3	;	b	4	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	4	;	b	5	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	5	;	b	6	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	6	;	b	7	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	7	;	b	8	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	8	;	b	9	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	9	;	b	10	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	10	;	b	11	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	11	;	b	12	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	12	;	b	13	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	13	;	b	14	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	14	;	b	15	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	15	;	b	16	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	16	;	b	17	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	17	;	b	18	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	18	;	b	19	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	19	;	b	20	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	20	;	b	21	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	21	;	b	22	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	22	;	b	23	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	23	;	b	24	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	24	;	b	25	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	25	;	b	26	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	26	;	b	27	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	27	;	b	28	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	28	;	b	29	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	29	;	b	30	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	30	;	b	31	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	31	;	b	32	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	32	;	b	33	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	33	;	b	34	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	34	;	b	35	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	35	;	b	36	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	36	;	b	37	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	37	;	b	38	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	38	;	b	39	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	39	;	b	40	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+																																																																																											
+																																																																																											
+																																																																																											
+												beam	;	a	41	;	b	42	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	42	;	b	43	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	43	;	b	44	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	44	;	b	45	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	45	;	b	46	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	46	;	b	47	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	47	;	b	48	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	48	;	b	49	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	49	;	b	50	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	50	;	b	51	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	51	;	b	52	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	52	;	b	53	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	53	;	b	54	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	54	;	b	55	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	55	;	b	56	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	56	;	b	57	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	57	;	b	58	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	58	;	b	59	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	59	;	b	60	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	60	;	b	61	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	61	;	b	62	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	62	;	b	63	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	63	;	b	64	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	64	;	b	65	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	65	;	b	66	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	66	;	b	67	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	67	;	b	68	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	68	;	b	69	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	69	;	b	70	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	70	;	b	71	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	71	;	b	72	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	72	;	b	73	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	73	;	b	74	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	74	;	b	75	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	75	;	b	76	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	76	;	b	77	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	77	;	b	78	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	78	;	b	79	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	79	;	b	80	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+																																																																																											
+																																																																																											
+												beam	;	a	81	;	b	82	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	82	;	b	83	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	83	;	b	84	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	84	;	b	85	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	85	;	b	86	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	86	;	b	87	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	87	;	b	88	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	88	;	b	89	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	89	;	b	90	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	90	;	b	91	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	91	;	b	92	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	92	;	b	93	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	93	;	b	94	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	94	;	b	95	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	95	;	b	96	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	96	;	b	97	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	97	;	b	98	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	98	;	b	99	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	99	;	b	100	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	100	;	b	101	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	101	;	b	102	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	102	;	b	103	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	103	;	b	104	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	104	;	b	105	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	105	;	b	106	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	106	;	b	107	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	107	;	b	108	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	108	;	b	109	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	109	;	b	110	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	110	;	b	111	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	111	;	b	112	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	112	;	b	113	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	113	;	b	114	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	114	;	b	115	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	115	;	b	116	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	116	;	b	117	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	117	;	b	118	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	118	;	b	119	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	119	;	b	120	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+																																																																																											
+																																																																																											
+																																																																																											
+											1:2																																																																																
+												beam	;	a	1	;	b	41	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	2	;	b	42	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	3	;	b	43	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	4	;	b	44	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	5	;	b	45	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	6	;	b	46	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	7	;	b	47	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	8	;	b	48	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	9	;	b	49	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	10	;	b	50	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	11	;	b	51	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	12	;	b	52	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	13	;	b	53	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	14	;	b	54	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	15	;	b	55	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	16	;	b	56	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	17	;	b	57	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	18	;	b	58	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	19	;	b	59	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	20	;	b	60	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	21	;	b	61	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	22	;	b	62	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	23	;	b	63	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	24	;	b	64	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	25	;	b	65	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	26	;	b	66	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	27	;	b	67	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	28	;	b	68	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	29	;	b	69	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	30	;	b	70	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	31	;	b	71	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	32	;	b	72	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	33	;	b	73	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	34	;	b	74	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	35	;	b	75	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	36	;	b	76	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	37	;	b	77	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	38	;	b	78	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	39	;	b	79	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	40	;	b	80	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+																																																																																											
+																																																																																											
+												beam	;	a	2	;	b	41	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	3	;	b	42	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	4	;	b	43	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	5	;	b	44	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	6	;	b	45	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	7	;	b	46	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	8	;	b	47	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	9	;	b	48	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	10	;	b	49	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	11	;	b	50	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	12	;	b	51	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	13	;	b	52	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	14	;	b	53	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	15	;	b	54	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	16	;	b	55	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	17	;	b	56	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	18	;	b	57	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	19	;	b	58	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	20	;	b	59	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	21	;	b	60	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	22	;	b	61	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	23	;	b	62	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	24	;	b	63	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	25	;	b	64	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	26	;	b	65	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	27	;	b	66	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	28	;	b	67	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	29	;	b	68	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	30	;	b	69	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	31	;	b	70	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	32	;	b	71	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	33	;	b	72	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	34	;	b	73	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	35	;	b	74	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	36	;	b	75	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	37	;	b	76	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	38	;	b	77	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	39	;	b	78	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	40	;	b	79	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+																																																																																											
+											1:3																																																																																
+												beam	;	a	1	;	b	81	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	2	;	b	82	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	3	;	b	83	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	4	;	b	84	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	5	;	b	85	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	6	;	b	86	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	7	;	b	87	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	8	;	b	88	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	9	;	b	89	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	10	;	b	90	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	11	;	b	91	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	12	;	b	92	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	13	;	b	93	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	14	;	b	94	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	15	;	b	95	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	16	;	b	96	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	17	;	b	97	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	18	;	b	98	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	19	;	b	99	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	20	;	b	100	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	21	;	b	101	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	22	;	b	102	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	23	;	b	103	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	24	;	b	104	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	25	;	b	105	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	26	;	b	106	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	27	;	b	107	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	28	;	b	108	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	29	;	b	109	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	30	;	b	110	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	31	;	b	111	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	32	;	b	112	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	33	;	b	113	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	34	;	b	114	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	35	;	b	115	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	36	;	b	116	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	37	;	b	117	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	38	;	b	118	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	39	;	b	119	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	40	;	b	120	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+																																																																																											
+																																																																																											
+												beam	;	a	2	;	b	81	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	3	;	b	82	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	4	;	b	83	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	5	;	b	84	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	6	;	b	85	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	7	;	b	86	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	8	;	b	87	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	9	;	b	88	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	10	;	b	89	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	11	;	b	90	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	12	;	b	91	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	13	;	b	92	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	14	;	b	93	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	15	;	b	94	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	16	;	b	95	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	17	;	b	96	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	18	;	b	97	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	19	;	b	98	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	20	;	b	99	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	21	;	b	100	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	22	;	b	101	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	23	;	b	102	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	24	;	b	103	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	25	;	b	104	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	26	;	b	105	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	27	;	b	106	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	28	;	b	107	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	29	;	b	108	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	30	;	b	109	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	31	;	b	110	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	32	;	b	111	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	33	;	b	112	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	34	;	b	113	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	35	;	b	114	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	36	;	b	115	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	37	;	b	116	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	38	;	b	117	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	39	;	b	118	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	40	;	b	119	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+																																																																																											
+																																																																																											
+											2:3																																																																																
+												beam	;	a	41	;	b	81	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	42	;	b	82	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	43	;	b	83	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	44	;	b	84	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	45	;	b	85	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	46	;	b	86	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	47	;	b	87	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	48	;	b	88	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	49	;	b	89	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	50	;	b	90	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	51	;	b	91	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	52	;	b	92	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	53	;	b	93	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	54	;	b	94	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	55	;	b	95	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	56	;	b	96	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	57	;	b	97	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	58	;	b	98	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	59	;	b	99	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	60	;	b	100	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	61	;	b	101	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	62	;	b	102	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	63	;	b	103	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	64	;	b	104	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	65	;	b	105	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	66	;	b	106	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	67	;	b	107	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	68	;	b	108	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	69	;	b	109	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	70	;	b	110	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	71	;	b	111	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	72	;	b	112	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	73	;	b	113	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	74	;	b	114	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	75	;	b	115	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	76	;	b	116	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	77	;	b	117	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	78	;	b	118	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	79	;	b	119	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	80	;	b	120	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+																																																																																											
+																																																																																											
+												beam	;	a	42	;	b	81	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	43	;	b	82	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	44	;	b	83	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	45	;	b	84	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	46	;	b	85	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	47	;	b	86	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	48	;	b	87	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	49	;	b	88	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	50	;	b	89	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	51	;	b	90	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	52	;	b	91	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	53	;	b	92	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	54	;	b	93	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	55	;	b	94	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	56	;	b	95	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	57	;	b	96	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	58	;	b	97	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	59	;	b	98	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	60	;	b	99	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	61	;	b	100	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	62	;	b	101	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	63	;	b	102	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	64	;	b	103	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	65	;	b	104	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	66	;	b	105	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	67	;	b	106	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	68	;	b	107	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	69	;	b	108	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	70	;	b	109	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	71	;	b	110	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	72	;	b	111	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	73	;	b	112	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	74	;	b	113	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	75	;	b	114	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	76	;	b	115	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	77	;	b	116	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	78	;	b	117	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	79	;	b	118	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+												beam	;	a	80	;	b	119	;	length	0	;	stiffness	300000	;	mass	5	;	strength	20000																																																													
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											
+																																																																																											

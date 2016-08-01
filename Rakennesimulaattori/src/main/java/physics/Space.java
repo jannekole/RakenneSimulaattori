@@ -16,8 +16,12 @@ public class Space {
     private double gravity;
     private double updateInterval;
 
+    double time;
+    
     ArrayList<Node> nodes;
     ArrayList<Beam> beams;
+    
+    private boolean stop;
 
     /**
      * Constructs a new Space with the default gravity and update interval.
@@ -26,6 +30,9 @@ public class Space {
         setGravity(9.81);
         setUpdateInterval(0.0001);
 
+        time = 0;
+        stop = false;
+        
         setEmpty();
     }
 
@@ -76,8 +83,22 @@ public class Space {
      */
     public void stepFor(int steps) {
 
+        stepFor(steps, 60000); // 1 minute
+    }
+    
+    public void stepFor(int steps, long maxTime) {
+        
+        stop = false;
+        
+        long startingTime = System.currentTimeMillis();
+        
         for (int i = 0; i < steps; i++) {
             step();
+            if (System.currentTimeMillis() > startingTime + maxTime) {
+                return;
+            } else if (stop == true) {
+                return;
+            }
         }
     }
     
@@ -92,6 +113,8 @@ public class Space {
         for (Node node : nodes) {
             node.calculateNewState();
         }
+        
+        time = time + updateInterval;
     }
 
     @Override
@@ -111,5 +134,12 @@ public class Space {
     public final void setEmpty() {
         nodes = new ArrayList();
         beams = new ArrayList();
+    }
+
+    public double getTime() {
+        return time;
+    }
+    public void pause() {
+        stop = true;
     }
 }

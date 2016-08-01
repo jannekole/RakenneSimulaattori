@@ -191,6 +191,9 @@ public class Builder {
 
         boolean isConstantVelocityY = getValue("constanty", valueStrings).equalsIgnoreCase("true");
         node.setYConstantVelocity(isConstantVelocityY);
+        
+        boolean isConstantVelocityZ= getValue("constantz", valueStrings).equalsIgnoreCase("true");
+        node.setZConstantVelocity(isConstantVelocityZ);
     }
 
     private void setOffset(String[] componentFields) {

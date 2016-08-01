@@ -1,8 +1,8 @@
 offset ; xoffset 400; yoffset 100
 
-node	1	;	x	0	;	y	-100;	constanty	TRUE	;	constantx	TRUE
+node	1	;	x	0	;	y	-100;	constanty	TRUE	;	constantx	TRUE ; constantz true
 node	2	;	x	1	;	y	-300
-node	3	;	x	0	;	y	-900
+node	3	;	x	0	;	y	-900 ; z 5
 
 beam	;	a	1	;	b	2	;	length	400	;	stiffness	500	;	mass	2	;	strength	1200
 beam	;	a	2	;	b	3	;	length	400	;	stiffness	500	;	mass	2	;	strength	1200
