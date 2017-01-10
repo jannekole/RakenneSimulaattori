@@ -14,6 +14,10 @@ import physics.Space;
 public class RunnableSpace implements Runnable{
     Space space;
     
+    int maxSteps = 2000;
+    
+
+
     boolean pause = true;
     boolean pause2 = true;
     boolean stop = false;
@@ -26,7 +30,7 @@ public class RunnableSpace implements Runnable{
         int times = 0;
         while (stop == false) {
             
-            if (pause2 == true || pause == true || times >= 2000) {
+            if (pause2 == true || pause == true || times >= maxSteps) { //2000
                 try {
                     wait();
                     times = 0;
@@ -37,7 +41,7 @@ public class RunnableSpace implements Runnable{
 
                 }
             }
-            if (!pause2) {
+            if (pause2 == false) {
                 space.step();
                 times++;
             }
@@ -50,12 +54,19 @@ public class RunnableSpace implements Runnable{
 
     public synchronized void play() {
         pause = false;
+        
         notify();
     }
     public void playPause() {
         pause2 = !pause2;
     }
-
+    
+    public void setMaxSteps(int maxSteps) {
+        this.maxSteps = maxSteps;
+    }
+    
+    
+    //unnecessary?
     public synchronized void stop() {
         
         stop = true;

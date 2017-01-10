@@ -22,14 +22,14 @@ public class test {
         Builder builder = new Builder(space);
         
         try {
-            builder.buildFromFile("C:\\Users\\janne\\rakenneSimulaattori\\Rakennesimulaattori\\valmitRakenteet\\highBeam.txt");
+            builder.buildFromFile("C:\\Users\\janne\\rakenneSimulaattori\\Rakennesimulaattori\\valmitRakenteet\\3DhighBeam.txt");
         } catch (Exception e) {
             System.out.println("failed ");
         }
         long millis1 = java.lang.System.currentTimeMillis();
-        space.stepFor(5000);
+        space.stepFor(50000);
         long millis2 = java.lang.System.currentTimeMillis();        
-        space.stepFor(5000);
+        space.stepFor(50000);
         long millis3 = java.lang.System.currentTimeMillis();
         long first = millis2 - millis1;
         System.out.println("first 5000: " + first);
@@ -40,3 +40,7 @@ public class test {
     }
     
 }
+
+
+//2805 2644
+//2856 2445

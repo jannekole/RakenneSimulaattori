@@ -22,9 +22,15 @@ import logic.Builder;
 import physics.Beam;
 import physics.Space;
 
+/**
+ *      2D  2D  2D
+ * 
+ *
+ * @author janne
+ */
 public class AnimationFrame extends JPanel {
 
-    double speedMultiplier = 10;
+    double speedMultiplier = 1;
 
     ArrayList<GraphicNode> graphicNodes;
     ArrayList<GraphicBeam> graphicBeams;
@@ -125,14 +131,14 @@ public class AnimationFrame extends JPanel {
             @Override
             public void actionPerformed(ActionEvent evt) {
 
-                space.stepFor(calculationsPerFrame);
+//                space.stepFor(calculationsPerFrame);
                 
-                repaint();
+//                repaint();
             }
         };
 
-        Timer timer = new Timer(delay, taskPerformer);
-        return timer;
+        Timer timer1 = new Timer(delay, taskPerformer);
+        return timer1;
     }
 
     void stepFor(int steps) {

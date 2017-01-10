@@ -25,7 +25,7 @@ public class Beam {
     
     private boolean isBroken;
     
-    private double dampeningFactor = 0.2;
+    private double dampeningFactor = 0.5;
     
     private boolean useExperimentalDampening = false;
     

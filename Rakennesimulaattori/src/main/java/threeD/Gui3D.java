@@ -284,6 +284,13 @@ public class Gui3D extends Application {
     @Override
     public void start(Stage primaryStage) {
         
+        double frameRate = 20;
+        double speedMultiplyer = 1;
+        double spaceUpdateInterval = 0.0001;
+        
+        int maxSteps = (int) (speedMultiplyer/spaceUpdateInterval/frameRate);
+        
+        
         this.primaryStage = primaryStage;
         // setUserAgentStylesheet(STYLESHEET_MODENA);
         System.out.println("start()");
@@ -295,9 +302,11 @@ public class Gui3D extends Application {
         buildCamera();
 
         space = new Space();
-        space.setUpdateInterval(0.0001);
+        space.setUpdateInterval(spaceUpdateInterval); //0.0001
         runnableSpace = new RunnableSpace(space);
 
+        runnableSpace.setMaxSteps(maxSteps);
+        
         Thread spaceThread = new Thread(runnableSpace);
         spaceThread.setDaemon(true);
         spaceThread.start();
@@ -336,7 +345,7 @@ public class Gui3D extends Application {
         Timeline timeline = new Timeline();
         timeline.setCycleCount(Animation.INDEFINITE);
 
-        KeyFrame moveBall = new KeyFrame(Duration.millis(50),
+        KeyFrame moveBall = new KeyFrame(Duration.millis(1000/frameRate),
                 new EventHandler<ActionEvent>() {
                     private double time = 0;
 
